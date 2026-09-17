@@ -1,0 +1,6337 @@
+[
+  {
+    "id": 1,
+    "original_id": 1,
+    "type": "单选题",
+    "question": "自建数据库和RDS相比，哪项不是RDS的优点？",
+    "options": [
+      "A、即开即用",
+      "B、便捷管理",
+      "C、弹性伸缩",
+      "D、用户自主安装数据库"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 2,
+    "original_id": 2,
+    "type": "单选题",
+    "question": "中继器工作在OSI七层模型中的什么层。",
+    "options": [
+      "A、物理层",
+      "B、数据链路层",
+      "C、网络层",
+      "D、运输层"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 3,
+    "original_id": 3,
+    "type": "单选题",
+    "question": "只有当云服务器ECS实例处于（）状态时，才可以进行快照创建操作。",
+    "options": [
+      "A、启动中",
+      "B、创建中",
+      "C、运行中",
+      "D、停止中"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 4,
+    "original_id": 4,
+    "type": "单选题",
+    "question": "在制作FusionAccess链接克隆虚拟机模板时,若终端用户需要使用第三方的Windows登录认证,则需勾选功能配置页面的\"激活操作系统\"选项,以此激活操作系统的第三方登录支持功能。",
+    "options": [
+      "A、TRUE",
+      "B、FALSE"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 5,
+    "original_id": 5,
+    "type": "单选题",
+    "question": "在有N个节点FusionlnsightHD集群中部署HBase时，推荐部署（）个HMaster进程，（）个RegionServer进程",
+    "options": [
+      "A、3，N",
+      "B、N，N",
+      "C、2，N",
+      "D、2，2"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 6,
+    "original_id": 6,
+    "type": "单选题",
+    "question": "在因特网域名中，edu通常表示：",
+    "options": [
+      "A、商业组织",
+      "B、教育机构",
+      "C、政府部门",
+      "D、军事部门"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 7,
+    "original_id": 7,
+    "type": "单选题",
+    "question": "在下面的协议中不是应用层协议的是：",
+    "options": [
+      "A、HTTP",
+      "B、SMTP",
+      "C、TCP",
+      "D、FTP"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 8,
+    "original_id": 8,
+    "type": "单选题",
+    "question": "在调用华为云服务的环境准备中，下列哪一个不需要确认安装？",
+    "options": [
+      "A、requests",
+      "B、setuptools",
+      "C、websocketclient",
+      "D、Jieba"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 9,
+    "original_id": 9,
+    "type": "单选题",
+    "question": "在数据库系统中，保证数据及语义正确和有效的功能是：",
+    "options": [
+      "A、并发控制",
+      "B、存取控制",
+      "C、安全控制",
+      "D、完整性控制"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 10,
+    "original_id": 10,
+    "type": "单选题",
+    "question": "在可视化方法中，将各个属性的值映射到不同的坐标轴，并确定各数据点在坐标系中的位置，称为",
+    "options": [
+      "A、散点图",
+      "B、柱形图",
+      "C、图标法",
+      "D、空间映射"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 11,
+    "original_id": 11,
+    "type": "单选题",
+    "question": "在可变式分区分配方案中，只需要进行依次比较就可以判定系统是否能满足作业对主存空间要求的算法是：",
+    "options": [
+      "A、最先适应算法",
+      "B、最佳适应算法",
+      "C、最差适应算法",
+      "D、固定式分区算法"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 12,
+    "original_id": 12,
+    "type": "单选题",
+    "question": "在华为云硬盘的使用过程中，以下哪一项是数据盘支持但系统盘不支持的操作？（云服务考点）",
+    "options": [
+      "A、加密云硬盘",
+      "B、删除云硬盘",
+      "C、在线卸载云硬盘",
+      "D、扩容云硬盘"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 13,
+    "original_id": 13,
+    "type": "单选题",
+    "question": "在华为云Stack中，ManageOne运维层使用以下哪些方式实现全局数据的接入？（云计算考点）",
+    "options": [
+      "A、嵌入内核技术",
+      "B、驱动对接技术",
+      "C、Tools技术",
+      "D、Agent技术"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 14,
+    "original_id": 14,
+    "type": "单选题",
+    "question": "在华为FusionCompute中，以下哪个操作可以即时生效？（云计算考点）",
+    "options": [
+      "A、安装Tools",
+      "B、磁盘减容",
+      "C、对新绑定磁盘直接读写",
+      "D、删除网卡"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 15,
+    "original_id": 15,
+    "type": "单选题",
+    "question": "在对象存储服务控制台不可以监控以下什么数据？",
+    "options": [
+      "A、对象数量",
+      "B、流量统计",
+      "C、存储用量",
+      "D、异常统计"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 16,
+    "original_id": 16,
+    "type": "单选题",
+    "question": "在部署vLB组件时,通常将vAG和vLB组件部署在同一台虚拟机上,但vLB不能与WI组件合并部署",
+    "options": [
+      "A、TRUE",
+      "B、FALSE"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 17,
+    "original_id": 17,
+    "type": "单选题",
+    "question": "在YARN的任务调度流中，下列哪个是ApplicationMaster负责的任务？",
+    "options": [
+      "A、申请和领取资源",
+      "B、为任务设置好运行环境",
+      "C、分配Container",
+      "D、启动Map或Reduce任务"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 18,
+    "original_id": 18,
+    "type": "单选题",
+    "question": "在WebHCat架构中，用户能够通过安全的HTTPS协议执行以下哪些操作（）",
+    "options": [
+      "A、执行HiveDDL操作",
+      "B、运行MapReduce任务",
+      "C、运行HiveHQL任务",
+      "D、以上全部正确"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 19,
+    "original_id": 19,
+    "type": "单选题",
+    "question": "在NetWare中，当工作站用户请求将数据和文件写入硬盘时，先将其写入内存缓冲区，然后以后台方式写入磁盘中，称为：",
+    "options": [
+      "A、目录Cache",
+      "B、目录Hash",
+      "C、文件Cache",
+      "D、后台写盘功能"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 20,
+    "original_id": 20,
+    "type": "单选题",
+    "question": "在ISDN中，把2B+D信道合并为一个数字信道使用时，传输速率为：",
+    "options": [
+      "A、1Mbps",
+      "B、144Kbps",
+      "C、128Kbps",
+      "D、64Kbos"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 21,
+    "original_id": 21,
+    "type": "单选题",
+    "question": "在Fusionsccess中,若虚拟机桌面网卡所属的端口组配置有误,并不影响虚拟机桌面的发放,管理员可在虚拟机发放完成后,手动变更虚拟机网卡的端团组配置。",
+    "options": [
+      "A、TRUE",
+      "B、FALSE"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 22,
+    "original_id": 22,
+    "type": "单选题",
+    "question": "在FusionCoupute中,按模板部署虚拟机时,以下哪项属性不是继承自模板,可以进行自定义?",
+    "options": [
+      "A、虚拟机磁盘容量",
+      "B、虚拟机磁盘的数量、容量和总线类型",
+      "C、虚拟机的网卡数。",
+      "D、虚拟机的内存大小。"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 23,
+    "original_id": 23,
+    "type": "单选题",
+    "question": "在FusionComute中,管理员可以配置主机大页内存,优化主机内存访问效率,从而提升系统性能。",
+    "options": [
+      "A、TRUE",
+      "B、FALSE"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 24,
+    "original_id": 24,
+    "type": "单选题",
+    "question": "在FusionCompute中采用虚拟化数据存储的虚拟机磁盘,每创建一个快照都会在数据存储上生成一个新的镜像文件",
+    "options": [
+      "A、TRUE",
+      "B、FALSE"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 25,
+    "original_id": 25,
+    "type": "单选题",
+    "question": "在FusionCompute中,以下关于删除虚拟机的描述,错误的是哪一项?",
+    "options": [
+      "A、存储类型为NAS的数据存储上的磁盘仅支持普通删除。",
+      "B、安全删除:通过覆盖性擦写对磁盘空间进行删除。",
+      "C、普通删除:通过破坏磁盘文件系统对磁盘空间进行删除。",
+      "D、安全删除后通过残余信息可以恢复数据,安全性较高。"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 26,
+    "original_id": 26,
+    "type": "单选题",
+    "question": "在FusionCompute中,以下关于分布式虚拟交换机特性的描述,错误的是哪一项?",
+    "options": [
+      "A、每个VM可以具有多个vNIC接口,每个vNIC可以加入分布式交换机的多个端口组",
+      "B、每个分布式交换机可配置多个端口组,每个端口组具有各自的属性",
+      "C、用户可以配置多个分布式交换机,每个分布式交换机可以覆盖集群中的多个CNA节点",
+      "D、每个分布式交换机可以配置一个上行链路组,用于VM对外的通信"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 27,
+    "original_id": 27,
+    "type": "单选题",
+    "question": "在FusionCompute中,以下关于端口组的描述,正确的是哪一项?",
+    "options": [
+      "A、从虚拟机发出的数据,通过端口组后会被打上VLAN标签",
+      "B、属于不同端口组的虚拟机不能互相通信",
+      "C、虚拟机一块网卡可以加入多个端口组",
+      "D、同一端口组可以跨多个CNA主机"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 28,
+    "original_id": 28,
+    "type": "单选题",
+    "question": "在FusionCompute中,虚拟机流量出物理主机的正确流量路径是以下哪一项?",
+    "options": [
+      "A、vPort（DVS）&gt;vNIC（VM）&gt;pNIC（网卡）&gt;port（交换机）",
+      "B、vNIC（VM）&gt;pNIC（网卡）&gt;port（交换机）&gt;vPort（DVS）",
+      "C、vNIC（VM）&gt;pNIC（网卡）&gt;vPort（DvS）&gt;port（交换机）",
+      "D、vNIC（VM）&gt;vPort（DVS）&gt;pNIC（网卡）&gt;port（交换机）"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 29,
+    "original_id": 29,
+    "type": "单选题",
+    "question": "在FusionCompute中,同集群内的两台虚拟机可以正常通信。但在管理员进行某项调整操作后不能互相通信,可能的原因是?",
+    "options": [
+      "A、管理员调整了其中一台虚拟机的磁盘容量。",
+      "B、管理员调整里其中一台虚拟机的内存大小。",
+      "C、管理员调整了其中一台虚拟机的描述。",
+      "D、管理员调整了其中一台虚拟机的所属端口组。"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 30,
+    "original_id": 30,
+    "type": "单选题",
+    "question": "在FusionCompute中,不能对模板执行以下哪---项操作?",
+    "options": [
+      "A、转为虚拟机",
+      "B、按模板部署虚拟机",
+      "C、克隆为模板",
+      "D、克隆为虚拟机"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 31,
+    "original_id": 31,
+    "type": "单选题",
+    "question": "在FusionAccess桌面云中制作模板，安装windows操作系统时填写的临时账号必须是以下哪个账号？（云计算考点）",
+    "options": [
+      "A、PrivateAccount",
+      "B、safeAccount",
+      "C、AreaAccount",
+      "D、LocalAccount"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 32,
+    "original_id": 32,
+    "type": "单选题",
+    "question": "在FusionAccess中,制作链接克隆虚拟机模板时的\"加域\",是为了将该用户或用户组加入到本地用户组中,并且只有该用户或该用户组中的用户才能登录发放的链接克隆虚拟机。",
+    "options": [
+      "A、TRUE",
+      "B、FALSE"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 33,
+    "original_id": 33,
+    "type": "单选题",
+    "question": "在FusionAccess中,应用策略应根据终端用户的实际环境及特有需求进行自定义配置。",
+    "options": [
+      "A、TRUE",
+      "B、FALSE"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 34,
+    "original_id": 34,
+    "type": "单选题",
+    "question": "在FusionAccess中,使用同一个虚拟机模板发放的虚拟机桌面,具有与虚拟机模板相同的CPU个数和内存大小,且无法更改。",
+    "options": [
+      "A、TRUE",
+      "B、FALSE"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 35,
+    "original_id": 35,
+    "type": "单选题",
+    "question": "在FusionAccess中,使用工具封装虚拟机模板时,若虚拟机在重启过程中异常关机,则在手动启动虚拟机后,工具将自动继续封装虚拟机.",
+    "options": [
+      "A、TRUE",
+      "B、FALSE"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 36,
+    "original_id": 36,
+    "type": "单选题",
+    "question": "在FusionAccess中,若使用vAG/vLB做网关与负载均衡时,需要配置1集群相关参数。",
+    "options": [
+      "A、TRUE",
+      "B、FALSE"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 37,
+    "original_id": 37,
+    "type": "单选题",
+    "question": "在FusionAccess中,若WI服务器的IP地址冲突,将导致用户虚拟机列表中的虑拟机图标出现\"灰色\"和\"蓝色\"交替变换的情况",
+    "options": [
+      "A、TRUE",
+      "B、FALSE"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 38,
+    "original_id": 38,
+    "type": "单选题",
+    "question": "在FusionAccess中,如果AD需要与VRM所在的CNA进行时钟同步,需要同时添加管理平面网卡和业务平面网卡。",
+    "options": [
+      "A、TRUE",
+      "B、FALSE"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 39,
+    "original_id": 39,
+    "type": "单选题",
+    "question": "在FusionAccess中,链接克隆虚拟机的个性化数据存放在各自的差分盘中,且支持关机还原",
+    "options": [
+      "A、TRUE",
+      "B、FALSE"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 40,
+    "original_id": 40,
+    "type": "单选题",
+    "question": "在FusionAccess中,管理员可以对不再使用的完整复制和链接克隆虚拟机进行解分配,其中完整复制虚拟机支持恢复分配,而链接克隆虚拟机则不支持。",
+    "options": [
+      "A、TRUE",
+      "B、FALSE"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 41,
+    "original_id": 41,
+    "type": "单选题",
+    "question": "在FusionAccess中,故障处理流程主要分为:故障信息收集、故障判断、故障定位、故障排除。",
+    "options": [
+      "A、TRUE",
+      "B、FALSE"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 42,
+    "original_id": 42,
+    "type": "单选题",
+    "question": "在FusionAccess中,当ITA/GaussDB/WI/License虚拟机主备部署且合一部署时,两台虚拟机必须部署在不同的CNA节点上。",
+    "options": [
+      "A、TRUE",
+      "B、FALSE"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 43,
+    "original_id": 43,
+    "type": "单选题",
+    "question": "在FusionAccess中,\"单用户\"与\"静态池\"的桌面分配方式,两者的差异在于\"静态池\"是在用户首次登录虚拟机时与其绑定,而\"单用户\"是在发放虚拟机时与用户绑定。",
+    "options": [
+      "A、TRUE",
+      "B、FALSE"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 44,
+    "original_id": 44,
+    "type": "单选题",
+    "question": "在FusionAccess中,\"池化\"类型的链接克隆虚拟机会保留制作虚拟机模板时预置的用户组:而\"池化\"类型的完整复制虚拟机则只保留分配的用户或用户组。",
+    "options": [
+      "A、TRUE",
+      "B、FALSE"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 45,
+    "original_id": 45,
+    "type": "单选题",
+    "question": "在FusionAccess的桌面快速发放过程中,分配虚拟机时会将虚拟机添加到指定的虚拟机组中,以便后续基于虚拟机组对虚拟机桌面进行管理。",
+    "options": [
+      "A、TRUE",
+      "B、FALSE"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 46,
+    "original_id": 46,
+    "type": "单选题",
+    "question": "在“当前告警”页面，运维人员可以查看（）的当前告警，以便掌握最新告警动态。",
+    "options": [
+      "A、",
+      "B、已处理 B、Top10告警",
+      "C、Top100告警"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 47,
+    "original_id": 47,
+    "type": "单选题",
+    "question": "云硬盘像使用传统服务器硬盘一样，您可以挂载到云服务器上的云硬盘格式化，创建文件系统等操作，并对数据持久化存储",
+    "options": [
+      "A、true",
+      "B、false"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 48,
+    "original_id": 48,
+    "type": "单选题",
+    "question": "云迁移使用的传输层协议是",
+    "options": [
+      "A、tcp",
+      "B、udp",
+      "C、http",
+      "D、ip"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 49,
+    "original_id": 49,
+    "type": "单选题",
+    "question": "云计算是一种模型，它可以实现随时随地、便捷地、随需应变地从可配置计算资源共享池中获取所需的资源（例如：计算、存储、网络、应用及服务），资源能过快速供应并释放，使用管理资源的工作量和与服务提供商的交互减小到最低限度。",
+    "options": [
+      "A、true",
+      "B、false"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 50,
+    "original_id": 50,
+    "type": "单选题",
+    "question": "云计算安全服务的目标不包括哪项（）。",
+    "options": [
+      "A、用户安全",
+      "B、云平台安全",
+      "C、数据安全",
+      "D、服务安全"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 51,
+    "original_id": 51,
+    "type": "单选题",
+    "question": "有关Internet互联网的概念错的是（）",
+    "options": [
+      "A、Internet即国际互联网络",
+      "B、Internet具有子网和资源共享的特点",
+      "C、在中国称为因特网",
+      "D、Internet是一种局域网的一种"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 52,
+    "original_id": 52,
+    "type": "单选题",
+    "question": "用于可视化文本特征在一个文档集合中不同粒度的分布情况的方法是",
+    "options": [
+      "A、文本弧",
+      "B、文本特征透镜",
+      "C、TIARA",
+      "D、文献指纹"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 53,
+    "original_id": 53,
+    "type": "单选题",
+    "question": "用户最多可以支持创建多少条告警规则？",
+    "options": [
+      "A、200",
+      "B、1000",
+      "C、800",
+      "D、100"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 54,
+    "original_id": 54,
+    "type": "单选题",
+    "question": "硬件故障被认为是常态，为了解决这个问题，HDFS设计了副本机制。默认情况下，一份文件，HDFS会存（）份？",
+    "options": [
+      "A、2",
+      "B、4",
+      "C、3",
+      "D、5"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 55,
+    "original_id": 55,
+    "type": "单选题",
+    "question": "以下组件中，Docker实现资源隔离使用的哪一项？（云计算考点）",
+    "options": [
+      "A、ufs",
+      "B、Namespace",
+      "C、SELinux",
+      "D、Cgroup"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 56,
+    "original_id": 56,
+    "type": "单选题",
+    "question": "以下那种算法相比于其他三种差异最大？",
+    "options": [
+      "A、KNN",
+      "B、SVM",
+      "C、逻辑回归",
+      "D、K-means"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 57,
+    "original_id": 57,
+    "type": "单选题",
+    "question": "以下哪种技术或设备不能隔离广播？（云计算考点）",
+    "options": [
+      "A、路由器",
+      "B、防火墙",
+      "C、Hub",
+      "D、VLAN"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 58,
+    "original_id": 58,
+    "type": "单选题",
+    "question": "以下哪些选项属于FusionlnsightSparkSQL的优点？",
+    "options": [
+      "A、支持数据插入、更新和删除",
+      "B、长稳测试",
+      "C、以上全都正确",
+      "D、稳定和高性能ESQL兼容性"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 59,
+    "original_id": 59,
+    "type": "单选题",
+    "question": "以下哪些服务需要部署在windows虚拟机中？（云计算考点）",
+    "options": [
+      "A、D",
+      "B、ITA",
+      "C、HDC",
+      "D、vAG"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 60,
+    "original_id": 60,
+    "type": "单选题",
+    "question": "以下哪项属于自建数据库的缺点？",
+    "options": [
+      "A、即开即用",
+      "B、稳定可靠",
+      "C、便捷管理",
+      "D、高投入"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 61,
+    "original_id": 61,
+    "type": "单选题",
+    "question": "以下哪项不属于态势感知服务的安全检测源（）。",
+    "options": [
+      "A、漏洞扫描、主机安全、流探针",
+      "B、DDoS、IDS",
+      "C、ACL/安全组",
+      "D、Web防火墙、数据库防火墙"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 62,
+    "original_id": 62,
+    "type": "单选题",
+    "question": "以下哪项不是华为云提供的关系型数据库？（云服务考点）",
+    "options": [
+      "A、GaussDB（forMongo）",
+      "B、GaussDB（forMySQL）",
+      "C、GaussDB（openGauss）",
+      "D、GaussDB（forPostgresQL）"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 63,
+    "original_id": 63,
+    "type": "单选题",
+    "question": "以下哪个华为云服务属于SaaS层服务？",
+    "options": [
+      "A、弹性云服务器ECS",
+      "B、云桌面服务Workspace",
+      "C、云监控服务CloudEye",
+      "D、云容器引擎CCE"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 64,
+    "original_id": 64,
+    "type": "单选题",
+    "question": "以下哪个不是企业主机安全的版本？（云服务考点）",
+    "options": [
+      "A、企业版",
+      "B、个人版",
+      "C、基础版",
+      "D、网页防算改版"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 65,
+    "original_id": 65,
+    "type": "单选题",
+    "question": "以下关于云计算架构发展的描述，错误的是哪项？（云计算考点）",
+    "options": [
+      "A、资源池从小规模的资源虚拟化整合走向更大规模的资源池构建",
+      "B、云平台和云管理软件从闭源、封闭走向开源、开放",
+      "C、从非关键应用走向企业关键应用",
+      "D、数据形态从非结构化和半结构化走向结构化"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 66,
+    "original_id": 66,
+    "type": "单选题",
+    "question": "以下关于虚拟机快照创建条件的描述，错误的是哪一项？（云计算考点）",
+    "options": [
+      "A、虚拟机磁盘的存储类型为FusionStorageBlock、虚拟化本地硬盘、虚拟化SAN存储或NAS存储",
+      "B、虚拟机所在的数据存储可用容量充足",
+      "C、创建快照过程中，不能对虚拟机进行磁盘扩容操作",
+      "D、虚拟机创建快照前无需安装Tools"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 67,
+    "original_id": 67,
+    "type": "单选题",
+    "question": "以下关于虚拟机克隆的描述，错误的是哪一项？（云计算考点）",
+    "options": [
+      "A、使用虚拟机克隆可以快速的部署出一台虚拟机",
+      "B、使用虚拟机克隆，被克隆出来的虚拟机主机名与源虚拟机一样",
+      "C、使用虚拟机克隆，被克隆出来的虚拟机MAC地址与源虚拟机一样",
+      "D、使用虚拟机克隆，被克隆出来的虚拟机IP地址与源虚拟机样"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 68,
+    "original_id": 68,
+    "type": "单选题",
+    "question": "以下关于华为云提供的智能线路解析的描述，错误的是哪一项？（云服务考点）",
+    "options": [
+      "A、智能线路解析功能支持按运营商的维度区分访问者IP的来源和类型",
+      "B、只有公网域名支持使用智能线路解析功能",
+      "C、智能线路解析功能支持按地域的维度区分访问者IP的来源和类型",
+      "D、公网域名和内网域名均支持使用智能线路解析功能"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 69,
+    "original_id": 69,
+    "type": "单选题",
+    "question": "以下关于华为虚拟交换机描述正确的是（云计算考点）",
+    "options": [
+      "A、华为虚拟机交换机就是开源的Openvswitch",
+      "B、华为分布式交换机若有多个虚拟端口，每个端口都具有各自的属性",
+      "C、华为虚拟交换机分为标准虚拟交换机和分布式虚拟交换机",
+      "D、智能网卡的虚拟交换功能也是由华为虚拟交换机提供的"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 70,
+    "original_id": 70,
+    "type": "单选题",
+    "question": "以下关于弹性云服务器ECS的描述中，错误的是哪一项？",
+    "options": [
+      "A、支持包年/包月、按需计费以及竞价计费等模式购买云服务器",
+      "B、可以通过web控制台或API的访问，控制或访问云服务器",
+      "C、适合部署AI分析、视频剪辑、核心数据库等业务",
+      "D、可以根据业务需求和策略，自动调整弹性计算资源，高效匹配业务需求"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 71,
+    "original_id": 71,
+    "type": "单选题",
+    "question": "以下关于磁盘性能，说法正确的是？（云计算考点）",
+    "options": [
+      "A、精简＞普通延迟置零＞普通",
+      "B、普通延迟置零＞精简＞普通",
+      "C、普通＞普通延迟置零＞精简",
+      "D、普通延迟置零＞普通＞精简"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 72,
+    "original_id": 72,
+    "type": "单选题",
+    "question": "以下关于标准RNN模型，说法正确的是？",
+    "options": [
+      "A、不存在一对一的模型结构",
+      "B、反向传播时不考虑时间方向",
+      "C、不存在多对多的模型结构",
+      "D、会出现长时间传输记忆的信息衰减的问题"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 73,
+    "original_id": 73,
+    "type": "单选题",
+    "question": "以下关于Zookeeper的Leader节点在收到数据变更请求后的读写流程说法正确的是？",
+    "options": [
+      "A、同时写入磁盘和内存",
+      "B、先写磁盘再写内存",
+      "C、仅写入内存",
+      "D、先写内存再写磁盘"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 74,
+    "original_id": 74,
+    "type": "单选题",
+    "question": "以下关于HiveSQL基本操作描述正确的是（）",
+    "options": [
+      "A、加载数据到Hive时源数据必须是HDFS的一个路径",
+      "B、创建外部表必须要指定location信息",
+      "C、创建表时可以指定列分隔符",
+      "D、创建外部表使用external关键字。创建普通表需要指定internal关键字"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 75,
+    "original_id": 75,
+    "type": "单选题",
+    "question": "以下关于FusionCompute内存虚拟化的描述，错误的是哪一项?",
+    "options": [
+      "A、FusionCompute支持内存硬件辅助虚拟化技术，降低内存的虚拟化开销",
+      "B、应用程序申请虚拟内存都是连续的",
+      "C、内存虚拟化技术可以实现内存超分配",
+      "D、应用程序申请虚拟内存可以从非0地址开始"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 76,
+    "original_id": 76,
+    "type": "单选题",
+    "question": "以下关于FusionCompute内存复用的描述,错误的是哪一项?",
+    "options": [
+      "A、内存置换技术是将内存中长时间未访问的数据转储到硬盘中,待需要时再读取",
+      "B、FusionCompute系统默认开启内存复用技术,只能在后台使用命令行关闭",
+      "C、内存共享可以使多台虚拟机共享数据内容相同的内存页",
+      "D、内存复用技术可以降低硬件采购成本"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 77,
+    "original_id": 77,
+    "type": "单选题",
+    "question": "以下对于精简磁盘的描述，错误的是？（云计算考点）",
+    "options": [
+      "A、精简磁盘使用动态磁盘技术，可以节省存储空间",
+      "B、该磁盘在创建时会进行空间分配",
+      "C、精简磁盘创建时大小为0，精简磁盘创建时含少量元数据信息，大小一般为几十K，创建时间均非常短",
+      "D、适用于用户对存储需求不明确，或是规划的容量比实际使用的容量多的场景"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 78,
+    "original_id": 78,
+    "type": "单选题",
+    "question": "以下不属于TensorFlow2.0的特点是？",
+    "options": [
+      "A、多核CPU加速",
+      "B、分布式",
+      "C、多语言",
+      "D、多平台"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 79,
+    "original_id": 79,
+    "type": "单选题",
+    "question": "以下（）不属于VDC的功能。",
+    "options": [
+      "A、用户管理",
+      "B、配额管理",
+      "C、资源发放",
+      "D、应用编排"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 80,
+    "original_id": 80,
+    "type": "单选题",
+    "question": "一个伸缩组中可以配置多少个伸缩配置？",
+    "options": [
+      "A、1",
+      "B、2",
+      "C、3",
+      "D、4"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 81,
+    "original_id": 81,
+    "type": "单选题",
+    "question": "一次I/O操作的结束，有可能导致：",
+    "options": [
+      "A、一个进程由睡眠变就绪",
+      "B、几个进程由睡眠变就绪",
+      "C、一个进程由睡眠变运行",
+      "D、几个进程由睡眠变运行"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 82,
+    "original_id": 82,
+    "type": "单选题",
+    "question": "新闻热点随时间的推移而发生变化是因为文本内容具有什么特点",
+    "options": [
+      "A、时间属性",
+      "B、顺序属性",
+      "C、排序",
+      "D、有序演化"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 83,
+    "original_id": 83,
+    "type": "单选题",
+    "question": "新创建的虚机网络无法访问可能的原因可能是VPC中（）未配置。",
+    "options": [
+      "A、安全组",
+      "B、IP地址",
+      "C、DNS",
+      "D、网关"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 84,
+    "original_id": 84,
+    "type": "单选题",
+    "question": "向导式创建弹性伸缩后，还需要手动启用伸缩组",
+    "options": [
+      "A、true",
+      "B、false"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 85,
+    "original_id": 85,
+    "type": "单选题",
+    "question": "下面有关信元交换的正确叙述是（）",
+    "options": [
+      "A、信元交换是一种使用异步时分多路复用技术的交换技术",
+      "B、信元交换是分组更小的分组交换",
+      "C、信元交换通过使用频分多路复用技术提高通信能力",
+      "D、信元交换是基于光纤的高速交换技术"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 86,
+    "original_id": 86,
+    "type": "单选题",
+    "question": "下面选项中正确描述了冲突域的是：",
+    "options": [
+      "A、传送了冲突的数据包的网络区域",
+      "B、以网桥、路由器、交换机为边界的网络区域",
+      "C、安装了路由器和集线器的网络区域",
+      "D、应用了过滤器的网络区域"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 87,
+    "original_id": 87,
+    "type": "单选题",
+    "question": "下面是展现文本集合中主题演化的可视化方法",
+    "options": [
+      "A、主题河流",
+      "B、主题抽取",
+      "C、TF-IDF",
+      "D、文档散"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 88,
+    "original_id": 88,
+    "type": "单选题",
+    "question": "下面哪项是Kubernetes中用于持久化存储的组件？",
+    "options": [
+      "A、pi-server",
+      "B、etcd",
+      "C、kubelet",
+      "D、event-controller"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 89,
+    "original_id": 89,
+    "type": "单选题",
+    "question": "下面哪个不是大数据带来的挑战",
+    "options": [
+      "A、不会存在数据盲点",
+      "B、危及个人隐私",
+      "C、造成群体歧视",
+      "D、产生庞大能耗"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 90,
+    "original_id": 90,
+    "type": "单选题",
+    "question": "下面的（）是广播地址。",
+    "options": [
+      "A、1.1.1.1",
+      "B、255.255.255.255",
+      "C、1.0.1.0",
+      "D、127.0.0.1"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 91,
+    "original_id": 91,
+    "type": "单选题",
+    "question": "下面不属于二维标量场可视化的基本可视化方法的是",
+    "options": [
+      "A、颜色映射",
+      "B、折线图",
+      "C、等值线",
+      "D、高度图"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 92,
+    "original_id": 92,
+    "type": "单选题",
+    "question": "下面不属于采样空间网格的是",
+    "options": [
+      "A、均匀网格",
+      "B、矩形网格",
+      "C、曲线网格",
+      "D、其他网格"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 93,
+    "original_id": 93,
+    "type": "单选题",
+    "question": "下面（）项不是数据模型的常用组成部分。",
+    "options": [
+      "A、数据结构",
+      "B、数据表",
+      "C、数据操作",
+      "D、完整性约束"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 94,
+    "original_id": 94,
+    "type": "单选题",
+    "question": "下列哪种材料（）对2.4GHz的RF信号的阻碍作用最小。",
+    "options": [
+      "A、混凝土",
+      "B、金属",
+      "C、钢",
+      "D、干墙"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 95,
+    "original_id": 95,
+    "type": "单选题",
+    "question": "下列哪一个是图像标签服务的URI？",
+    "options": [
+      "A、/1.0/image/recognition",
+      "B、/1.0/image/celebrityrecognition",
+      "C、/v1.0/image/recapturedetect",
+      "D、/M.0/image/tagging"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 96,
+    "original_id": 96,
+    "type": "单选题",
+    "question": "下列哪个不是专门用于可视化时间空间数据的技术",
+    "options": [
+      "A、等高线图",
+      "B、饼图",
+      "C、曲面图",
+      "D、矢量场图"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 97,
+    "original_id": 97,
+    "type": "单选题",
+    "question": "下列关于进程的叙述中，正确的是：",
+    "options": [
+      "A、进程通过进程调度程序而获得CPU",
+      "B、优先级是进行进程调度的重要依据，一旦确定不能改变",
+      "C、在单CPU系统中，任一时刻都有进程申请CPU得不到满足时，其状态变为等待状态"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 98,
+    "original_id": 98,
+    "type": "单选题",
+    "question": "系统引导加载时的各文件的目录是哪一个",
+    "options": [
+      "A、Boot",
+      "B、Proc",
+      "C、Dev",
+      "D、Tmp"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 99,
+    "original_id": 99,
+    "type": "单选题",
+    "question": "系统抖动现象的发生是由（）引起的？",
+    "options": [
+      "A、置换算法选择不当",
+      "B、交换的信息量过大",
+      "C、内存容量充足",
+      "D、请求页式管理方案"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 100,
+    "original_id": 100,
+    "type": "单选题",
+    "question": "五层协议的体系结构中不包含哪一层（）",
+    "options": [
+      "A、应用层",
+      "B、网络层",
+      "C、物理层",
+      "D、会话层"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 101,
+    "original_id": 101,
+    "type": "单选题",
+    "question": "沃T或者腾讯云导入镜像容量最大支持多少",
+    "options": [
+      "A、500G",
+      "B、200G",
+      "C、100G",
+      "D、50G"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 102,
+    "original_id": 102,
+    "type": "单选题",
+    "question": "我们说公钥加密比常规加密更先进，这是因为：",
+    "options": [
+      "A、公钥是建立在数学函数基础上的，而不是建立在位方式的操作上的",
+      "B、公钥加密比常规加密更具有安全性",
+      "C、公钥加密是一种通用机制，常规加密已经过时了",
+      "D、公钥加密算法的额外开销少"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 103,
+    "original_id": 103,
+    "type": "单选题",
+    "question": "为了给用户提供良好的使用体验，云平台需要有高效的网络，该前提用到的是以下云计算特点中的哪一项（云计算考点）",
+    "options": [
+      "A、按需自助服务",
+      "B、资源池化",
+      "C、广泛的网络接入",
+      "D、快速弹性伸缩"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 104,
+    "original_id": 104,
+    "type": "单选题",
+    "question": "同一个环境中一个API能绑定（）访问控制策略；一个访问控制策略可以绑定（）API。",
+    "options": [
+      "A、多个，一个",
+      "B、一个、多个",
+      "C、多个，多个",
+      "D、一个，最多一个"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 105,
+    "original_id": 105,
+    "type": "单选题",
+    "question": "同Region的两个VPC之间进行通信，建议通过（）实现。",
+    "options": [
+      "A、SNAT",
+      "B、对等连接",
+      "C、EIP",
+      "D、专线"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 106,
+    "original_id": 106,
+    "type": "单选题",
+    "question": "通过设置（）可以对备份资源进行过滤和管理。（云服务考点）",
+    "options": [
+      "A、共享",
+      "B、保留规则",
+      "C、标签",
+      "D、备份时间"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 107,
+    "original_id": 107,
+    "type": "单选题",
+    "question": "通道能够完成（）之间数据的传输。",
+    "options": [
+      "A、CPU与外设",
+      "B、内存与外设",
+      "C、PU与主存",
+      "D、外设与外设"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 108,
+    "original_id": 108,
+    "type": "单选题",
+    "question": "通常提供应用运行开发环境的服务属于哪个层面的云服务？",
+    "options": [
+      "A、IaaS",
+      "B、PaaS",
+      "C、SaaS",
+      "D、aaS"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 109,
+    "original_id": 109,
+    "type": "单选题",
+    "question": "通常Regions是根据什么划分的？",
+    "options": [
+      "A、地理位置和网络时延维度",
+      "B、集群服务器",
+      "C、可用区（AZ）"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 110,
+    "original_id": 110,
+    "type": "单选题",
+    "question": "双绞线由两个具有绝缘保护层的铜导线按一定密度互相绞在一起组成，这样可以（）",
+    "options": [
+      "A、降低成本",
+      "B、降低电磁干扰",
+      "C、提高传输速度",
+      "D、提高线缆硬度"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 111,
+    "original_id": 111,
+    "type": "单选题",
+    "question": "数据通信中的信道传输速率单位用bps表示，bps的含义是（）",
+    "options": [
+      "A、bytesperSecond",
+      "B、audperSecond",
+      "C、bitsperSecond",
+      "D、billonperSecond"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 112,
+    "original_id": 112,
+    "type": "单选题",
+    "question": "数据库的（）是指数据的正确性和相容性。",
+    "options": [
+      "A、安全性",
+      "B、完整性",
+      "C、并发控制",
+      "D、恢复"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 113,
+    "original_id": 113,
+    "type": "单选题",
+    "question": "数据安全为云计算环境下的用户数据应用、存储等提供机密性，完整性保障。",
+    "options": [
+      "A、true",
+      "B、false"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 114,
+    "original_id": 114,
+    "type": "单选题",
+    "question": "室内AP最好安装在下面哪个环境（）",
+    "options": [
+      "A、强电井通风好",
+      "B、弱电井通风好",
+      "C、强电井通风不好",
+      "D、弱电井通不好"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 115,
+    "original_id": 115,
+    "type": "单选题",
+    "question": "使用华为云弹性负载均衡服务添加监听器时，在以下哪种协议下需要配置服务器证书？（云服务考点）",
+    "options": [
+      "A、UDP",
+      "B、HTTPS",
+      "C、HTTP",
+      "D、TCP"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 116,
+    "original_id": 116,
+    "type": "单选题",
+    "question": "使用CREATE语句创建的对象，需要使用（）语句删除。",
+    "options": [
+      "A、DROP",
+      "B、INSERT",
+      "C、OMMIT",
+      "D、SELECT"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 117,
+    "original_id": 117,
+    "type": "单选题",
+    "question": "实现云下到云上批量数据迁移的服务是哪种？（云服务考点）",
+    "options": [
+      "A、云数据迁移服务CDM",
+      "B、实时流计算服务CloudStream",
+      "C、数据接入服务DIS",
+      "D、数据仓库服务Dws"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 118,
+    "original_id": 118,
+    "type": "单选题",
+    "question": "生成对抗网络像是一个博弈系统，生成器生成伪造的样本，判别器进行判断是真是假，我们理想的结果是？",
+    "options": [
+      "A、生成器产生样本的大致相同",
+      "B、判别器高效的分辨生成器产生样本的真假",
+      "C、判别器无法分辨生成器产生样本的真假",
+      "D、生成器产生样本的不尽相同"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 119,
+    "original_id": 119,
+    "type": "单选题",
+    "question": "神将网络训练时，常会遇到很多问题，对于梯度消失问题，我们可以通过选择使用以下哪种函数减轻该问题？",
+    "options": [
+      "A、Softsign函数",
+      "B、Relu函数",
+      "C、anh函数",
+      "D、Sigmoid函数"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 120,
+    "original_id": 120,
+    "type": "单选题",
+    "question": "深度学习神经网络训练时需要大量的矩阵计算，一般我们需要配用硬件让计算机具备并行计算的能力，以下硬件设备可提供并行计算能力的是：",
+    "options": [
+      "A、主板",
+      "B、内存条",
+      "C、GPU",
+      "D、cPU"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 121,
+    "original_id": 121,
+    "type": "单选题",
+    "question": "申请开通弹性云服务器—般需要多长时间？",
+    "options": [
+      "A、几秒钟",
+      "B、几分钟",
+      "C、几小时",
+      "D、几天"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 122,
+    "original_id": 122,
+    "type": "单选题",
+    "question": "设备虚拟化（I/0虚拟化）的过程,就是模拟设备的寄存器和内存,截获GuestOS对I/0端口和寄存器的访问,通过软件的方式来模拟设备行为。",
+    "options": [
+      "A、TRUE",
+      "B、FALSE"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 123,
+    "original_id": 123,
+    "type": "单选题",
+    "question": "若系统中只有用户级线程，则处理机调度单位是：",
+    "options": [
+      "A、线程",
+      "B、进程",
+      "C、程序",
+      "D、作业"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 124,
+    "original_id": 124,
+    "type": "单选题",
+    "question": "如下选择中，哪项不是华为云监控产品CES的优势？",
+    "options": [
+      "A、实时",
+      "B、省钱",
+      "C、多种通知模式",
+      "D、监控第三方非华为云服务"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 125,
+    "original_id": 125,
+    "type": "单选题",
+    "question": "如果用户要查询最近7天内的历史告警服务，需要开通什么服务？",
+    "options": [
+      "A、云审计服务",
+      "B、消息通知服务",
+      "C、弹性云主机服务",
+      "D、关系型数据库服务"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 126,
+    "original_id": 126,
+    "type": "单选题",
+    "question": "迁移拷贝需要时间，在迁移过程中，产生的用户数据如何保证完整性",
+    "options": [
+      "A、通知用户停止业务数据，并且每次拍摄快照迁移完之后，重新创建快照与目的端进行用户数据校验",
+      "B、一直拷贝最新的直到用户觉得可以停止了",
+      "C、最后一次增量拷贝，时间足够短，可以忽略那时间点的用户数据",
+      "D、通知用户停业务，停了业务拷贝一次就行了"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 127,
+    "original_id": 127,
+    "type": "单选题",
+    "question": "哪项不属于华为的计算云服务？",
+    "options": [
+      "A、弹性伸缩",
+      "B、裸金属服务",
+      "C、镜像服务",
+      "D、弹性文件服务"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 128,
+    "original_id": 128,
+    "type": "单选题",
+    "question": "某用户因工作需要使用拥有OpenGL2.1和3D9图形处理能力的虚拟来面,因此他需要向管理员申请?",
+    "options": [
+      "A、GPU虚拟桌面",
+      "B、完整复制虚拟桌面",
+      "C、全内存虚拟桌面",
+      "D、链接克隆虚拟桌面"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 129,
+    "original_id": 129,
+    "type": "单选题",
+    "question": "某票务网站进行大促销时，由于瞬间访问量巨大，网站容易瘫痪。为了应对流量洪峰，以下哪种微服务治理方法能够有效应对该场景，防止系统过载崩溃？",
+    "options": [
+      "A、限流",
+      "B、负载均衡",
+      "C、熔断",
+      "D、容灾"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 130,
+    "original_id": 130,
+    "type": "单选题",
+    "question": "流数据的输入数据是",
+    "options": [
+      "A、储存在磁盘或内存中",
+      "B、储存在可随机访问的磁盘或内存中",
+      "C、以一个“连续数据流”的形式表达",
+      "D、以一个或多个“连续数据流”的形式到达"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 131,
+    "original_id": 131,
+    "type": "单选题",
+    "question": "两个站点之间跨Internet通信，可以在两端的防火墙部署IPSecVPN从而保护两地内网的互访流量。",
+    "options": [
+      "A、true",
+      "B、false"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 132,
+    "original_id": 132,
+    "type": "单选题",
+    "question": "开通云专线时，端口类型选择10GE，该端口类型是？",
+    "options": [
+      "A、电口",
+      "B、光口",
+      "C、以太口",
+      "D、串口"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 133,
+    "original_id": 133,
+    "type": "单选题",
+    "question": "经典型负载均衡算法，支持的调度算法不包括（）。",
+    "options": [
+      "A、轮询算法",
+      "B、最少连接",
+      "C、连接ID算法",
+      "D、源IP算法"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 134,
+    "original_id": 134,
+    "type": "单选题",
+    "question": "交换机能够识别（）地址。",
+    "options": [
+      "A、DNS",
+      "B、TCP",
+      "C、网络层",
+      "D、MAC"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 135,
+    "original_id": 135,
+    "type": "单选题",
+    "question": "将数据块存储大小设置为128M，HDFS客户端在写文件时，当写入一个100M大小的文件，实际占用储存空间为多大？（大数据考点）",
+    "options": [
+      "A、128M",
+      "B、100M",
+      "C、64M",
+      "D、SOM"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 136,
+    "original_id": 136,
+    "type": "单选题",
+    "question": "华为云有几种登录用户类型？",
+    "options": [
+      "A、1",
+      "B、2",
+      "C、3",
+      "D、4"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 137,
+    "original_id": 137,
+    "type": "单选题",
+    "question": "华为云服务的定位说法正确的是？（云服务考点）",
+    "options": [
+      "A、聚焦I层，使能P层，聚合S层",
+      "B、聚焦S层，使能P层，聚合I层",
+      "C、聚焦P层，使能I层，聚合S层",
+      "D、聚焦I层，使能S层，聚合P层"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 138,
+    "original_id": 138,
+    "type": "单选题",
+    "question": "华为云PostgreSQL数据库实例的默认端口为（）。",
+    "options": [
+      "A、1521",
+      "B、3306",
+      "C、5432",
+      "D、7001"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 139,
+    "original_id": 139,
+    "type": "单选题",
+    "question": "华为HCS8.0私有云平台网络虚拟化采用的是openstack的（）组件实现。",
+    "options": [
+      "A、cinder",
+      "B、nova",
+      "C、neutron",
+      "D、swift"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 140,
+    "original_id": 140,
+    "type": "单选题",
+    "question": "关于云硬盘备份，以下说法正确的是？",
+    "options": [
+      "A、云硬盘备份没有配额限制",
+      "B、云硬盘进行备份后，再进行扩容，可用之前的备份恢复数据，恢复后硬盘空间大小不变",
+      "C、云硬盘进行备份后，再进行扩容，不能用之前的备份恢复数据，因为恢复后云硬盘空间大小会变为扩容之前的大小",
+      "D、云硬盘扩容后，再进行备份，用此备份恢复数据，恢复后硬盘空间大小不变"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 141,
+    "original_id": 141,
+    "type": "单选题",
+    "question": "关于伸缩配置的说法，以下正确的是？（云服务考点）",
+    "options": [
+      "A、您可以创建无数多个伸缩配置。",
+      "B、伸宿配置定义了伸缩组中待添加的云服务器的规格数据。",
+      "C、您可以根据需要修改已创建的伸缩配置。",
+      "D、伸宿组启用后不能更换伸缩配置。"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 142,
+    "original_id": 142,
+    "type": "单选题",
+    "question": "关于面向列的数据库下列哪个是对的",
+    "options": [
+      "A、是关系型数据库",
+      "B、也可以面向行",
+      "C、擅长以列为单位读取数据",
+      "D、扩展性差"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 143,
+    "original_id": 143,
+    "type": "单选题",
+    "question": "关于均值滤波的说法，以下错误的是哪一项？",
+    "options": [
+      "A、均值滤波指模板权重都为1的滤波器",
+      "B、均值滤波将像素的邻域最大值作为输出结果",
+      "C、均值滤波可以起到图像平滑的效果，可以去除噪声",
+      "D、均值滤波经常用于图像模糊化"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 144,
+    "original_id": 144,
+    "type": "单选题",
+    "question": "关于弹性云服务器的使用限制，下列说法错误的是（）。",
+    "options": [
+      "A、支持声卡应用",
+      "B、不要编译Linux系统的内核，或对内核进行任何其他操作",
+      "C、不要重命名、删除或禁用Windows下的administrator账号，以免影响云服务器的正常使用",
+      "D、不支持在云服务器上安装虚拟化软件进行二次虚拟化"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 145,
+    "original_id": 145,
+    "type": "单选题",
+    "question": "关于VPN连接，下列说法错误的是（）。",
+    "options": [
+      "A、同一VPN网关可与关联的VPC内的多个子网建立连接",
+      "B、同一VPN网关下所有VPN连接，相互不能重叠",
+      "C、同一VPN连接的多个远端子网网段，相互不能重叠",
+      "D、同一VPN网关下所有VPN连接的本端子网网段，相互可以重叠"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 146,
+    "original_id": 146,
+    "type": "单选题",
+    "question": "关于FusionlnsightHD安装流程正确的是？",
+    "options": [
+      "A、安装Manager-&gt;执行preinstall-&gt;LLD工具进行配置-&gt;安装集群-&gt;安装后检查-&gt;安装后配置",
+      "B、LLD工具进行配置-&gt;执行preinstall-&gt;安装Manager-&gt;安装集群-&gt;安装后检查-&gt;安装后配置",
+      "C、安装Manager-&gt;LLD工具进行配置-&gt;执行preinstall-&gt;安装集群-&gt;安装后检查-&gt;安装后配置",
+      "D、LLD工具进行配置-&gt;执行preinstall-&gt;安装集群-&gt;安装Manager-&gt;安装后检查-&gt;安装后配置"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 147,
+    "original_id": 147,
+    "type": "单选题",
+    "question": "关于Flink中TimeWindow分类的描述，以下哪一个选项是不正确的？",
+    "options": [
+      "A、滚动窗口将数据依据固定的窗口长度对数据进行切片",
+      "B、滑动窗口由固定的窗口长度和滑动间隔组成",
+      "C、滑动窗口的特点是时间对齐，窗口长度固定，无重叠",
+      "D、会话窗口是一段时间没有接收到新数据就会生成新的窗口"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 148,
+    "original_id": 148,
+    "type": "单选题",
+    "question": "关系数据库服务RDS能够满足游戏行业多变的需求，有效缩短研发周期，降低研发成本。",
+    "options": [
+      "A、true",
+      "B、false"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 149,
+    "original_id": 149,
+    "type": "单选题",
+    "question": "共享镜像接受者不可以做哪项操作？",
+    "options": [
+      "A、共享指定镜像",
+      "B、接受其他用户提供的共享镜像",
+      "C、拒绝其他用户提供的共享镜像",
+      "D、移除已经接受的共享镜像"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 150,
+    "original_id": 150,
+    "type": "单选题",
+    "question": "根据美国汽车工程师协会（SAE）将自动驾驶按照车辆行驶对于系统依赖程度分为哪些级别？（AI考点）",
+    "options": [
+      "A、L1~L4",
+      "B、L1~L5",
+      "C、LO~L4",
+      "D、LO~L5"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 151,
+    "original_id": 151,
+    "type": "单选题",
+    "question": "给镜像打标签需要用哪个命令？",
+    "options": [
+      "A、dockertag",
+      "B、dockerpush",
+      "C、dockerpull",
+      "D、ockerirnages"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 152,
+    "original_id": 152,
+    "type": "单选题",
+    "question": "给定一个物理地址，什么协议能够动态映射出该地址的逻辑地址。",
+    "options": [
+      "A、RP",
+      "B、RARP",
+      "C、ICMP",
+      "D、以上都不是"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 153,
+    "original_id": 153,
+    "type": "单选题",
+    "question": "负载均衡的访问地址，通过该地址可以访问对应的负载均衡。每个ELB都必须有一个（），是ELB的地址信息。",
+    "options": [
+      "A、服务IP",
+      "B、弹性IP",
+      "C、服务链接",
+      "D、对外端口"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 154,
+    "original_id": 154,
+    "type": "单选题",
+    "question": "访问WWW网时，使用的应用层协议为：",
+    "options": [
+      "A、HTML",
+      "B、HTTP",
+      "C、FTP",
+      "D、SMTP"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 155,
+    "original_id": 155,
+    "type": "单选题",
+    "question": "对于广域网来说，下列说法不正确的是（）",
+    "options": [
+      "A、作用范围必须在几千公里以上",
+      "B、广域网有时可称为“远程网”",
+      "C、广域网一般采用存储转发的方式进行数据转化",
+      "D、广域网是基于报文交换或分组交换技术的"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 156,
+    "original_id": 156,
+    "type": "单选题",
+    "question": "对CSE微服务治理功能描述错误的是：（）。",
+    "options": [
+      "A、当出现访问量和流量较大，一台服务器无法负载的情况下，可以通过设置负载均衡的方式将流量分发到多个服务器均衡处理",
+      "B、限流主要解决微服务之间的流量分配问题，保证微服务在自己的资源池运行，互不影响",
+      "C、降级是容错的一种特殊形式，当出现服务吞吐量巨大，资源不够用等情况，可使用降级机制关掉部分不重要、性能较差的服务",
+      "D、熔断是当服务请求处理出现异常时，截断请求直接返回错误给调用者，当服务恢复正常，不会退出熔断状态，需要手工恢复状态"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 157,
+    "original_id": 157,
+    "type": "单选题",
+    "question": "导出的镜像大小没有限制。",
+    "options": [
+      "A、true",
+      "B、false"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 158,
+    "original_id": 158,
+    "type": "单选题",
+    "question": "当需要早每周某个固定的时间增加伸缩组中实例的数量时，我可以通过设置以下哪种伸缩策略实现？",
+    "options": [
+      "A、告警策略",
+      "B、定时策略",
+      "C、以上均可",
+      "D、周期策略"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 159,
+    "original_id": 159,
+    "type": "单选题",
+    "question": "当修改（）时，会触发弹性伸缩活动。系统自动增加或减少实例已达到期望实例数的数量。",
+    "options": [
+      "A、最小实例数",
+      "B、期望实例数",
+      "C、最大实例数",
+      "D、冷却时间"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 160,
+    "original_id": 160,
+    "type": "单选题",
+    "question": "当使用OpenAPI上传自定义监控指标成功时，返回值是多少？（云服务考点）",
+    "options": [
+      "A、200",
+      "B、201",
+      "C、202",
+      "D、203"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 161,
+    "original_id": 161,
+    "type": "单选题",
+    "question": "当模板制作过程中没有配置“Users“权限组，那么在追加虚拟机用户时，权限组可以设置成？（云计算考点）",
+    "options": [
+      "A、Users",
+      "B、Auditors",
+      "C、Operators",
+      "D、Administrators"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 162,
+    "original_id": 162,
+    "type": "单选题",
+    "question": "当客户无外部时钟源,且AD由华为提供时,VRM对应的CNA节点为一级时钟源,在FusionAccess配置时钟源后,AD作为二级时钟源将自动从第一时钟源同步时间,用户虚拟机及基础架构虚拟机自动从AD同步时间。",
+    "options": [
+      "A、TRUE",
+      "B、FALSE"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 163,
+    "original_id": 163,
+    "type": "单选题",
+    "question": "当看到pod的生命周期显示为pending的时候，表示的是？",
+    "options": [
+      "A、pod已被创建，但容器还未创建",
+      "B、pod已经被调度到node，容器已经创建，并且至少一个容器在运行",
+      "C、pod中的所有容器正常退出",
+      "D、pod中的所有容器退出，至少有一个容器是一次退出的"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 164,
+    "original_id": 164,
+    "type": "单选题",
+    "question": "当华为云RDS实例处于以下（）状态时，无法删除实例。",
+    "options": [
+      "A、正常",
+      "B、主备切换中",
+      "C、异常",
+      "D、创建失败"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 165,
+    "original_id": 165,
+    "type": "单选题",
+    "question": "当负载均衡器的类型为私网时，不支持以下哪种协议?",
+    "options": [
+      "A、TCP",
+      "B、UDP",
+      "C、HTTP",
+      "D、HTTPS"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 166,
+    "original_id": 166,
+    "type": "单选题",
+    "question": "当多个用户请求同一个JSP页面时，Tomcat服务器为每一个客户启动一个：",
+    "options": [
+      "A、进程",
+      "B、线程",
+      "C、程序",
+      "D、服务"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 167,
+    "original_id": 167,
+    "type": "单选题",
+    "question": "弹性云服务器通过什么构建逻辑上完全隔离的网络区域？（云服务考点）",
+    "options": [
+      "A、云审计",
+      "B、云容器引擎",
+      "C、虚拟私有云",
+      "D、弹性伸缩"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 168,
+    "original_id": 168,
+    "type": "单选题",
+    "question": "弹性云服务器挂载的数据盘容量不足时，必须卸载并重新购买一块大容量的云硬盘。",
+    "options": [
+      "A、true",
+      "B、false"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 169,
+    "original_id": 169,
+    "type": "单选题",
+    "question": "弹性云服务器创建成功后，使用的带宽一旦确定，将不能修改。",
+    "options": [
+      "A、true",
+      "B、false"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 170,
+    "original_id": 170,
+    "type": "单选题",
+    "question": "弹性云服务器绑定了（）后，可以通过固定的公网IP地址对外提供访问。",
+    "options": [
+      "A、镜像",
+      "B、系统盘",
+      "C、数据盘",
+      "D、弹性IP"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 171,
+    "original_id": 171,
+    "type": "单选题",
+    "question": "弹性伸缩告警策略不支持以下（）类型的告警信息监控。",
+    "options": [
+      "A、CPU利用率",
+      "B、内存利用率",
+      "C、网络流入速率",
+      "D、磁盘容量使用率"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 172,
+    "original_id": 172,
+    "type": "单选题",
+    "question": "创建文件系统之前，需要配置哪些信息？（云服务考点）",
+    "options": [
+      "A、弹性伸缩AS",
+      "B、虚拟私有云VPC",
+      "C、弹性负载均衡ELB",
+      "D、弹性公网IP"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 173,
+    "original_id": 173,
+    "type": "单选题",
+    "question": "传统数据处理的数据规模的单位是？",
+    "options": [
+      "A、TB",
+      "B、EB",
+      "C、PB",
+      "D、GB"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 174,
+    "original_id": 174,
+    "type": "单选题",
+    "question": "传统机器学习和深度学习是人工智能核心技术，在工程流程上略有差别，以下步骤在深度学习中不需要做的是",
+    "options": [
+      "A、模型评估",
+      "B、特征工程",
+      "C、数据清洗",
+      "D、模型构建"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 175,
+    "original_id": 175,
+    "type": "单选题",
+    "question": "超文本（Hypertext）是一种信息管理技术，也是一种电子文献形式，下面关于超文本的论述中不正确的是：l、超文本采用一种非线性的网状结构来组织信息2、超文本就是超大规格（通常大于64K）的文本文件3、超文本以结点作为基本单位，比传统的以字符为基本单位高一个层次4、超文本的每个结点就是一个文本文件",
+    "options": [
+      "A、1",
+      "B、3",
+      "C、2、4",
+      "D、1、3"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 176,
+    "original_id": 176,
+    "type": "单选题",
+    "question": "层次数据库用（）来表示实体之间的联系。",
+    "options": [
+      "A、树结构",
+      "B、网结构",
+      "C、二维表",
+      "D、线性表"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 177,
+    "original_id": 177,
+    "type": "单选题",
+    "question": "采用段式存储管理的系统中，若地址用24位表示，其中8位表示段号，则允许每段的最大长度是：",
+    "options": [
+      "A、224",
+      "B、216",
+      "C、28",
+      "D、232"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 178,
+    "original_id": 178,
+    "type": "单选题",
+    "question": "部署FusionlnsightHD时，同一集群内的FlumeServer节点建议至少部署几个？",
+    "options": [
+      "A、1",
+      "B、2",
+      "C、3",
+      "D、4"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 179,
+    "original_id": 179,
+    "type": "单选题",
+    "question": "备份云硬盘需要的时间只取决于云硬盘中的数据量。",
+    "options": [
+      "A、true",
+      "B、false"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 180,
+    "original_id": 180,
+    "type": "单选题",
+    "question": "Zookeeper在分布式应用中的主要作用不包括一下哪些选项？",
+    "options": [
+      "A、选举Master节点",
+      "B、保证各节点上数据的一致性",
+      "C、分配集群资源",
+      "D、存储及群中服务器信息"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 181,
+    "original_id": 181,
+    "type": "单选题",
+    "question": "Zookeeper的scheme认证方式不包含以下哪项？（）",
+    "options": [
+      "A、sasl",
+      "B、auth",
+      "C、digest",
+      "D、world"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 182,
+    "original_id": 182,
+    "type": "单选题",
+    "question": "YARN服务中，如果要给队列QuqueA设置容量为30%，应该配置哪个参数？",
+    "options": [
+      "A、yarn.scheduler.capacity.root.Queue",
+      "B、user-limit-factor",
+      "C、yarn.scheduler.capacity.root.Queue",
+      "D、minimum-user-limit-percent",
+      "E、yarn.scheduler.capacity.root.Queue",
+      "F、capacity G、yarn.scheduler.capacity.root.Queue H、state"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 183,
+    "original_id": 183,
+    "type": "单选题",
+    "question": "WTP（网页防篡改服务）的主要功能不包括一下哪项？（云服务考点）",
+    "options": [
+      "A、Web站点文件保护",
+      "B、告警信息记录",
+      "C、防护详情统计",
+      "D、防SQL注入"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 184,
+    "original_id": 184,
+    "type": "单选题",
+    "question": "VPC子网网段创建后可以进行修改？",
+    "options": [
+      "A、true",
+      "B、false"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 185,
+    "original_id": 185,
+    "type": "单选题",
+    "question": "VIMS集群文件系统在读写数据前会触发分布式文件锁,以保证多节点读写同一文件的数据一致性。",
+    "options": [
+      "A、TRUE",
+      "B、FALSE"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 186,
+    "original_id": 186,
+    "type": "单选题",
+    "question": "TCP使用了4种计时器：重传计时器、坚持计时器，保持计时器和（）",
+    "options": [
+      "A、延迟计时器",
+      "B、时间等待计时器",
+      "C、端口计时器",
+      "D、服务时间计时器"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 187,
+    "original_id": 187,
+    "type": "单选题",
+    "question": "rsync同步文件夹a到文件夹b命令是什么",
+    "options": [
+      "A、rsync-a/a/b",
+      "B、rsync-a/a//b",
+      "C、rsync-a/a//b/",
+      "D、rsync-a/a/b/"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 188,
+    "original_id": 188,
+    "type": "单选题",
+    "question": "RDS提供了即开即用的数据库服务，其创建时间为（）级别的。",
+    "options": [
+      "A、毫秒级",
+      "B、秒级",
+      "C、分钟级",
+      "D、小时级"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 189,
+    "original_id": 189,
+    "type": "单选题",
+    "question": "RDS数据库实例的备份和快照数据存储在哪项服务上？（云服务考点）",
+    "options": [
+      "A、ECS",
+      "B、OBS",
+      "C、VPC",
+      "D、CES"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 190,
+    "original_id": 190,
+    "type": "单选题",
+    "question": "Ping指令实现的是什么协议。",
+    "options": [
+      "A、RP",
+      "B、IGMP",
+      "C、ICMP",
+      "D、IP"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 191,
+    "original_id": 191,
+    "type": "单选题",
+    "question": "OS的不确定性是指：",
+    "options": [
+      "A、程序的运行结果不确定",
+      "B、程序的运行次序不确定",
+      "C、程序多次运行的时间不确定",
+      "D、B和C"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 192,
+    "original_id": 192,
+    "type": "单选题",
+    "question": "OnDevice执行，即整图卸载执行，充分发挥异腾芯片的算力，可以大大降低交互的开销，从而提升加速器占用率，关于OnDevice执行以下描述错误的是？",
+    "options": [
+      "A、MindSpore通过梯度数据驱动的自适应图优化，实现去中心化的自主A11Reduce，梯度聚合步调一致，计算与通信充分流水",
+      "B、超强芯片算力下模型执行的挑战：内存墙问题、交互开销大、数据供给难。部分在Host执行，部分在Device执行，交互开销甚至远大于执行开销，导致加速器占用率低",
+      "C、MindSpore通过面向芯片的深度图优化技术，同步等待少，最大化“数据计算通信”的并行度，训练性能相比Host侧图调度方式持平",
+      "D、超强芯片算力下分布式梯度累合的挑战：ReslNet50单迭代20ms时间时会产生中心控制的同步开销和频繁同步的通信开销。传统方法需要3次同步完成A11Reduce，数据驱动方法自主A11Reduce，无控制开销"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 193,
+    "original_id": 193,
+    "type": "单选题",
+    "question": "OBS桶的存储类型，哪一种适用于CTS（云审计服务）存储事件文件？（云服务考点）",
+    "options": [
+      "A、高频访问存储",
+      "B、归档存储",
+      "C、标准存储",
+      "D、低频访问存储"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 194,
+    "original_id": 194,
+    "type": "单选题",
+    "question": "NAS的架构体系中不包括以下哪项？（云计算考点）",
+    "options": [
+      "A、卷管理模块",
+      "B、状态校验模块",
+      "C、文件系统",
+      "D、网络接口"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 195,
+    "original_id": 195,
+    "type": "单选题",
+    "question": "MindSpore提供高阶封装Model，可自动构建训练网络，以下哪一个Model的接口用于对输入数据进行推理?",
+    "options": [
+      "A、train",
+      "B、eval",
+      "C、predict",
+      "D、Fit"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 196,
+    "original_id": 196,
+    "type": "单选题",
+    "question": "MBR分区模式最多有（）主分区",
+    "options": [
+      "A、1",
+      "B、2",
+      "C、3",
+      "D、4"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 197,
+    "original_id": 197,
+    "type": "单选题",
+    "question": "MapReduce任务最终是在下列哪一项中被执行的？（大数据考点）",
+    "options": [
+      "A、NodeManager",
+      "B、container",
+      "C、ResourceManager",
+      "D、AppMaster"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 198,
+    "original_id": 198,
+    "type": "单选题",
+    "question": "MAN通常是指（）",
+    "options": [
+      "A、广域网",
+      "B、局域网",
+      "C、资源子网",
+      "D、城域网"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 199,
+    "original_id": 199,
+    "type": "单选题",
+    "question": "linux的卷管理服务是：",
+    "options": [
+      "A、lvm",
+      "B、llc",
+      "C、iscsi",
+      "D、ceph"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 200,
+    "original_id": 200,
+    "type": "单选题",
+    "question": "KVM虚拟化架构中包括模块、QEMU和Libvirt。以下关于这些模块描述不正确的是（云计算考点）",
+    "options": [
+      "A、Libvirt＋QEMU可以构成一套虚拟化解决方案",
+      "B、KVM模块主要负责vCPU的创建和虚拟内存的分配",
+      "C、QEMU主要负责I／O操作模拟",
+      "D、KVM＋QEMU可以构成一套虚拟化解决方案"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 201,
+    "original_id": 201,
+    "type": "单选题",
+    "question": "Kafka集群中，Kafka服务端的角色是？",
+    "options": [
+      "A、Producer",
+      "B、Consumer",
+      "C、Zookeeper",
+      "D、Broker"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 202,
+    "original_id": 202,
+    "type": "单选题",
+    "question": "Internet是全球最具影响力的计算机互联网，也是世界范围的重要的（）",
+    "options": [
+      "A、信息资源网",
+      "B、多媒体网络",
+      "C、办公网络",
+      "D、销售网络"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 203,
+    "original_id": 203,
+    "type": "单选题",
+    "question": "IaaS服务不提供以下那种服务能力？",
+    "options": [
+      "A、计算服务",
+      "B、中间件服务",
+      "C、存储服务",
+      "D、网络服务"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 204,
+    "original_id": 204,
+    "type": "单选题",
+    "question": "Hadoop的HBase不适合哪些数据类型的应用场景？",
+    "options": [
+      "A、大文件应用场景",
+      "B、海量数据应用场景",
+      "C、高吞吐率应用场景",
+      "D、半结构化数据应用场景"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 205,
+    "original_id": 205,
+    "type": "单选题",
+    "question": "FusionlnsightHD使用HBase客户端批量写入10条数据，某个RegionServer节点上包含该表的2个Region，分别A和B，10条数据中有两条属于A，4条属于B，请问写入这10条数据需要向该RegionServer发送几次RPC请求？",
+    "options": [
+      "A、1",
+      "B、2",
+      "C、3",
+      "D、4"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 206,
+    "original_id": 206,
+    "type": "单选题",
+    "question": "FusionCompute上,DPM功能可用的前提是配置了主机的BMC信息。",
+    "options": [
+      "A、TRUE",
+      "B、FALSE"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 207,
+    "original_id": 207,
+    "type": "单选题",
+    "question": "FusionCompute创建VLAN池时,VLANID的范围是以下哪一项?",
+    "options": [
+      "A、0-4094",
+      "B、2-4094",
+      "C、1~4094",
+      "D、3~4094"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 208,
+    "original_id": 208,
+    "type": "单选题",
+    "question": "FusionCompute部署模式为三员分立时,系统超级管理员账户是admin。",
+    "options": [
+      "A、TRUE",
+      "B、FALSE"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 209,
+    "original_id": 209,
+    "type": "单选题",
+    "question": "FusionAccess桌面云基于网络提供按需服务,但不依赖于虚拟机中的网络配置。",
+    "options": [
+      "A、TRUE",
+      "B、FALSE"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 210,
+    "original_id": 210,
+    "type": "单选题",
+    "question": "FusionAccess支持使用BackupServer临时备份服务器备份所有组件,当备份空间充足时,备份服务器将保存10天内的备份数据;当备份间不足时,系统会产生告警信息,管理员需手动删除不需要的备份文件。",
+    "options": [
+      "A、TRUE",
+      "B、FALSE"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 211,
+    "original_id": 211,
+    "type": "单选题",
+    "question": "Flink中的（）接口用于流数据处理，（）接口用于批处理？",
+    "options": [
+      "A、DataStreamAPl，DataSetAPl",
+      "B、DatabatchAPl，DataStreamAPl",
+      "C、StreamAPl，BatchAPl",
+      "D、BatchAPl，StreamAPl"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 212,
+    "original_id": 212,
+    "type": "单选题",
+    "question": "ELB全称是：（）。",
+    "options": [
+      "A、弹性云服务器",
+      "B、容器引擎服务",
+      "C、对象存储服务",
+      "D、弹性负载均衡"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 213,
+    "original_id": 213,
+    "type": "单选题",
+    "question": "ELBHTTP默认端口号是：（）。",
+    "options": [
+      "A、80",
+      "B、443",
+      "C、8080",
+      "D、8090"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 214,
+    "original_id": 214,
+    "type": "单选题",
+    "question": "CA安全认证中心的功能是：",
+    "options": [
+      "A、发放证书，用于在电子商务交易中确认对方的身份或表明自己的身份",
+      "B、完成协议转换，保护银行内部网络",
+      "C、进行在线销售和在线谈判，处理用户的订单",
+      "D、提供用户接入线路，保证线路的可靠性"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 215,
+    "original_id": 215,
+    "type": "单选题",
+    "question": "B类地址的默认子网掩码为：",
+    "options": [
+      "A、255.0.0.0",
+      "B、255.255.0.0",
+      "C、255.255.255.0",
+      "D、255.255.255.255"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 216,
+    "original_id": 216,
+    "type": "单选题",
+    "question": "10BASE-T使用标准的RJ-45接插件与3类或5类非屏蔽双绞线连接网卡与集线器。网卡与集线器之间的双绞线长度最大为：",
+    "options": [
+      "A、15米",
+      "B、50米",
+      "C、100米",
+      "D、500"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 217,
+    "original_id": 217,
+    "type": "单选题",
+    "question": "“学生”与“课程”两个实体集之间联系一般是：",
+    "options": [
+      "A、（1:1）",
+      "B、（m:n）",
+      "C、（1:n）",
+      "D、（n:n）"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 218,
+    "original_id": 218,
+    "type": "单选题",
+    "question": "“天下大势，合久必分，分久必合”，云计算时代IT基础设施演进的下个10年，是从分离重新走向融合的10年，无论IT架构如何螺旋式演进，关于客户的价值和驱动立体不正确的是？",
+    "options": [
+      "A、更低的TCO",
+      "B、更高的业务部署与生命周期管理效率",
+      "C、更优的业务性能与用户体验",
+      "D、有更多的厂商选择"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 219,
+    "original_id": 219,
+    "type": "单选题",
+    "question": "“班级”与“学生”两个实体集之间联系一般是：",
+    "options": [
+      "A、（1:1）",
+      "B、（m:n）",
+      "C、（1:n）",
+      "D、（n:n）"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 220,
+    "original_id": 220,
+    "type": "单选题",
+    "question": "（）是离差平方和与相应的自由度之比",
+    "options": [
+      "A、方差",
+      "B、平均值",
+      "C、差",
+      "D、和"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 221,
+    "original_id": 1,
+    "type": "多选题",
+    "question": "执行Hbase数据业务（题干可能为读数据业务），需要读取哪几部分数据（）",
+    "options": [
+      "A、HLog",
+      "B、MenStore",
+      "C、HFile",
+      "D、HMaster"
+    ],
+    "answer": "BC"
+  },
+  {
+    "id": 222,
+    "original_id": 2,
+    "type": "多选题",
+    "question": "执行HBase数据读取业务时，需要读取哪几部分数据？",
+    "options": [
+      "A、HFile",
+      "B、Hlog",
+      "C、MemStore",
+      "D、Hmaster"
+    ],
+    "answer": "AC"
+  },
+  {
+    "id": 223,
+    "original_id": 3,
+    "type": "多选题",
+    "question": "在云监控中可以监控哪些服务的资源指标？",
+    "options": [
+      "A、虚拟私有云",
+      "B、弹性计算服务",
+      "C、分布式缓存服务",
+      "D、弹性负载均衡"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 224,
+    "original_id": 4,
+    "type": "多选题",
+    "question": "在线日志查询方案中，采用了？处理来完成计算工作，整个计算过程中，需要将中间计算结果暂时存放，下列哪些组件适合存储中间计算结果？（大数据考点）",
+    "options": [
+      "A、HDfS",
+      "B、HBase",
+      "C、Kafka",
+      "D、Redis"
+    ],
+    "answer": "CD"
+  },
+  {
+    "id": 225,
+    "original_id": 5,
+    "type": "多选题",
+    "question": "在沃云W以下关于虚拟机迁移，说法正确的是",
+    "options": [
+      "A、虚拟机热迁移不会影响客户业务，因此可以直接操作，无需制作快照",
+      "B、虚拟机热迁移的操作命令是novalive-migration",
+      "C、虚拟机冷迁移后，需要重启虚拟机",
+      "D、虚拟机冷迁移操作前需要关闭要迁移的虚拟机"
+    ],
+    "answer": "BD"
+  },
+  {
+    "id": 226,
+    "original_id": 6,
+    "type": "多选题",
+    "question": "在ServiceOM界面上可以完成（）配置工作。",
+    "options": [
+      "A、计算资源",
+      "B、网络资源",
+      "C、存储资源",
+      "D、安全"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 227,
+    "original_id": 7,
+    "type": "多选题",
+    "question": "在FusionlnsightHD中，Flink主要与以下哪些组件进行交互",
+    "options": [
+      "A、zookeeper",
+      "B、HDFS",
+      "C、Kafka",
+      "D、Yarn"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 228,
+    "original_id": 8,
+    "type": "多选题",
+    "question": "在FusionCompute中,以下关于虚拟网络的描述,正确的是哪些项?",
+    "options": [
+      "A、同一宿主机上属于相同VLAN的不同虚拟机相互通信时,网络流量不经过Dvs",
+      "B、同一宿主机上属于相同VLA的不同虚拟机相互通信时,网络流量不经过上层物理交换机",
+      "C、同一宿主机上属于不同VLAI的不同虚拟机相互通信时,网络流量经过上层物理交换机",
+      "D、同一宿主机上属于不同VLAN的不同虚拟机相互通信时,网络流量经过DVS"
+    ],
+    "answer": "BC"
+  },
+  {
+    "id": 229,
+    "original_id": 9,
+    "type": "多选题",
+    "question": "在FusionCompute中,虚拟机导出模板到共享目录,支持以下哪些协议?",
+    "options": [
+      "A、CIFS",
+      "B、NFS",
+      "C、HTTPS",
+      "D、FTP"
+    ],
+    "answer": "AB"
+  },
+  {
+    "id": 230,
+    "original_id": 10,
+    "type": "多选题",
+    "question": "在FusionCompute中,数据从VM发出,通过虚拟交换机的端口组时,会根据设置做相应的处理,具体的处理有以下哪些项?",
+    "options": [
+      "A、可以为该数据帧添加相应的VLAN标签",
+      "B、改变该数据的源MAC地址",
+      "C、根据数据帧已有的VLAN标签确定是否转发",
+      "D、替换该数据帧的目的MAC地址"
+    ],
+    "answer": "AC"
+  },
+  {
+    "id": 231,
+    "original_id": 11,
+    "type": "多选题",
+    "question": "在FusionCompute中,可以配置的集群规则组有哪些?",
+    "options": [
+      "A、同分布虚拟机",
+      "B、互斥虚拟机",
+      "C、虚拟机到主机",
+      "D、聚集虚拟机"
+    ],
+    "answer": "BCD"
+  },
+  {
+    "id": 232,
+    "original_id": 12,
+    "type": "多选题",
+    "question": "在FusionCompute系统中,以下关于虚拟化防病毒的描述中,正确的有哪几项?",
+    "options": [
+      "A、使用FusionCompute虚拟化防病毒功能时,安全服务虚拟机不支持生成内存快照。",
+      "B、使用FusionCompute虚拟化防病毒功能时,安全服务虚拟机支持生成内存快照。",
+      "C、每台主机部署一台安全服务虚拟机。",
+      "D、每台主机可配置多台安全用户虚拟机。"
+    ],
+    "answer": "AC"
+  },
+  {
+    "id": 233,
+    "original_id": 13,
+    "type": "多选题",
+    "question": "在FusionAecess中、以下关于\"静态多用户\"虚拟机桌面追加用户的描述,正确的是哪些项?",
+    "options": [
+      "A、支持为多个用户同时追加用户",
+      "B、\"静态多用户\"虚拟机桌面的运行状态为\"已停止\"",
+      "C、\"静态多用户\"虚拟机桌面的运行状态为\"运行中\"",
+      "D、追加的用户应为AD域中已存在的用户"
+    ],
+    "answer": "ACD"
+  },
+  {
+    "id": 234,
+    "original_id": 14,
+    "type": "多选题",
+    "question": "在FusionAccess中,桌面云系统兼容性主要包括以下哪些项?",
+    "options": [
+      "A、后端兼容性",
+      "B、外设兼容性",
+      "C、前端兼容性",
+      "D、软件兼容性"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 235,
+    "original_id": 15,
+    "type": "多选题",
+    "question": "在FusionAccess中,针对不同的场景需要配不同的AD组策略。以下关于AD组策略配的描述,正确的是些项?",
+    "options": [
+      "A、在AD服务器上配置\"允许本地登录\"策略时,若\"策略设置\"的参数值为\"没有定义\",则需要将\"Users\"组添加到参数值中",
+      "B、在使用模板工具制作模板的过程中,如果勾选\"配置用户登录\"选项,则需要在AD服务器上配置\"允许本地登录\"策略",
+      "C、在AD服务器上配置\"允许本地登录\"策略时,若\"策略设置\"的参数值已设置且不包含\"Users\"组,则将\"Users\"组漆加到参数值中",
+      "D、针对制作链接克隆虚拟机模板的场景,需要禁用更改机器帐号密码的相关组策略"
+    ],
+    "answer": "ACD"
+  },
+  {
+    "id": 236,
+    "original_id": 16,
+    "type": "多选题",
+    "question": "在FusionAccess中,用户登录WI页面后发现虚拟机图标显示\"蓝色\",但无法登录虚拟机,可能是以下哪些原因导致的?",
+    "options": [
+      "A、客户端AccessClient版本与虚拟机HDA版本不匹配",
+      "B、HDC与DB之间的网络异常",
+      "C、虚拟机所在的主机资源不足",
+      "D、若桌面访问不经过vAG,则可能是客户端与虚拟机HDA之间的网络异常"
+    ],
+    "answer": "ACD"
+  },
+  {
+    "id": 237,
+    "original_id": 17,
+    "type": "多选题",
+    "question": "在FusionAccess中,以下哪些原因会导致ITA服务器状态异常且无法访问?",
+    "options": [
+      "A、DNS服务器解析异常",
+      "B、网络链路中断",
+      "C、IP地址冲突",
+      "D、ITA的DriverTools运行异常"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 238,
+    "original_id": 18,
+    "type": "多选题",
+    "question": "在FusionAccess中,以下关于桌面云关联组件AD的描述,正确的是哪些项?",
+    "options": [
+      "A、D域服务的目录数据存储在域控制器内,且一个域内可以有域控制器",
+      "B、AD可管理用户域账户、用户信息、企业通讯录（与电子邮件系统集成）、用户组、用户身份认证、用户授权等",
+      "C、若A域信任B域,则B域的用户可以直接访问A域上的资源",
+      "D、AD支持在容器对象中创建OU"
+    ],
+    "answer": "ABC"
+  },
+  {
+    "id": 239,
+    "original_id": 19,
+    "type": "多选题",
+    "question": "在FusionAccess中，以下关于追加完整虚拟机时，配置虚拟机磁盘信息的描述，正确的是哪些项？（云计算考点）",
+    "options": [
+      "A、追加的虚拟机可以添加用户磁盘，但总个数不能超过20个",
+      "B、追加的虚拟机其用户盘类型仅支持“精简模式”",
+      "C、追加的虚拟机其系统盘类型仅支持“普通模式”",
+      "D、添加用户磁盘会延长发放时间"
+    ],
+    "answer": "AD"
+  },
+  {
+    "id": 240,
+    "original_id": 20,
+    "type": "多选题",
+    "question": "在FusionAccess中,以下关于账户管理的描述,正确的是哪些项?",
+    "options": [
+      "A、为防止账户无限制地尝试登录访问,需要对Windows基础架构虚拟机的账号设置登录失败尝试次数的限制",
+      "B、使用安全加固工具加固后,除AD外的其他Windows基础架构虚拟机的\"Administrator\"管理员账号名称会修改为\"SWMaster\"",
+      "C、管理员修改账户锁定阈值时。需要在AD服务器上修改",
+      "D、为防止已有域管理账号入侵FusionAccess系统,需要系统管理员定期修改域管理员账号名称"
+    ],
+    "answer": "BCD"
+  },
+  {
+    "id": 241,
+    "original_id": 21,
+    "type": "多选题",
+    "question": "在FusionAccess中，以下关于链接克隆虚拟机的描述，正确的是哪些项？（云计算考点）",
+    "options": [
+      "A、链接克隆虚拟机支持批量快速发放",
+      "B、链接克隆虚拟机将母盘和差分盘在逻辑上组合成一个链接克隆盘，作为虚拟机系统盘",
+      "C、链接克隆桌面组支持“池化”和“专有”类型",
+      "D、链接克隆虚拟机模板需要加域，但不用封装系统"
+    ],
+    "answer": "ABD"
+  },
+  {
+    "id": 242,
+    "original_id": 22,
+    "type": "多选题",
+    "question": "在FusionAccess中,以下关于快速封装虚拟机的描述,正确的是哪些项?",
+    "options": [
+      "A、用户对快速封装虚拟机上数据的变更（如安装软件）可以保存",
+      "B、完整复制虚拟机比快速封装虚拟机发放速度更快",
+      "C、快速封装虚拟机不支持关机还原功能",
+      "D、用户可以批量更新（升级软件、更新软件病毒库）快速封装虚拟机"
+    ],
+    "answer": "AC"
+  },
+  {
+    "id": 243,
+    "original_id": 23,
+    "type": "多选题",
+    "question": "在FusionAccess中,虚拟机注册失败,可能是以下哪些原因导致的?",
+    "options": [
+      "A、虚拟机DNS配置有误",
+      "B、虚拟机防火墙未配置规则",
+      "C、虚拟机未获取到IP地址",
+      "D、虚拟机HDP服务异常或未启动"
+    ],
+    "answer": "AC"
+  },
+  {
+    "id": 244,
+    "original_id": 24,
+    "type": "多选题",
+    "question": "在FusionAccess中,通过配置接入控制策略,可以实现对虛拟机桌面的接入限制和控制。以下关于接入控制策略的描述,正确的是那些项?",
+    "options": [
+      "A、接入控制策略主要包括:接入时间控制、设备与用户绑定、TC与计算机绑定",
+      "B、配置TC与计算机的绑定关系后,该计算机只能通过绑定的TC登录",
+      "C、在设备与用户绑定策略中,Linux设备不支持与用户绑定",
+      "D、在设备与用户绑定策略中,MacOS设备不支持与用户绑定"
+    ],
+    "answer": "AB"
+  },
+  {
+    "id": 245,
+    "original_id": 25,
+    "type": "多选题",
+    "question": "在FusionAccess中,若用户无法通过TC/SC方式登录虚拟机,则可能是以下哪些原因导致的?",
+    "options": [
+      "A、License服务器没有正常运行",
+      "B、虚拟机IP地址发生变更",
+      "C、License用户数不足",
+      "D、虚拟机IP地址冲突"
+    ],
+    "answer": "ACD"
+  },
+  {
+    "id": 246,
+    "original_id": 26,
+    "type": "多选题",
+    "question": "在FusionAccess中,发放虚拟机时,若任务长时间停留在\"检查虚拟机IP地址是否可达\",可能是以下哪些原因?",
+    "options": [
+      "A、虚拟机未获获取到IP地址",
+      "B、虚拟机从DIHCP获取的IP地址与ITA不在同一网段",
+      "C、虚拟机与DHCP网络不通",
+      "D、发放该虚拟机时,使用了\"静态分配\"的IP地址获取方式"
+    ],
+    "answer": "ACD"
+  },
+  {
+    "id": 247,
+    "original_id": 27,
+    "type": "多选题",
+    "question": "云专线整体可分为两段（）和（）",
+    "options": [
+      "A、物理专线",
+      "B、私有专线",
+      "C、公共专线",
+      "D、虚拟专线"
+    ],
+    "answer": "AD"
+  },
+  {
+    "id": 248,
+    "original_id": 28,
+    "type": "多选题",
+    "question": "云硬盘有以下哪些应用场景？",
+    "options": [
+      "A、开发测试",
+      "B、高性能计算",
+      "C、部署各类数据库",
+      "D、海量数据存储"
+    ],
+    "answer": "ABC"
+  },
+  {
+    "id": 249,
+    "original_id": 29,
+    "type": "多选题",
+    "question": "云硬盘有哪几种类型？",
+    "options": [
+      "A、超高IO",
+      "B、高IO",
+      "C、普通IO",
+      "D、优化IO"
+    ],
+    "answer": "ABC"
+  },
+  {
+    "id": 250,
+    "original_id": 30,
+    "type": "多选题",
+    "question": "云容器引擎支持哪些层面的亲和性与反亲和性？",
+    "options": [
+      "A、集群",
+      "B、节点",
+      "C、网络",
+      "D、应用"
+    ],
+    "answer": "BD"
+  },
+  {
+    "id": 251,
+    "original_id": 31,
+    "type": "多选题",
+    "question": "云平台可提供的镜像类型有：（）。",
+    "options": [
+      "A、公共镜像",
+      "B、私有镜像",
+      "C、共享镜像",
+      "D、市场镜像"
+    ],
+    "answer": "ABC"
+  },
+  {
+    "id": 252,
+    "original_id": 32,
+    "type": "多选题",
+    "question": "云监控支持的聚合方法有哪几种？",
+    "options": [
+      "A、最大值",
+      "B、最小值",
+      "C、平均值",
+      "D、求和值",
+      "E、方差"
+    ],
+    "answer": "ABCDE"
+  },
+  {
+    "id": 253,
+    "original_id": 33,
+    "type": "多选题",
+    "question": "云计算的部署模式有哪些？",
+    "options": [
+      "A、私有云",
+      "B、公有云",
+      "C、混合云",
+      "D、社区云/行业云"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 254,
+    "original_id": 34,
+    "type": "多选题",
+    "question": "与传统文件共享存储相比，SFS具有哪些优势？",
+    "options": [
+      "A、文件共享",
+      "B、无缝集成",
+      "C、操作简单但成本高",
+      "D、高可靠性"
+    ],
+    "answer": "ABD"
+  },
+  {
+    "id": 255,
+    "original_id": 35,
+    "type": "多选题",
+    "question": "硬盘的关键指标有那些",
+    "options": [
+      "A、硬盘容量",
+      "B、转速",
+      "C、平均访问时间",
+      "D、数据传输率"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 256,
+    "original_id": 36,
+    "type": "多选题",
+    "question": "以下选项中，属于HDFS架构关键特性的是？（）",
+    "options": [
+      "A、健壮机制",
+      "B、多方式访问机制",
+      "C、HA高可靠性",
+      "D、元数据持久化机制"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 257,
+    "original_id": 37,
+    "type": "多选题",
+    "question": "以下说法正确的是",
+    "options": [
+      "A、Docker使得开法人员构建一次即可实现多平台运行",
+      "B、容器不会占用太多的资源，利用率非常高",
+      "C、容器需要安装要给完成的操作系统，占用空间比较大",
+      "D、容器的启动速度在秒级"
+    ],
+    "answer": "ABD"
+  },
+  {
+    "id": 258,
+    "original_id": 38,
+    "type": "多选题",
+    "question": "以下哪些选项为MindSpore中用于加载模型权重checkpoint文件的接口？",
+    "options": [
+      "A、save_checkpoint",
+      "B、load_checkpoint",
+      "C、loadparam_into_net",
+      "D、Load"
+    ],
+    "answer": "BC"
+  },
+  {
+    "id": 259,
+    "original_id": 39,
+    "type": "多选题",
+    "question": "以下哪些选项是FusionCompute支持的特性?",
+    "options": [
+      "A、支持CPU从AMD到INTEL的虚拟机热迁移",
+      "B、CPUQoS",
+      "C、动态资源调度",
+      "D、虚拟机HA"
+    ],
+    "answer": "BCD"
+  },
+  {
+    "id": 260,
+    "original_id": 40,
+    "type": "多选题",
+    "question": "以下哪些项构成了华为公有云生态?",
+    "options": [
+      "A、华为云市场",
+      "B、开发者中心",
+      "C、合作伙伴",
+      "D、华为云服务认证工程师"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 261,
+    "original_id": 41,
+    "type": "多选题",
+    "question": "以下哪些属于云容器引擎CCE的特点？",
+    "options": [
+      "A、支持有状态容器应用",
+      "B、支持无状态容器应用",
+      "C、DevOps持续交付",
+      "D、自动化运维和高可用"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 262,
+    "original_id": 42,
+    "type": "多选题",
+    "question": "以下哪些是华为CCE云容器引擎适用的场景？",
+    "options": [
+      "A、业务负荷有明显波动的场景",
+      "B、降低资源成本的场景",
+      "C、传统IT架构可以稳定支撑业务的场景",
+      "D、提升业务上线效率的场景"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 263,
+    "original_id": 43,
+    "type": "多选题",
+    "question": "以下哪些是存储类产品？",
+    "options": [
+      "A、云硬盘",
+      "B、对象存储",
+      "C、文件存储",
+      "D、云监控"
+    ],
+    "answer": "ABC"
+  },
+  {
+    "id": 264,
+    "original_id": 44,
+    "type": "多选题",
+    "question": "以下哪些是Kafka实际的应用场景",
+    "options": [
+      "A、日志收集",
+      "B、网站活性跟踪",
+      "C、资源管理",
+      "D、聚合统计系统运营数据"
+    ],
+    "answer": "BD"
+  },
+  {
+    "id": 265,
+    "original_id": 45,
+    "type": "多选题",
+    "question": "以下哪些激活函数容易产生梯度消失问题？",
+    "options": [
+      "A、ReLU",
+      "B、Softplus",
+      "C、Tanh",
+      "D、Sigmoid"
+    ],
+    "answer": "CD"
+  },
+  {
+    "id": 266,
+    "original_id": 46,
+    "type": "多选题",
+    "question": "以下哪几个方面属于华为的全栈Al解决方案？",
+    "options": [
+      "A、scend",
+      "B、CANN",
+      "C、ModelArts",
+      "D、MindSpore"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 267,
+    "original_id": 47,
+    "type": "多选题",
+    "question": "以下关于光驱的描述,正确的是哪些项?",
+    "options": [
+      "A、每个虚拟机可以同时挂越多个光驱",
+      "B、已挂载光驱的虚拟机不能休眠",
+      "C、虚拟机被关团或HA后,所挂戴的光驱会自动卸载",
+      "D、虚拟机挂钱光驱区后不能进行迁移"
+    ],
+    "answer": "BCD"
+  },
+  {
+    "id": 268,
+    "original_id": 48,
+    "type": "多选题",
+    "question": "以下关于更新FusionAccess组件间通讯证书对系统造成影响的描述,正确的是哪些项?",
+    "options": [
+      "A、更新ITA组件间通讯证书,将影响业务管理和业务发放,以及虚拟机的正常登录",
+      "B、更新HDC组件间通讯证书,将影响业务管理和业务发放、以及关闭状态的虚拟机的正常登录",
+      "C、更新WI组件间通讯证书,将影响业务管理和虚拟机的正常登录",
+      "D、更新AUS组件间通讯证书,将影响使用AUS方式升级虚拟机"
+    ],
+    "answer": "ACD"
+  },
+  {
+    "id": 269,
+    "original_id": 49,
+    "type": "多选题",
+    "question": "以下关于存储虚拟化的描述，正确的是哪些项？（云计算考点）",
+    "options": [
+      "A、存储虚拟化是指通过在存储设备上加入一个逻辑层，用户通过逻辑层访问或者调整存储资源，提高存储利用率",
+      "B、基于存储设备的存储虚拟化优势在于不占用主机资源，数据管理功能丰富",
+      "C、基于主机的存储虚拟化实现起来比较困难，设备成本较高",
+      "D、存储虚拟化是将存储设备抽象为数据存储，虚拟机在数据存储中作为一组文件存储在目录中，数据存储是逻辑容器，类似于文件系统，它将各个存储设备的特性隐藏起来，并提供一个统一的模型来存储虚拟机文件"
+    ],
+    "answer": "ABD"
+  },
+  {
+    "id": 270,
+    "original_id": 50,
+    "type": "多选题",
+    "question": "以下关于部署FusionAccess组件的描述,正确的是哪些项?",
+    "options": [
+      "A、WI与UNS存在端口冲突,不能合并部署",
+      "B、标准部署方案不建议vLB与WI合并部署,不建议vLB与UNS合并部署",
+      "C、TCM与IT",
+      "D、WI、UNS、vLB存在端口冲突,建议单独部署",
+      "E、商用局点的所有管理节点必须主备部署"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 271,
+    "original_id": 51,
+    "type": "多选题",
+    "question": "以下关于VNC登录虚拟机的描述,正确的是哪些项?",
+    "options": [
+      "A、通过VNC方式,管理员能够连接并查看虚拟机的界面,便于进行虚拟机的管理和维护",
+      "B、VNC登录可能触及最终用户的数据,需谨慎使用",
+      "C、虚拟机处于\"运行中\"状态时才可以VNC登录",
+      "D、VNC登录Linux虚拟机后,虚拟机管理员将无法SSH登录虚拟机"
+    ],
+    "answer": "ABC"
+  },
+  {
+    "id": 272,
+    "original_id": 52,
+    "type": "多选题",
+    "question": "以下关于MindSpore特性的描述，正确的是哪些项？",
+    "options": [
+      "A、动静统一",
+      "B、仅适配Ascend硬件",
+      "C、分布式并行",
+      "D、全场景统一（MindIR）"
+    ],
+    "answer": "ACD"
+  },
+  {
+    "id": 273,
+    "original_id": 53,
+    "type": "多选题",
+    "question": "以下关于KNN算法当中k值描述正确的是？",
+    "options": [
+      "A、K值越大，模型越容易过拟合",
+      "B、K值越大，分类的分割面越平滑",
+      "C、K值是超参数",
+      "D、可以将k值设为0"
+    ],
+    "answer": "BC"
+  },
+  {
+    "id": 274,
+    "original_id": 54,
+    "type": "多选题",
+    "question": "以下关于HBase的文件存储模块（HBaseFileStream，简称HFS）描述正确的有？",
+    "options": [
+      "A、应用在FusioninsightHD的上层应用",
+      "B、HFS封装了HBase与HDFS的接口",
+      "C、为上层应用提供文件的存储.读取.删除等功能",
+      "D、HFS是HBase的独立模块"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 275,
+    "original_id": 55,
+    "type": "多选题",
+    "question": "以下关于FusionCompute分布式虚拟交换机的描述,正确的是哪些项?",
+    "options": [
+      "A、每个VM只能连接一个虚拟网卡",
+      "B、可配置多个UPLink端口",
+      "C、可覆盖多个物理服务器",
+      "D、可配置多个虚拟端口"
+    ],
+    "answer": "BCD"
+  },
+  {
+    "id": 276,
+    "original_id": 56,
+    "type": "多选题",
+    "question": "以下关于FusionComputeVLAN池的描述,正确的是哪些项?",
+    "options": [
+      "A、创建VLAN池时必须制定起始VLANID和结束VLANID",
+      "B、删除VLAN段时,须设置起始VLANID和结束VLANID,默认删除整个VLAN池",
+      "C、只有创建了VLAN池之后才可以创建端口组",
+      "D、一个DVS中不同的VLAN池之间VLANID不能重叠"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 277,
+    "original_id": 57,
+    "type": "多选题",
+    "question": "以下关于FusionComputeCPU虚拟化支持功能的描述,正确的是哪些项?",
+    "options": [
+      "A、支持CPU资源超分配",
+      "B、支持Windows和Linux虚拟机在线增加CPU",
+      "C、支持异构服务器",
+      "D、支持QoS"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 278,
+    "original_id": 58,
+    "type": "多选题",
+    "question": "以下关于FusionAccess桌面云使用场景的描述,正确的是哪些项?",
+    "options": [
+      "A、呼叫中心场景下,建议使用\"池化\"类型的虚拟机桌面",
+      "B、普通办公场景下,建议使用链接克隆虚拟机",
+      "C、普通办公场景下,建议使用\"专有\"类型的虚拟机桌面",
+      "D、呼叫中心场景下,建议使用链接克隆虚拟机"
+    ],
+    "answer": "ACD"
+  },
+  {
+    "id": 279,
+    "original_id": 59,
+    "type": "多选题",
+    "question": "以下关于FusionAccess日志收集的描述,正确的是哪些项?",
+    "options": [
+      "A、WI/UNS的组件服务器日志路径为/var/FusionAccess/WI",
+      "B、FusionCare支持一键式收集基础架构虚拟机的日志信息,并将日志文件下载至本地进行分析",
+      "C、HuaweivDesk工具支持收集用户虚拟机日志和用户终端日志",
+      "D、HDC的组件服务器日志路径为/var/FusionAccess/HDC"
+    ],
+    "answer": "ABD"
+  },
+  {
+    "id": 280,
+    "original_id": 60,
+    "type": "多选题",
+    "question": "以下关于FusionAccess可靠性的描述,正确的是哪些项?",
+    "options": [
+      "A、支持虚拟机快照",
+      "B、支持虚拟机热迁移",
+      "C、支持集群化部署",
+      "D、支持故障监视及处理"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 281,
+    "original_id": 61,
+    "type": "多选题",
+    "question": "业务使用容器后能带来哪些好处？",
+    "options": [
+      "A、适合敏捷扩缩容场景",
+      "B、降低企业成本",
+      "C、提升代码开发质量",
+      "D、提升代码开发质量"
+    ],
+    "answer": "ABD"
+  },
+  {
+    "id": 282,
+    "original_id": 62,
+    "type": "多选题",
+    "question": "虚拟化技术不包括",
+    "options": [
+      "A、服务器虚拟化",
+      "B、进程虚拟化",
+      "C、存储虚拟化",
+      "D、业务虚拟化"
+    ],
+    "answer": "BD"
+  },
+  {
+    "id": 283,
+    "original_id": 63,
+    "type": "多选题",
+    "question": "下图展示了HDFS的标签存储策略，观察下图，HBase的数据会被存储到哪些数据节点上",
+    "options": [
+      "A、DataNodeA",
+      "B、DataNodeB",
+      "C、DataNodeE",
+      "D、ataNodeF"
+    ],
+    "answer": "AB"
+  },
+  {
+    "id": 284,
+    "original_id": 64,
+    "type": "多选题",
+    "question": "下面哪些属于AI的应用领域？（AI考点）",
+    "options": [
+      "A、智慧教育",
+      "B、智慧城市",
+      "C、智慧家居",
+      "D、智慧医疗"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 285,
+    "original_id": 65,
+    "type": "多选题",
+    "question": "下列选项中属于keras下estimator封装的方法有？",
+    "options": [
+      "A、评估",
+      "B、训练",
+      "C、预测",
+      "D、输出模型"
+    ],
+    "answer": "ABC"
+  },
+  {
+    "id": 286,
+    "original_id": 66,
+    "type": "多选题",
+    "question": "下列那些服务是未来云计算发展方向",
+    "options": [
+      "A、边缘计算",
+      "B、雾计算",
+      "C、雨计算",
+      "D、霾计算"
+    ],
+    "answer": "AB"
+  },
+  {
+    "id": 287,
+    "original_id": 67,
+    "type": "多选题",
+    "question": "下列哪些OS版本被推荐可以用来搭建FusioninsightV1R2C60集群？",
+    "options": [
+      "A、SUSE11SP1/SP2/SP3forAMD64&amp;Inter64",
+      "B、CentOS6.6",
+      "C、Redhat-6.4-×86_64",
+      "D、RedHat-6.7-×86_64",
+      "E、RedHat-6.5-×86_64"
+    ],
+    "answer": "ABCDE"
+  },
+  {
+    "id": 288,
+    "original_id": 68,
+    "type": "多选题",
+    "question": "下列关于通用表格识别服务返回的type字段说法正确的是？",
+    "options": [
+      "A、type代表文字识别区域类型",
+      "B、type为text时代表文本识别区域",
+      "C、type代表表格类型",
+      "D、type为table时代表表格识别区域"
+    ],
+    "answer": "BD"
+  },
+  {
+    "id": 289,
+    "original_id": 69,
+    "type": "多选题",
+    "question": "沃云虚拟私有云特点（）",
+    "options": [
+      "A、安全可靠",
+      "B、易于部署",
+      "C、灵活扩展",
+      "D、无缝迁移"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 290,
+    "original_id": 70,
+    "type": "多选题",
+    "question": "沃云W中迁移云主机的命令有哪些？",
+    "options": [
+      "A、Novalive-migration",
+      "B、Novarestore-to-host",
+      "C、Novachange-host",
+      "D、Navamigration-live"
+    ],
+    "answer": "AB"
+  },
+  {
+    "id": 291,
+    "original_id": 71,
+    "type": "多选题",
+    "question": "为什么需要多次进行校验？",
+    "options": [
+      "A、与拷贝的快照进行校验，是为了保证系统完整性",
+      "B、与最新时间进行快照校验，是为了保证用户数据完整性",
+      "C、完成一次拷贝进行一次用户数据校验，是为了获取迁移结束点",
+      "D、多次校验，充分保证本次迁移的成功率"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 292,
+    "original_id": 72,
+    "type": "多选题",
+    "question": "随着信息化的快速发展,某高校在电子阅览室安装部署了一套华为FusionAccess桌面云。基于上述场景,以下描述正确的是哪些项?",
+    "options": [
+      "A、电子阅览室的虚拟机桌面建议选择\"完整复制\"",
+      "B、电子阅览室的虚拟机桌面组建议选择\"专有\"类型",
+      "C、电子阅览室的虚拟机桌面建议选择\"链接克隆\"",
+      "D、电子阅览室的虚拟机桌面组建议选择\"动态池\"类型"
+    ],
+    "answer": "CD"
+  },
+  {
+    "id": 293,
+    "original_id": 73,
+    "type": "多选题",
+    "question": "私有云业务迁移流程包含以下哪些步骤：",
+    "options": [
+      "A、现状评估阶段",
+      "B、规划设计阶段",
+      "C、实施阶段",
+      "D、验证阶段"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 294,
+    "original_id": 74,
+    "type": "多选题",
+    "question": "适合上云的业务场景有",
+    "options": [
+      "A、间断性应用",
+      "B、完全保密应用",
+      "C、增长性应用",
+      "D、需求突出应用"
+    ],
+    "answer": "ACD"
+  },
+  {
+    "id": 295,
+    "original_id": 75,
+    "type": "多选题",
+    "question": "生成对抗网络目前应用非常广泛，以下场景中可以使用此网络的是？",
+    "options": [
+      "A、数据增强",
+      "B、语义分割",
+      "C、信息检索",
+      "D、图像生成"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 296,
+    "original_id": 76,
+    "type": "多选题",
+    "question": "伸缩组进行伸缩活动时，如果移除实例，需遵循一定的移除策略，平台提供的移除策略有：（）。",
+    "options": [
+      "A、较早创建的实例",
+      "B、较晚创建的实例",
+      "C、根据较早创建的配置较早创建的实例",
+      "D、根据较早创建的配置较晚创建的实例"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 297,
+    "original_id": 77,
+    "type": "多选题",
+    "question": "人脸搜索服务调用成功时返回的结果中包含下列哪些项？",
+    "options": [
+      "A、搜索出的人脸相似度",
+      "B、搜索出的人脸id",
+      "C、搜索出的人脸位置",
+      "D、搜索出的人脸序号"
+    ],
+    "answer": "ABC"
+  },
+  {
+    "id": 298,
+    "original_id": 78,
+    "type": "多选题",
+    "question": "人工智能现在的技术应用方向主要有？",
+    "options": [
+      "A、自然语言处理",
+      "B、控制系统",
+      "C、计算机视觉",
+      "D、语音识别"
+    ],
+    "answer": "ACD"
+  },
+  {
+    "id": 299,
+    "original_id": 79,
+    "type": "多选题",
+    "question": "人工智能包括哪些要素？",
+    "options": [
+      "A、算法",
+      "B、场景",
+      "C、算力",
+      "D、数据"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 300,
+    "original_id": 80,
+    "type": "多选题",
+    "question": "裸金属服务器的使用限制是：（）。",
+    "options": [
+      "A、禁止修改网络相关的配置，否则可能导致无法连接裸金属服务器。",
+      "B、对操作系统进行升级或打补丁，需从云服务商处获取相应的OS文件。",
+      "C、裸金属服务只支持从现有的操作系统进行升级或打补丁操作，不支持对已有的裸金属服务器重装操作系统。",
+      "D、在裸金属服务器上安装OracleRAC时请不要启用HighlyAvailableIP（HAIP）特性。"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 301,
+    "original_id": 81,
+    "type": "多选题",
+    "question": "华为云VPC提供哪些网络功能",
+    "options": [
+      "A、自定义网段划分",
+      "B、自定义控制访问策略",
+      "C、支持EIP接入公网",
+      "D、支持VPN/云专线接入本地数据中心"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 302,
+    "original_id": 82,
+    "type": "多选题",
+    "question": "华为云EI智能体根据行业和应用场景的不同也有很多种，目前可以实现的华为云El智能体有？",
+    "options": [
+      "A、工业智能体",
+      "B、交通智能体",
+      "C、园区智能体",
+      "D、汽车智能体"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 303,
+    "original_id": 83,
+    "type": "多选题",
+    "question": "华为私有云可提供的镜像类型包括：（）。",
+    "options": [
+      "A、公共镜像",
+      "B、私有镜像",
+      "C、共享镜像",
+      "D、市场镜像"
+    ],
+    "answer": "ABC"
+  },
+  {
+    "id": 304,
+    "original_id": 84,
+    "type": "多选题",
+    "question": "华为大数据产品FusionlnsightHD中的Streaming具有哪些关键特性？（）",
+    "options": [
+      "A、灵活性",
+      "B、可伸缩性",
+      "C、容灾能力",
+      "D、消息可靠性"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 305,
+    "original_id": 85,
+    "type": "多选题",
+    "question": "华为FusionlnsightHD行业成功案例都有哪些？",
+    "options": [
+      "A、数字政府",
+      "B、智慧园区",
+      "C、智慧交通",
+      "D、金融"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 306,
+    "original_id": 86,
+    "type": "多选题",
+    "question": "国网云（华为）容器镜像服务SWR,容器镜像服务中给用户添加权限中可以给用户添加（）权限。",
+    "options": [
+      "A、读取",
+      "B、编辑",
+      "C、管理",
+      "D、读写"
+    ],
+    "answer": "ABC"
+  },
+  {
+    "id": 307,
+    "original_id": 87,
+    "type": "多选题",
+    "question": "管理员可以对RDS实例非管理权限的账号进行（）管理操作。",
+    "options": [
+      "A、创新建数据库帐号",
+      "B、重置数据库帐号密码",
+      "C、修改数据库帐号权限",
+      "D、删除数据库账号"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 308,
+    "original_id": 88,
+    "type": "多选题",
+    "question": "关于云解析服务的价值的描述正确的是？",
+    "options": [
+      "A、高性能：云解析服务采用自研的新一代高性能解析加速服务，单节点支持千万级并发，为您提供高效稳定的解析服务。",
+      "B、轻松访问云上资源：可以为云服务器申请域名，并将域名托管到云解析服务中，便于通过域名访问云上资源。",
+      "C、核心数据安全隔离：对于保存核心数据的云服务器，不绑定弹性IP，使用内网DNS为其提供域名解析服务，既保证了核心数据的安全性，又实现了对核心数据的访问。",
+      "D、带宽共享：提供项目级别的带宽复用共享能力，节省带宽使用的运营及运维成本。"
+    ],
+    "answer": "ABC"
+  },
+  {
+    "id": 309,
+    "original_id": 89,
+    "type": "多选题",
+    "question": "关于图像内容审核服务调用成功时返回的suggestion字段，说法正确的是？",
+    "options": [
+      "A、pass代表不包含敏感信息，通过",
+      "B、review代表需要人工复检",
+      "C、suggestion字段代表检测是否通过",
+      "D、block代表包含敏感信息，不通过"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 310,
+    "original_id": 90,
+    "type": "多选题",
+    "question": "关于容器与虚拟机的比较，以下哪些说法是正确的?",
+    "options": [
+      "A、容器启动时间非常快，是秒级启动",
+      "B、容器不具有宿主机root权限，存在安全隐患",
+      "C、虚拟机的启动速度通常比容器慢",
+      "D、虚拟机虽然是硬件隔离，但是具备宿主机root权限，相对不安全"
+    ],
+    "answer": "AC"
+  },
+  {
+    "id": 311,
+    "original_id": 91,
+    "type": "多选题",
+    "question": "关于卷积神经网络池化层以下描述正确的是？",
+    "options": [
+      "A、池化操作采用扫描窗口实现",
+      "B、池化层可以起到降维的作用",
+      "C、常用的池化方法有最大池化和平均池化",
+      "D、经过池化的特征图像变小了"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 312,
+    "original_id": 92,
+    "type": "多选题",
+    "question": "关于RDS备份保留策略，以下说法正确的是（）。",
+    "options": [
+      "A、如果删除实例，该实例的自动备份将会被同步删除。",
+      "B、如果开启了实例的自动备份策略，当实例的自动备份保留期结束，该实例的自动备份也将会被同步删除。",
+      "C、如果需要长期保留自动备份，可以复制该自动备份生成一个手动备份，该备份在手动删除之前将会一直保留。",
+      "D、如果手动备份所使用的空间超过的默认存储空间，则可能会增加云数据库RDS存储成本。"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 313,
+    "original_id": 93,
+    "type": "多选题",
+    "question": "关于FusionCompute中DVS的描述正确的是?",
+    "options": [
+      "A、SR-IOV直通模式DVS不支持大帧",
+      "B、普通模式DVS支持大帧",
+      "C、SR-IOV直通模式DVS支持大帧",
+      "D、普通模式DVS不支持大帧"
+    ],
+    "answer": "CD"
+  },
+  {
+    "id": 314,
+    "original_id": 94,
+    "type": "多选题",
+    "question": "关于FusionCompute的内存QoS,描述不正确的是?",
+    "options": [
+      "A、内存QoS技术主要通过设置内存预留和内存份额实现。",
+      "B、开启内存QoS后,虚拟机能使用的内存空间可以超过虚拟机设定的内存大小。",
+      "C、通过内存QoS,可以解决内存复用时资源抢占问题。",
+      "D、内存QoS技术对物理机一样有效。"
+    ],
+    "answer": "BD"
+  },
+  {
+    "id": 315,
+    "original_id": 95,
+    "type": "多选题",
+    "question": "关于Docker的镜像仓库，说法正确的是？",
+    "options": [
+      "A、实现Docker镜像的全局存储",
+      "B、提供API接口",
+      "C、提供Docker镜像的下载/推送/查询",
+      "D、可用于租户管理"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 316,
+    "original_id": 96,
+    "type": "多选题",
+    "question": "关系型数据库服务有以下哪些安全保障措施？",
+    "options": [
+      "A、使用SSL通道",
+      "B、使用安全组",
+      "C、绑定弹性公网IP",
+      "D、设置虚拟私有云"
+    ],
+    "answer": "ABD"
+  },
+  {
+    "id": 317,
+    "original_id": 97,
+    "type": "多选题",
+    "question": "负载均衡采用的算法是：（），用来分配用户访问流量，提升负载均衡能力。",
+    "options": [
+      "A、应用程序cookie",
+      "B、轮询算法",
+      "C、最少连接",
+      "D、源IP算法"
+    ],
+    "answer": "BCD"
+  },
+  {
+    "id": 318,
+    "original_id": 98,
+    "type": "多选题",
+    "question": "分布式缓存服务（Redis）的优势包括：（）。",
+    "options": [
+      "A、即开即用",
+      "B、丰富的缓存规格",
+      "C、稳定可靠",
+      "D、易维护"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 319,
+    "original_id": 99,
+    "type": "多选题",
+    "question": "对于云数据库RDS磁盘扩容说法正确的是（）。",
+    "options": [
+      "A、磁盘扩容期间，服务不中断。",
+      "B、云数据库RDS服务只支持扩容磁盘存储空间大小，不支持变更存储类型。",
+      "C、扩容过程中，该实例不可重启和删除。",
+      "D、磁盘容量变更只允许扩容，不能缩容。"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 320,
+    "original_id": 100,
+    "type": "多选题",
+    "question": "对虚拟化技术的理解正确的选项是",
+    "options": [
+      "A、虚拟化是资源的逻辑表示，它不受物理限制的约束。",
+      "B、资源可以是各种硬件资源",
+      "C、虚拟化层隐藏了替代资源如何转换成真正资源的内部细节",
+      "D、对使用虚拟化资源的人，就如真实的资源同样的访问方式"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 321,
+    "original_id": 101,
+    "type": "多选题",
+    "question": "对象存储适用以下哪些场景",
+    "options": [
+      "A、海量存储资源池",
+      "B、静态网站托管",
+      "C、大数据存储",
+      "D、备份",
+      "E、归档"
+    ],
+    "answer": "ABCDE"
+  },
+  {
+    "id": 322,
+    "original_id": 102,
+    "type": "多选题",
+    "question": "当编译模型时用了以下代码：model.compile（optimizer='Adam，loss=‘categorical.crossentropy'，metrics=[tf.keras.metrics.accuracy]），在使用evaluate方法评估模型时，会输出以下哪些指标？",
+    "options": [
+      "A、ccuracy",
+      "B、categorical_1oss",
+      "C、loss.categoricalaccuracy"
+    ],
+    "answer": "AC"
+  },
+  {
+    "id": 323,
+    "original_id": 103,
+    "type": "多选题",
+    "question": "弹性负载均衡包含哪几种算法？",
+    "options": [
+      "A、加权轮询算法",
+      "B、加权最少连接",
+      "C、源IP算法",
+      "D、加密算法"
+    ],
+    "answer": "ABC"
+  },
+  {
+    "id": 324,
+    "original_id": 104,
+    "type": "多选题",
+    "question": "达芬奇架构计算单元主要包含的计算资源有？",
+    "options": [
+      "A、向量计算单元",
+      "B、标量计算单元",
+      "C、张量计算单元",
+      "D、矩阵计算单元"
+    ],
+    "answer": "ABD"
+  },
+  {
+    "id": 325,
+    "original_id": 105,
+    "type": "多选题",
+    "question": "存储虚拟化包括",
+    "options": [
+      "A、磁盘虚拟化",
+      "B、块虚拟化",
+      "C、磁带/磁带机/磁带库虚拟化",
+      "D、文件系统虚拟化"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 326,
+    "original_id": 106,
+    "type": "多选题",
+    "question": "创建私有镜像有哪些方式？",
+    "options": [
+      "A、通过云服务器创建",
+      "B、通过OBS文件创建",
+      "C、通过外部镜像文件创建",
+      "D、通过物理服务器创建"
+    ],
+    "answer": "AC"
+  },
+  {
+    "id": 327,
+    "original_id": 107,
+    "type": "多选题",
+    "question": "不是安全组规则预置的协议是：（）。",
+    "options": [
+      "A、TCP",
+      "B、UPD",
+      "C、SMTP",
+      "D、HTTP"
+    ],
+    "answer": "CD"
+  },
+  {
+    "id": 328,
+    "original_id": 108,
+    "type": "多选题",
+    "question": "Zookeeper中的数据节点znode分为哪几种类型？",
+    "options": [
+      "A、semi-persistent",
+      "B、ephemeral",
+      "C、temporary",
+      "D、persistent"
+    ],
+    "answer": "BD"
+  },
+  {
+    "id": 329,
+    "original_id": 109,
+    "type": "多选题",
+    "question": "Zookeeper可以为FusionlnsightHD中哪些组件提供分布式管理支持（）",
+    "options": [
+      "A、HBase",
+      "B、Loader",
+      "C、Hive",
+      "D、Spark"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 330,
+    "original_id": 110,
+    "type": "多选题",
+    "question": "YARN中，“从”节点负责以下哪些工作？（）",
+    "options": [
+      "A、集群中所有资源的统一管理和分配",
+      "B、监督Container的生命周期管理",
+      "C、管理日志和不同应用程序用到的附属服务",
+      "D、监控每个Container的资源使用（内存，CPU等）情况"
+    ],
+    "answer": "BD"
+  },
+  {
+    "id": 331,
+    "original_id": 111,
+    "type": "多选题",
+    "question": "windows系统迁移时，使用到的cmd命令和powershell命令大致的区别包含哪些？",
+    "options": [
+      "A、powershell是基于.net开发的",
+      "B、powershell可以看作cmd的超集",
+      "C、powershell支持复杂的管道操作",
+      "D、powershell支持Debug"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 332,
+    "original_id": 112,
+    "type": "多选题",
+    "question": "VPC有哪些产品优势？",
+    "options": [
+      "A、安全隔离",
+      "B、灵魂部署",
+      "C、动态BGP",
+      "D、支持混合云部署"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 333,
+    "original_id": 113,
+    "type": "多选题",
+    "question": "UVPVMTools提供的具体功能有哪些？（）",
+    "options": [
+      "A、提升虚拟机I/O性能",
+      "B、提供虚拟机内部信息查询功能",
+      "C、提供hostOS与guestOS消息通道功能",
+      "D、提供外部使用虚拟机内部功能的能力"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 334,
+    "original_id": 114,
+    "type": "多选题",
+    "question": "SWR使用流程包括：（）。",
+    "options": [
+      "A、创建组织",
+      "B、获取镜像",
+      "C、应用部署",
+      "D、更新镜像"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 335,
+    "original_id": 115,
+    "type": "多选题",
+    "question": "Spark适用于以下哪些场景？（）",
+    "options": [
+      "A、图计算",
+      "B、交互式查询",
+      "C、批处理",
+      "D、实时流处理"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 336,
+    "original_id": 116,
+    "type": "多选题",
+    "question": "RDS相比自建数据库有（）优势。",
+    "options": [
+      "A、无需投入软硬件成本，按需购买，弹性伸缩。",
+      "B、资源利用率按实际结算，100%利用率。",
+      "C、支持自动备份，手动备份，自定义备份存储周期。",
+      "D、防DDoS攻击，流量清洗。"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 337,
+    "original_id": 117,
+    "type": "多选题",
+    "question": "RDS提供了（）特性来保障租户数据库的可靠性和安全性。",
+    "options": [
+      "A、网络隔离",
+      "B、访问控制",
+      "C、传输加密",
+      "D、自动备份和快照"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 338,
+    "original_id": 118,
+    "type": "多选题",
+    "question": "RDA开启HA后，如下主备实例同步模式可供选择的是什么？",
+    "options": [
+      "A、同步",
+      "B、半同步",
+      "C、异步",
+      "D、以上都有"
+    ],
+    "answer": "BC"
+  },
+  {
+    "id": 339,
+    "original_id": 119,
+    "type": "多选题",
+    "question": "pod的状态有哪些？",
+    "options": [
+      "A、Pending",
+      "B、Running",
+      "C、ompleted",
+      "D、Failed"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 340,
+    "original_id": 120,
+    "type": "多选题",
+    "question": "OBS支持哪几种方式对用户的OBS请求进行访问控制",
+    "options": [
+      "A、CL",
+      "B、桶策略",
+      "C、用户签名认证",
+      "D、服务端加密"
+    ],
+    "answer": "ABC"
+  },
+  {
+    "id": 341,
+    "original_id": 121,
+    "type": "多选题",
+    "question": "MapReduce过程中，以下属于shuffle机制的是？（）",
+    "options": [
+      "A、partition",
+      "B、sort/merge",
+      "C、opy",
+      "D、combine"
+    ],
+    "answer": "BC"
+  },
+  {
+    "id": 342,
+    "original_id": 122,
+    "type": "多选题",
+    "question": "Linux返回用户主目录使用哪条命令",
+    "options": [
+      "A、cd",
+      "B、cd~",
+      "C、d/home",
+      "D、cd–"
+    ],
+    "answer": "AB"
+  },
+  {
+    "id": 343,
+    "original_id": 123,
+    "type": "多选题",
+    "question": "IAM统一身份认证有哪些关键特性？",
+    "options": [
+      "A、集中控制用户和安全凭证",
+      "B、集中控制用户访问",
+      "C、基于用户组的权限",
+      "D、支持华为客服代维操作"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 344,
+    "original_id": 124,
+    "type": "多选题",
+    "question": "Heat从哪些方面来支持编排",
+    "options": [
+      "A、从OpenStack提供的基础架构资源，包括计算，网络和存储等资源得到最基本的VM",
+      "B、提供SoftwareConfiguration和SoftwareDeployment等对VM进行复杂的配置",
+      "C、提供AutoScaling和LoadBalance等进行支持高级的功能需求",
+      "D、可以通过集成Chef来复用Cookbook，这样就能够节省大量的开发时间或者是迁移时间"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 345,
+    "original_id": 125,
+    "type": "多选题",
+    "question": "HBase集群定时执行Compaction的目的是什么？",
+    "options": [
+      "A、减少同一Region，同一ColumnFamily下的文件数目",
+      "B、提升数据读取性能",
+      "C、减少同一ColumnFamily的文件数据",
+      "D、减少同一Region的文件数目"
+    ],
+    "answer": "ABD"
+  },
+  {
+    "id": 346,
+    "original_id": 126,
+    "type": "多选题",
+    "question": "HBase的主要特点有哪些？",
+    "options": [
+      "A、高可靠性",
+      "B、高性能",
+      "C、面向列",
+      "D、可伸缩"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 347,
+    "original_id": 127,
+    "type": "多选题",
+    "question": "HBase的数据文件HFile中一个KeyValue格式包含哪些信息？",
+    "options": [
+      "A、Key",
+      "B、Value",
+      "C、Timest",
+      "D、KeyType"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 348,
+    "original_id": 128,
+    "type": "多选题",
+    "question": "Hadoop集群规模很大时，数据的分布情况会非常关键，用户需要根据数据分布情况，决定集群是否扩容，数据是否需要做均衡等。以下关于Fusionlnsight资源分布监控说法正确的有（）",
+    "options": [
+      "A、帮助用户迅速找到资源消耗最高的节点，采用适当的措施",
+      "B、通过每个服务主页的资源分布查看界面，查看到关键的资源分布情况",
+      "C、可以帮助用户快速聚集在最关键的资源消耗上",
+      "D、通过DashBoard界面，可以查看到主机资源分布情况。例如内存占有率在50-75%的主机列表，并提供链接跳转"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 349,
+    "original_id": 129,
+    "type": "多选题",
+    "question": "FuskmlnsightHD集群中，集群规模现有300个节点，如果采用推荐部署方案，控制节点上一定不会存在哪些分区？",
+    "options": [
+      "A、/",
+      "B、/sr/BigData/dbdata_om",
+      "C、sr/BigData",
+      "D、/srV/Bigdata/umatnode",
+      "E、/sr/Bigdata/hadoop/data5"
+    ],
+    "answer": "BE"
+  },
+  {
+    "id": 350,
+    "original_id": 130,
+    "type": "多选题",
+    "question": "FusionlnsightManager与外部管理平台对接时，支持哪些接口（）",
+    "options": [
+      "A、SNMP",
+      "B、Syslog",
+      "C、VPN",
+      "D、FTP"
+    ],
+    "answer": "AB"
+  },
+  {
+    "id": 351,
+    "original_id": 131,
+    "type": "多选题",
+    "question": "FusionlnsightManager会定时备份哪些数据？",
+    "options": [
+      "A、NameNode",
+      "B、LDAP",
+      "C、OMS",
+      "D、BService"
+    ],
+    "answer": "BCD"
+  },
+  {
+    "id": 352,
+    "original_id": 132,
+    "type": "多选题",
+    "question": "FusionlnsightHD平台中，哪些组件支持对表、列加密？（）",
+    "options": [
+      "A、Flink",
+      "B、HBase",
+      "C、hive",
+      "D、HDFS"
+    ],
+    "answer": "BC"
+  },
+  {
+    "id": 353,
+    "original_id": 133,
+    "type": "多选题",
+    "question": "FusionlnsightHD集群中包含多种服务，每种服务又由若干角色组成，下面哪些是服务的角色？",
+    "options": [
+      "A、HDFS",
+      "B、NameNode",
+      "C、DataNode",
+      "D、HBase"
+    ],
+    "answer": "BC"
+  },
+  {
+    "id": 354,
+    "original_id": 134,
+    "type": "多选题",
+    "question": "FusionlnsightHD的HBase服务包含哪些进程？",
+    "options": [
+      "A、Hmaster",
+      "B、Slave",
+      "C、HRegionServer",
+      "D、ataNode"
+    ],
+    "answer": "AC"
+  },
+  {
+    "id": 355,
+    "original_id": 135,
+    "type": "多选题",
+    "question": "FusionlnsightHDV100R002C60版本集群中，以下哪些组件需要规划元数据分区？",
+    "options": [
+      "A、HDFS",
+      "B、zookeeper",
+      "C、Streaming",
+      "D、Redis",
+      "E、Hbase"
+    ],
+    "answer": "ABC"
+  },
+  {
+    "id": 356,
+    "original_id": 136,
+    "type": "多选题",
+    "question": "FusionCompute分布式交换机支持以下哪几种类型?",
+    "options": [
+      "A、SR-IOV直通模式",
+      "B、普通模式",
+      "C、标准模式",
+      "D、用户态交换模式"
+    ],
+    "answer": "ABD"
+  },
+  {
+    "id": 357,
+    "original_id": 137,
+    "type": "多选题",
+    "question": "fusininsightHD平台中，那些组件支持对列表加密？",
+    "options": [
+      "A、HDFS",
+      "B、Fink",
+      "C、hbase",
+      "D、hive"
+    ],
+    "answer": "CD"
+  },
+  {
+    "id": 358,
+    "original_id": 138,
+    "type": "多选题",
+    "question": "Flume进程级联时，以下哪些sink类型用于接收上一跳Flume发送过来的消息？",
+    "options": [
+      "A、vrosink",
+      "B、Thriftsink",
+      "C、Hivesink",
+      "D、Nullsink"
+    ],
+    "answer": "AB"
+  },
+  {
+    "id": 359,
+    "original_id": 139,
+    "type": "多选题",
+    "question": "Flink的兼容性体现在以下哪些方面？（）",
+    "options": [
+      "A、能够与hadoop原有的mappers和reducers混合使用",
+      "B、YARN能够作为Flink集群的资源调度管理器",
+      "C、能够使用hadoop的格式化输入和输出",
+      "D、能够从本地获取数据"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 360,
+    "original_id": 140,
+    "type": "多选题",
+    "question": "ELBnginx节点异常，7层协议（HTTP）数据面服务不可用的原因（）",
+    "options": [
+      "A、nginx进程异常",
+      "B、ELBnginx节点间配置文件不一致",
+      "C、ETCD节点etcd进程异常",
+      "D、SIS进程异常"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 361,
+    "original_id": 141,
+    "type": "多选题",
+    "question": "ECS控制台支持管理弹性云服务器的生命周期，包括（）",
+    "options": [
+      "A、开机",
+      "B、关机",
+      "C、重启",
+      "D、删除"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 362,
+    "original_id": 142,
+    "type": "多选题",
+    "question": "dockerrun-p6379:6379v$PWD/data:/data-dt_arm64v8/centos_redis:5.05redisserver--appendonlyyes关于此命令的描述，以下哪些是正确的?",
+    "options": [
+      "A、“6379:6379\":将主机的6379端口映射到容器的6379端口",
+      "B、“appendonlyyes\"，打开持久化配置",
+      "C、该命令功能是启动容器，并在容器启动时候执行容器内的redis-server服务",
+      "D、“$PWD/dat",
+      "E、/data\":将主机中当前目录下的data挂载到容器的/data"
+    ],
+    "answer": "BCD"
+  },
+  {
+    "id": 363,
+    "original_id": 143,
+    "type": "多选题",
+    "question": "CCE自定义调动策略包含：（）。",
+    "options": [
+      "A、节点亲和性",
+      "B、工作负载亲和性",
+      "C、工作负载反亲和性",
+      "D、区域亲和性"
+    ],
+    "answer": "ABC"
+  },
+  {
+    "id": 364,
+    "original_id": 144,
+    "type": "多选题",
+    "question": "APM的主要功能有：（）。",
+    "options": [
+      "A、查询应用列表",
+      "B、查询调用链详情",
+      "C、查询服务实例列表",
+      "D、查询服务事物列表"
+    ],
+    "answer": "ABCD"
+  },
+  {
+    "id": 365,
+    "original_id": 1,
+    "type": "单选题",
+    "question": "重复性强、要求弱社交能力的工作是最容易被Al取代的工作。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 366,
+    "original_id": 2,
+    "type": "单选题",
+    "question": "中国政府对云计算的定位是一种新“技术”。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 367,
+    "original_id": 3,
+    "type": "单选题",
+    "question": "在装有Atlas300（3000）加速卡的服务器中安装DDK（DeviceDevelopmentKit）依赖环境时只需要安装Python3。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 368,
+    "original_id": 4,
+    "type": "单选题",
+    "question": "在以连接主义为基础的神经网络中，每个节点都能表达特定的意义。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 369,
+    "original_id": 5,
+    "type": "单选题",
+    "question": "在使用RDS过程中，如果忘记数据库帐号密码，无法重新设置密码。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 370,
+    "original_id": 6,
+    "type": "单选题",
+    "question": "在Zookeeper的服务模型中，Leader节点以主备模式存在，其他节点都属于Follower节点。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 371,
+    "original_id": 7,
+    "type": "单选题",
+    "question": "在TensorFlow2.0中tf.contrib方法可以继续使用。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 372,
+    "original_id": 8,
+    "type": "单选题",
+    "question": "在Streaming中，消息可靠性级别中精确一次是通过ACK机制来实现的。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 373,
+    "original_id": 9,
+    "type": "单选题",
+    "question": "在Oracle中，下列表空间中，SYSTEM表空间是运行一个数据库必须的一个表空间",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 374,
+    "original_id": 10,
+    "type": "单选题",
+    "question": "在Openstack解决方案中，Swift组件负责提供持久化块存储。（云计算考点）",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 375,
+    "original_id": 11,
+    "type": "单选题",
+    "question": "在HBase表结构中，每个单元格都保存着同一份数据的多个版本，这些版本采用时间戳进行索引。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 376,
+    "original_id": 12,
+    "type": "单选题",
+    "question": "在FusionlnsightHD系统，Loader作业运行过程中，如果产生脏数据，Loader作业执行结果的状态一定是失败。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 377,
+    "original_id": 13,
+    "type": "单选题",
+    "question": "在FusionAccess中,若出现\"当前桌面连接许可证无效或者已达到上限\"的报错,但License用户数是足够的,则可能是License不匹配导致的。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 378,
+    "original_id": 14,
+    "type": "单选题",
+    "question": "在Flink中，checkpoint机制能够保证应用在运行过程中出现失败时，从某一个检查点恢复，在此过程中，流快照是根据数据流入顺序依次创建的。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 379,
+    "original_id": 15,
+    "type": "单选题",
+    "question": "云硬盘可以挂载至不同可用区的云服务器。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 380,
+    "original_id": 16,
+    "type": "单选题",
+    "question": "云数据库RDS只读实例必须创建在与主实例相同的一个子网内。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 381,
+    "original_id": 17,
+    "type": "单选题",
+    "question": "云日志服务提供实时日志采集功能，支持云服务、APVSDK接入等多种日志采集方式。无需安装插件，即可接入平台，通过平台主动采集日志后，日志数据可以在云日志控制台以简单有序的方式展示、方便快捷的方式进行查询。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 382,
+    "original_id": 18,
+    "type": "单选题",
+    "question": "云平台的计算服务包括虚拟机、容器和K8S、裸金属服务和分布式缓存服务。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 383,
+    "original_id": 19,
+    "type": "单选题",
+    "question": "云计算最大的特点就是按需、弹性、安全。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 384,
+    "original_id": 20,
+    "type": "单选题",
+    "question": "云计算真正实现了按需计算，从而有效地提高了对软硬件资源的利用效率。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 385,
+    "original_id": 21,
+    "type": "单选题",
+    "question": "云计算体系结构的SOA构建层负责资源管理、任务管理用户管理和安全管理等工作",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 386,
+    "original_id": 22,
+    "type": "单选题",
+    "question": "云计算是从网格计算演化而来的，能够随需应变地提供资源。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 387,
+    "original_id": 23,
+    "type": "单选题",
+    "question": "云计算的硬件主要部署于数据中心。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 388,
+    "original_id": 24,
+    "type": "单选题",
+    "question": "语音识别指的是将音频数据识别为文本数据。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 389,
+    "original_id": 25,
+    "type": "单选题",
+    "question": "用户可根据需要将存储在OBS上的文件下载到本地。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 390,
+    "original_id": 26,
+    "type": "单选题",
+    "question": "硬盘是计算机非常重要并且是必不可少的组成部分，用来长时间保存数据。（云计算考点）",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 391,
+    "original_id": 27,
+    "type": "单选题",
+    "question": "一个虚拟机可以同时有多个虚拟网卡，对应不同的虚拟交换机。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 392,
+    "original_id": 28,
+    "type": "单选题",
+    "question": "一个文件系统可以同时挂载至多个云服务器上。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 393,
+    "original_id": 29,
+    "type": "单选题",
+    "question": "校园网或企业网是属于局域网",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 394,
+    "original_id": 30,
+    "type": "单选题",
+    "question": "消息队列服务适用于可用于缓存、事件发布或订阅、高速队列等典型应用场景。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 395,
+    "original_id": 31,
+    "type": "单选题",
+    "question": "相比于卷积神经网络，循环神经网络更适合处理时序数据、对于硬件（GPU、NPU）的资源利用率更高，但参数量较多、容易过拟合和出现梯度消失问题，但两者都具备权重共享的特点。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 396,
+    "original_id": 32,
+    "type": "单选题",
+    "question": "线性回归的损失函数中加入L1正则项，此时该回归叫做Lasso回归。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 397,
+    "original_id": 33,
+    "type": "单选题",
+    "question": "现有3个机架，有一个文件需要存3份，其中副本1和副本2存放在与client相同的机架且不同的服务器上。根据HDFS的副本放置策略一定要存放在其他机架。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 398,
+    "original_id": 34,
+    "type": "单选题",
+    "question": "现阶段的人工智能仍处于弱人工智能阶段。（AI考点）",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 399,
+    "original_id": 35,
+    "type": "单选题",
+    "question": "下图展示的flume架构，主要应用于集群外的数据导入到集群内。（）",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 400,
+    "original_id": 36,
+    "type": "单选题",
+    "question": "微服务引擎提供了微服务之间的灰度发布，支持按照Request中某个字段（例如Header）的值进行匹配。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 401,
+    "original_id": 37,
+    "type": "单选题",
+    "question": "微服务可以基于ServiceStage进行部署。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 402,
+    "original_id": 38,
+    "type": "单选题",
+    "question": "微服务架构模式下，开发者无法自由选择开发技术来提供API服务",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 403,
+    "original_id": 39,
+    "type": "单选题",
+    "question": "微服务的设计建议采用低内聚、紧耦合的设计原则。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 404,
+    "original_id": 40,
+    "type": "单选题",
+    "question": "网格搜索是一种参数调节的方法。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 405,
+    "original_id": 41,
+    "type": "单选题",
+    "question": "同子网内ECS通信既可以使用安全组防护，又可以使用网络ACL",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 406,
+    "original_id": 42,
+    "type": "单选题",
+    "question": "同一VPC内相同子网二层互通，不同子网三层互通。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 407,
+    "original_id": 43,
+    "type": "单选题",
+    "question": "数据库的三级模式结构中，描述数据库中用户能看到并允许使用的那部分局部数据的逻辑结构和特征的是内模式",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 408,
+    "original_id": 44,
+    "type": "单选题",
+    "question": "使用配置规划工具对FusionlnsightHDV100R002C50集群进行规划时，可以用V100R2002C60版本的配置规划工具来规划。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 409,
+    "original_id": 45,
+    "type": "单选题",
+    "question": "使用Loader进行数据导入和导出时，必须经过Reduce阶段进行数据处理",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 410,
+    "original_id": 46,
+    "type": "单选题",
+    "question": "涉及敏感数据业务系统，谨慎云化。如系统涉及财务数据，需要经过严格验证后再迁移到云平台。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 411,
+    "original_id": 47,
+    "type": "单选题",
+    "question": "如果YARN集群中只有Default、QueueA和QueueB子队列，那么允许将他们的容量分别设置为60%、25%、22%。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 412,
+    "original_id": 48,
+    "type": "单选题",
+    "question": "容量调度器在尽行资源分配，现有同级的2个队列Q1和Q2，他们的容量均为30，其中Q1已使用8，Q2已使用14，则会优先将资源分配Q1。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 413,
+    "original_id": 49,
+    "type": "单选题",
+    "question": "人脸比对服务调用时只传入一张图像也可以。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 414,
+    "original_id": 50,
+    "type": "单选题",
+    "question": "人工智能是研究、开发用于模拟、延伸和扩展人的智能的理论、方法及应用系统的一门新的技术科学。（AI考点）",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 415,
+    "original_id": 51,
+    "type": "单选题",
+    "question": "全虚拟化同时能够支持多个不同的操作系统。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 416,
+    "original_id": 52,
+    "type": "单选题",
+    "question": "驱动型Source是flume周期性主动去获取数据。（）",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 417,
+    "original_id": 53,
+    "type": "单选题",
+    "question": "内核是操作系统必不可少的组成部分，用来管理计算机硬件资源并提供上层应用程序运行所需要的系统调用接口。（云计算考点）",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 418,
+    "original_id": 54,
+    "type": "单选题",
+    "question": "逻辑回归的损失函数是交叉熵损失函数。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 419,
+    "original_id": 55,
+    "type": "单选题",
+    "question": "逻辑回归当中也可以加入正则项用于避免过拟合。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 420,
+    "original_id": 56,
+    "type": "单选题",
+    "question": "联邦学习在保证数据隐私安全的前提下，利用不同数据源合作训练模型，进步突破数据的瓶颈。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 421,
+    "original_id": 57,
+    "type": "单选题",
+    "question": "利用远程登录提供的服务，用户可以使自己计算机暂时成为远程计算机的一个仿真终端",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 422,
+    "original_id": 58,
+    "type": "单选题",
+    "question": "可以通过对等连接实现两个VPC互通。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 423,
+    "original_id": 59,
+    "type": "单选题",
+    "question": "假设HDFS在写入数据时只存2份，那么在写入过程中，HDFSClient先将数据写入DataNode1，再将数据写入DataNode2。（）",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 424,
+    "original_id": 60,
+    "type": "单选题",
+    "question": "华为云容器启动速度快、资源占用小、运行效率高等优势，快速扩容、从容应对突发性大流量冲击，从根本上避免了“官宣”式宕机。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 425,
+    "original_id": 61,
+    "type": "单选题",
+    "question": "华为的Al全场景包括公有云、私有云、各种边缘计算、物联网行业终端以及消费类终端等端、边、云的部署环境。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 426,
+    "original_id": 62,
+    "type": "单选题",
+    "question": "华为HCS8.2.1私有云平台物理网络组网只能使用华为品牌的网络设备。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 427,
+    "original_id": 63,
+    "type": "单选题",
+    "question": "华为Fusionlnsight中，hbase的表设计工具、连接池管理和增强的SDK，可以简化复杂数据表的业务开发。（）",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 428,
+    "original_id": 64,
+    "type": "单选题",
+    "question": "华內云数据库PostgreSQL是一款分布式架构的关系型数据库，支持集群化部署，在保证数据可靠性和完整性方面表现出色，支持互联网电商、地理位置应用系统、金融保险系统、复杂数据对象处理等场景。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 429,
+    "original_id": 65,
+    "type": "单选题",
+    "question": "广播域，指的是广播帧（目标MAC地址全部为1）所能传递到的范围，且能够直接通信的范围。（云计算考点）",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 430,
+    "original_id": 66,
+    "type": "单选题",
+    "question": "光纤通信存储属于以太网",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 431,
+    "original_id": 67,
+    "type": "单选题",
+    "question": "关于语音识别服务中的一句话识别指的是，用于短语音的同步识别。一次性上传整个音频，响应中即返回识别结果。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 432,
+    "original_id": 68,
+    "type": "单选题",
+    "question": "关系型数据库创建成功后，不能更换数据库引擎，所以，在创建数据库实例时需谨慎选择。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 433,
+    "original_id": 69,
+    "type": "单选题",
+    "question": "各国政府都非常重视云计算产业发展，但并未在政府内部广泛推行云计算应用。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 434,
+    "original_id": 70,
+    "type": "单选题",
+    "question": "分布式存储技术，多副本保存，保障数据不丢失。数据持久性高达99.9999999%。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 435,
+    "original_id": 71,
+    "type": "单选题",
+    "question": "多项式回归当中，模型的公式中存在平方项，因此其不是线性的。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 436,
+    "original_id": 72,
+    "type": "单选题",
+    "question": "多个弹性云服务器可以共用一个密钥对。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 437,
+    "original_id": 73,
+    "type": "单选题",
+    "question": "对于云数据库RDS主备实例，修改主实例的安全组，备实例的安全组会被同步修改。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 438,
+    "original_id": 74,
+    "type": "单选题",
+    "question": "对象存储概念里的容器是docker",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 439,
+    "original_id": 75,
+    "type": "单选题",
+    "question": "低功耗芯片是将来云计算芯片的主流，将是云计算芯片的主流发展方向。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 440,
+    "original_id": 76,
+    "type": "单选题",
+    "question": "当站点从一个VLAN转移到另一个VLAN时，一般不需要改变物理连接",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 441,
+    "original_id": 77,
+    "type": "单选题",
+    "question": "当伸缩组正在进行伸缩活动，停用伸缩组，伸缩活动会立即停止。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 442,
+    "original_id": 78,
+    "type": "单选题",
+    "question": "弹性云服务器必须处于目标云数据库RDS实例所属安全组允许访问的范围内。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 443,
+    "original_id": 79,
+    "type": "单选题",
+    "question": "弹性云服务器VNC远程登录可以在多个页面窗口登录。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 444,
+    "original_id": 80,
+    "type": "单选题",
+    "question": "弹性伸缩一定要搭配弹性负载均衡才能使用。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 445,
+    "original_id": 81,
+    "type": "单选题",
+    "question": "测试误差会随着模型复杂度的上升不断诚小。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 446,
+    "original_id": 82,
+    "type": "单选题",
+    "question": "操作系统虚拟化位于操作系统的底部。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 447,
+    "original_id": 83,
+    "type": "单选题",
+    "question": "安全组提供ECS级别防护，网络ACL提供子网级别防护",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 448,
+    "original_id": 84,
+    "type": "单选题",
+    "question": "安全组规则支持入方向和出方向",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 449,
+    "original_id": 85,
+    "type": "单选题",
+    "question": "安全组规则支持黑名单与白名单形式",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 450,
+    "original_id": 86,
+    "type": "单选题",
+    "question": "ZooKeeper所有节点都可以处理读请求。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 451,
+    "original_id": 87,
+    "type": "单选题",
+    "question": "Zookeeper的增强特性包括在审计日志中添加ephemeralnode被删除的审计日志。（）",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 452,
+    "original_id": 88,
+    "type": "单选题",
+    "question": "WebLogic服务的运行状态不包含CLOSED",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 453,
+    "original_id": 89,
+    "type": "单选题",
+    "question": "VLAN可以通过MAC地址、交换机端口等进行定义",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 454,
+    "original_id": 90,
+    "type": "单选题",
+    "question": "TP99时延即满足百分之九十九的网络请求所需要的最低耗时",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 455,
+    "original_id": 91,
+    "type": "单选题",
+    "question": "tf.keras.datasets可以查看keras中内置的数据集。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 456,
+    "original_id": 92,
+    "type": "单选题",
+    "question": "TensorFlow2.0中取消了图和会话的机制。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 457,
+    "original_id": 93,
+    "type": "单选题",
+    "question": "TensorFlow2.0支持GPU加速主要表现在对矩阵的加减乘除有一个并行运算的加速。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 458,
+    "original_id": 94,
+    "type": "单选题",
+    "question": "TCP使用了4种计时器：重传计时器、坚持计时器，保持计时器和时间等待计时器",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 459,
+    "original_id": 95,
+    "type": "单选题",
+    "question": "swift为了保证访问的安全性，首先在authenticationserver认证访问者的身份和权限，获取获取访问令牌，然后才可以访问数据",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 460,
+    "original_id": 96,
+    "type": "单选题",
+    "question": "Spark是基于内存的计算引擎，所有Spark程序运行过程中的数据只能存储在内存中",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 461,
+    "original_id": 97,
+    "type": "单选题",
+    "question": "Spark和Hadoop都不适用于迭代计算的场景。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 462,
+    "original_id": 98,
+    "type": "单选题",
+    "question": "Spark根据RDD的依赖关系来划分Stage，调度器从DAG图末端出发，逆向遍历整个依赖关系链，遇到窄依赖就断开，遇到宽依赖就将其加入当前Stage。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 463,
+    "original_id": 99,
+    "type": "单选题",
+    "question": "sparkStreaming容错机制是指RDD中任意的partition出错，都可以根据其父RDD重新计算生成，如果父RDD丢失，则需要去磁盘中查找原始数据。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 464,
+    "original_id": 100,
+    "type": "单选题",
+    "question": "SparkOnYarn模式下的driver只能运行在客户端。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 465,
+    "original_id": 101,
+    "type": "单选题",
+    "question": "SparkonYarn-client适合用于生产环境是因为可以更快的看到APP的输出。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 466,
+    "original_id": 102,
+    "type": "单选题",
+    "question": "ResourceManager采用高可用方案，当Activeresourcemanager发现故障时，只能通过内置的zookeeper来启动standby的resourcemanager，将其状态切换为active。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 467,
+    "original_id": 103,
+    "type": "单选题",
+    "question": "RDS暂时不支持磁盘缩容。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 468,
+    "original_id": 104,
+    "type": "单选题",
+    "question": "RDS实例磁盘扩容的过程中，不需要重启数据库实例。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 469,
+    "original_id": 105,
+    "type": "单选题",
+    "question": "RAID6将校验值写入3个磁盘之中",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 470,
+    "original_id": 106,
+    "type": "单选题",
+    "question": "Raid1是备份量极高的Raid策略，相应的他的保护能力也很强。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 471,
+    "original_id": 107,
+    "type": "单选题",
+    "question": "OBS支持数据共享。可设置匿名访问，访问用户数量无限制。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 472,
+    "original_id": 108,
+    "type": "单选题",
+    "question": "OBS管理控制台不支持批量上传文件。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 473,
+    "original_id": 109,
+    "type": "单选题",
+    "question": "NAT技术是实现防火墙的主流技术",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 474,
+    "original_id": 110,
+    "type": "单选题",
+    "question": "MindSpore中提供了数据处理的子模块dataset，用于加载数据集或进行数据增强操作。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 475,
+    "original_id": 111,
+    "type": "单选题",
+    "question": "Linux是类Unix系统的统称，也是一种非常流行的多任务、多用户的开源操作系统，支持多种硬件平台（云计算考点）",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 476,
+    "original_id": 112,
+    "type": "单选题",
+    "question": "LINUX观察系统当前进程的运行情况的命令是DMESG",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 477,
+    "original_id": 113,
+    "type": "单选题",
+    "question": "Kafka作为一个分布式消息系统，支持在线和离线消息处理，并提供了javaAPI以便其他组件对接使用，在Fusionlnsight解决方案中，Kafka属于FusionlnsightHD模块。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 478,
+    "original_id": 114,
+    "type": "单选题",
+    "question": "Kafka是一个分布式的消息发布订阅系统，它只是进行消息的转发，不会保存消息。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 479,
+    "original_id": 115,
+    "type": "单选题",
+    "question": "Kafka日志的清理方式有两种：delete和compact。默认值是delete。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 480,
+    "original_id": 116,
+    "type": "单选题",
+    "question": "IEEE802.3标准，定义了CSMA／CD总线介质访问控制子层与伟力层规范",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 481,
+    "original_id": 117,
+    "type": "单选题",
+    "question": "HTML5可用于服务端应用研发",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 482,
+    "original_id": 118,
+    "type": "单选题",
+    "question": "Hive中的“Groupby”指的是通过一定规则将一个数据集划分成若干个小的数据集，然后针对若干个小的数据集进行数据分组处理。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 483,
+    "original_id": 119,
+    "type": "单选题",
+    "question": "Hive是一种数据仓库处理工具，使用类SQL的HiveQL语言实现数据查询功能，所有Hive的数据都存储在HDFS中（）",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 484,
+    "original_id": 120,
+    "type": "单选题",
+    "question": "HDFS中的block默认保存3份",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 485,
+    "original_id": 121,
+    "type": "单选题",
+    "question": "HDFS支持大文件存储，同时支持多个用户对同一个文件的写操作，以及在文件任意位置进行修改。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 486,
+    "original_id": 122,
+    "type": "单选题",
+    "question": "HDFS联邦机制下，各NameNode间元数据是不共享的。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 487,
+    "original_id": 123,
+    "type": "单选题",
+    "question": "HDFS客户端以N副本向HDFS写文件时，若其中一个副本写入失败，则所有副本都会返回写入失败。（大数据考点）",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 488,
+    "original_id": 124,
+    "type": "单选题",
+    "question": "HDFS机制中NameNode负责管理元数据，Client端每次读请求都需要从NameNode的元数据磁盘中读取元数据信息，以此获取所读文件在DataNode中的位置。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 489,
+    "original_id": 125,
+    "type": "单选题",
+    "question": "Hbase中OpenScanner的过程，会创建两种不同的Scanner来读取HFile和MemStore的数据，HFile对应的Scanner为StoreFileScanner，MemStore对应的Scanner为MemStoreScanner。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 490,
+    "original_id": 126,
+    "type": "单选题",
+    "question": "HBase中MOB数据直接HFile的格式存储在HDFS上，然后把这个文件的地址信息及大小信息作为value存储在管理HBase的store上，通过工具集中管理这些文件。这样就可以大大降低HBase的compation和split频率，提升性能。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 491,
+    "original_id": 127,
+    "type": "单选题",
+    "question": "HBase的最小处理单元是Region，UserRegion和RegionServer之间的路由信息是保存在Zookeeper中。（）",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 492,
+    "original_id": 128,
+    "type": "单选题",
+    "question": "Hadoop系统中YARN分配给Container的内存大小，可以通过参数yarn.app.mapreduce.am.resource.mb来设置",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 493,
+    "original_id": 129,
+    "type": "单选题",
+    "question": "Hadoop的NameNode用于存储文件系统的元数据。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 494,
+    "original_id": 130,
+    "type": "单选题",
+    "question": "GPU擅长计算密集和易于并行的程序。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 495,
+    "original_id": 131,
+    "type": "单选题",
+    "question": "Fusionlnsight中Hive包含2个角色，HiveServer和MetaStore.",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 496,
+    "original_id": 132,
+    "type": "单选题",
+    "question": "Fusionlnsight是华为企业级大数据存储、查询、分析的统一平台，能够帮助企业快速构建海量数据信息处理系统，通过对海量信息数据实时与非实时的分析挖掘，发现全新价值点和企业商机。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 497,
+    "original_id": 133,
+    "type": "单选题",
+    "question": "FusionlnsightManger对外支持REST接口、SNMP接口、SYSLOG接口",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 498,
+    "original_id": 134,
+    "type": "单选题",
+    "question": "FusionlnsightHD系统中，HBase支持动态扩展列。（）",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 499,
+    "original_id": 135,
+    "type": "单选题",
+    "question": "FusionlnsightHD的Streaming对于Zookeeper弱依赖，即使Zookeeper故障Streaming可以正常提供服务。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 500,
+    "original_id": 136,
+    "type": "单选题",
+    "question": "FusioninsightManager界面上，当收到Kafka磁盘容量不足告警，且该告警的原因已经排除硬盘硬件故障时，系统管理员需要考虑扩容解决此问题",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 501,
+    "original_id": 137,
+    "type": "单选题",
+    "question": "FusioninsightHD集群三层组网时，管理节点、控制节点、数据节点建议安装在不同的网段内，可以提高可靠性。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 502,
+    "original_id": 138,
+    "type": "单选题",
+    "question": "FTP是应用层协议",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 503,
+    "original_id": 139,
+    "type": "单选题",
+    "question": "Flume的数据流可以根据headers的信息发送到不同的Channel中。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 504,
+    "original_id": 140,
+    "type": "单选题",
+    "question": "flume传输数据的可靠性是指flume在传输数据过程中，当下一跳的flume节点故障或者数据接收异常时，可以自动切换到另外一路上继续传输。（）",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 505,
+    "original_id": 141,
+    "type": "单选题",
+    "question": "Flink中的checkpoint机制不断绘制流应用的快照，流应用的状态快照只能保存在HDFS文件系统中。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 506,
+    "original_id": 142,
+    "type": "单选题",
+    "question": "Flink与SparkStreaming类似，属于事件驱动型实时流系统",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 507,
+    "original_id": 143,
+    "type": "单选题",
+    "question": "Flink采用checkpoint机制保障应用程序运行中的容错性。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 508,
+    "original_id": 144,
+    "type": "单选题",
+    "question": "EVS支持使用快照跨可用分区创建磁盘。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 509,
+    "original_id": 145,
+    "type": "单选题",
+    "question": "EVS为ECS、BMS等计算服务提供持久化块存储服务，提供高可用性和持久性，以及稳定的低时延性能。用户可以对云硬盘做格式化、创建文件系统等操作，并对数据做持久化存储。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 510,
+    "original_id": 146,
+    "type": "单选题",
+    "question": "Docker使用沙箱机制",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 511,
+    "original_id": 147,
+    "type": "单选题",
+    "question": "docker容器解决隔离性问题采用的技术是kernalnamespace",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 512,
+    "original_id": 148,
+    "type": "单选题",
+    "question": "colocation（同分布）文件级的同分布实现文件的快速访问，避免了因数据搬迁带来的大量网络开销。（）",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 513,
+    "original_id": 149,
+    "type": "单选题",
+    "question": "Channel支持事务，提供较弱的顺序保证，可以连接任何数量的Source和Sink（）",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 514,
+    "original_id": 150,
+    "type": "单选题",
+    "question": "Channel的作用类似队列，用于临时缓存进来的数据，当Sink成功地将数据发送到下一跳的Channel或最终目的，数据会从Channel移除",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 515,
+    "original_id": 151,
+    "type": "单选题",
+    "question": "bps是bytepersecond的缩写，是数据传输速率的单位",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 516,
+    "original_id": 152,
+    "type": "单选题",
+    "question": "Al芯片也被称为Al加速器，是专门用于处理人工智能应用中的大量计算任务的功能模块。",
+    "options": [
+      "A、正确",
+      "B、错误"
+    ],
+    "answer": "B"
+  }
+]
