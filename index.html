@@ -52,7 +52,7 @@
                     <!-- 考试进度 / 计时 (仅在考试中显示) -->
                     <div v-if="appState === 'exam'" class="hidden md:flex items-center space-x-3 pl-2 border-l border-gray-200">
                         <span class="text-xs text-gray-500">
-                            {{ examSource === 'wrong' ? '错题专练' : '全题库' }}
+                            {{ selectedBankName }}
                             <strong class="text-gray-800 text-sm ml-1">{{ currentIndex + 1 }}</strong> / {{ examQuestions.length }}
                         </span>
                         <div class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-mono text-xs font-bold flex items-center border border-blue-100">
@@ -84,17 +84,133 @@
 
             <!-- Welcome Screen -->
             <transition name="fade" mode="out-in">
-                <div v-if="appState === 'welcome' && !isLoading" class="max-w-2xl mx-auto mt-6">
-                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-10 text-center">
-                        <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-5 shadow-inner">
+                <div v-if="appState === 'welcome' && !isLoading" class="max-w-3xl mx-auto mt-4">
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8 text-center">
+                        <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4 shadow-inner">
                             <i class="fas fa-graduation-cap"></i>
                         </div>
-                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">华为云赛道备考中心</h2>
-                        <p class="text-gray-500 text-sm mb-6">题库真题共收录 <strong class="text-blue-600">{{ allQuestions.length }}</strong> 道 | 已收录错题 <strong class="text-red-500">{{ wrongQuestionsCount }}</strong> 道</p>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-1">华为云赛道备考中心</h2>
+                        <p class="text-gray-500 text-xs sm:text-sm mb-6">题库真题收录 <strong class="text-blue-600">{{ allQuestions.length }}</strong> 道 | 已收录错题 <strong class="text-red-500">{{ wrongQuestionsCount }}</strong> 道</p>
                         
-                        <!-- 模式提示说明卡片 -->
-                        <div class="bg-gray-50 rounded-xl p-5 mb-8 text-left border border-gray-200/80">
-                            <div class="flex items-center justify-between mb-3 pb-2 border-b border-gray-200">
+                        <!-- 1. 赛段题库选择专区 -->
+                        <div class="mb-6 text-left">
+                            <div class="flex items-center justify-between mb-3">
+                                <label class="text-sm font-bold text-gray-800 flex items-center">
+                                    <i class="fas fa-trophy mr-2 text-amber-500"></i>选择考试赛段题库：
+                                </label>
+                                <!-- 抽题策略切换 (模考范围 vs 专项突击) -->
+                                <div class="bg-gray-100 p-0.5 rounded-lg flex items-center text-xs">
+                                    <button @click="drawStrategy = 'progressive'" 
+                                            :class="drawStrategy === 'progressive' ? 'bg-white text-blue-600 font-bold shadow-sm' : 'text-gray-500'"
+                                            class="px-2 py-1 rounded-md transition-all">
+                                        赛段大纲模考
+                                    </button>
+                                    <button @click="drawStrategy = 'exclusive'" 
+                                            :class="drawStrategy === 'exclusive' ? 'bg-white text-blue-600 font-bold shadow-sm' : 'text-gray-500'"
+                                            class="px-2 py-1 rounded-md transition-all">
+                                        专项考点突击
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- 四大赛段选择卡片 -->
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                                <!-- 省赛初赛 -->
+                                <div @click="selectedStage = '省赛初赛'" 
+                                     :class="selectedStage === '省赛初赛' ? 'border-blue-500 bg-blue-50/70 ring-2 ring-blue-400' : 'border-gray-200 hover:border-blue-300 bg-white'"
+                                     class="border-2 rounded-xl p-3.5 cursor-pointer transition-all flex flex-col justify-between">
+                                    <div>
+                                        <div class="flex items-center justify-between mb-1.5">
+                                            <span class="text-xs font-bold px-2 py-0.5 rounded-md bg-blue-100 text-blue-800">
+                                                初赛
+                                            </span>
+                                            <i v-if="selectedStage === '省赛初赛'" class="fas fa-check-circle text-blue-600 text-sm"></i>
+                                        </div>
+                                        <div class="font-bold text-gray-800 text-sm mb-1">省赛初赛</div>
+                                        <p class="text-[11px] text-gray-500 leading-tight">云计算基础/云服务基本操作/容器/AI平台</p>
+                                    </div>
+                                    <div class="mt-3 pt-2 border-t border-gray-100 text-xs font-medium text-blue-700">
+                                        {{ getStageQuestionCount('省赛初赛') }} 题可用
+                                    </div>
+                                </div>
+
+                                <!-- 省赛复赛 -->
+                                <div @click="selectedStage = '省赛复赛'" 
+                                     :class="selectedStage === '省赛复赛' ? 'border-purple-500 bg-purple-50/70 ring-2 ring-purple-400' : 'border-gray-200 hover:border-purple-300 bg-white'"
+                                     class="border-2 rounded-xl p-3.5 cursor-pointer transition-all flex flex-col justify-between">
+                                    <div>
+                                        <div class="flex items-center justify-between mb-1.5">
+                                            <span class="text-xs font-bold px-2 py-0.5 rounded-md bg-purple-100 text-purple-800">
+                                                省赛
+                                            </span>
+                                            <i v-if="selectedStage === '省赛复赛'" class="fas fa-check-circle text-purple-600 text-sm"></i>
+                                        </div>
+                                        <div class="font-bold text-gray-800 text-sm mb-1">省赛复赛</div>
+                                        <p class="text-[11px] text-gray-500 leading-tight">云迁移SMS/DRS/AI算法/深度学习/大模型</p>
+                                    </div>
+                                    <div class="mt-3 pt-2 border-t border-gray-100 text-xs font-medium text-purple-700">
+                                        {{ getStageQuestionCount('省赛复赛') }} 题可用
+                                    </div>
+                                </div>
+
+                                <!-- 全国总决赛 -->
+                                <div @click="selectedStage = '全国总决赛'" 
+                                     :class="selectedStage === '全国总决赛' ? 'border-amber-500 bg-amber-50/70 ring-2 ring-amber-400' : 'border-gray-200 hover:border-amber-300 bg-white'"
+                                     class="border-2 rounded-xl p-3.5 cursor-pointer transition-all flex flex-col justify-between">
+                                    <div>
+                                        <div class="flex items-center justify-between mb-1.5">
+                                            <span class="text-xs font-bold px-2 py-0.5 rounded-md bg-amber-100 text-amber-800">
+                                                国赛
+                                            </span>
+                                            <i v-if="selectedStage === '全国总决赛'" class="fas fa-check-circle text-amber-600 text-sm"></i>
+                                        </div>
+                                        <div class="font-bold text-gray-800 text-sm mb-1">全国总决赛</div>
+                                        <p class="text-[11px] text-gray-500 leading-tight">五大支柱架构设计/高可靠方案/视觉语音API</p>
+                                    </div>
+                                    <div class="mt-3 pt-2 border-t border-gray-100 text-xs font-medium text-amber-700">
+                                        {{ getStageQuestionCount('全国总决赛') }} 题可用
+                                    </div>
+                                </div>
+
+                                <!-- 全球总决赛 -->
+                                <div @click="selectedStage = '全球总决赛'" 
+                                     :class="selectedStage === '全球总决赛' ? 'border-rose-500 bg-rose-50/70 ring-2 ring-rose-400' : 'border-gray-200 hover:border-rose-300 bg-white'"
+                                     class="border-2 rounded-xl p-3.5 cursor-pointer transition-all flex flex-col justify-between">
+                                    <div>
+                                        <div class="flex items-center justify-between mb-1.5">
+                                            <span class="text-xs font-bold px-2 py-0.5 rounded-md bg-rose-100 text-rose-800">
+                                                全球赛
+                                            </span>
+                                            <i v-if="selectedStage === '全球总决赛'" class="fas fa-check-circle text-rose-600 text-sm"></i>
+                                        </div>
+                                        <div class="font-bold text-gray-800 text-sm mb-1">全球总决赛</div>
+                                        <p class="text-[11px] text-gray-500 leading-tight">容灾双活/安全设计/立体运维/微调与Agent</p>
+                                    </div>
+                                    <div class="mt-3 pt-2 border-t border-gray-100 text-xs font-medium text-rose-700">
+                                        {{ getStageQuestionCount('全球总决赛') }} 题可用
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 抽题模式说明提示条 -->
+                            <div class="mt-2.5 px-3.5 py-2 rounded-lg bg-gray-50 border border-gray-200 text-xs text-gray-600 flex items-center justify-between">
+                                <span>
+                                    <i class="fas fa-info-circle text-blue-500 mr-1.5"></i>
+                                    当前选择：<strong class="text-blue-700 font-bold">【{{ selectedStage }}】</strong> - 
+                                    <span v-if="drawStrategy === 'progressive'">覆盖该赛段大纲范围（共 {{ currentPoolCount }} 题，随机抽取 60 题）</span>
+                                    <span v-else>专属考点强化突击（共 {{ currentPoolCount }} 题，抽取最多 60 题）</span>
+                                </span>
+                                <button @click="selectedStage = '全部'" 
+                                        :class="selectedStage === '全部' ? 'text-blue-600 font-bold underline' : 'text-gray-400 hover:text-gray-600'"
+                                        class="text-xs ml-2 whitespace-nowrap">
+                                    抽取全部题库 (516题)
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 2. 模式说明卡片 -->
+                        <div class="bg-gray-50 rounded-xl p-4 sm:p-5 mb-6 text-left border border-gray-200/80">
+                            <div class="flex items-center justify-between mb-2.5 pb-2 border-b border-gray-200">
                                 <span class="font-bold text-gray-700 text-sm flex items-center">
                                     <i class="fas fa-sliders-h mr-2 text-blue-500"></i>当前做题模式：
                                     <span v-if="studyMode === 'recite'" class="text-amber-600 font-extrabold ml-1">【背题模式】（即时查验）</span>
@@ -103,44 +219,44 @@
                                 <span class="text-xs text-gray-400">可在右上角随时切换</span>
                             </div>
                             
-                            <ul v-if="studyMode === 'recite'" class="space-y-2 text-xs sm:text-sm text-gray-600">
+                            <ul v-if="studyMode === 'recite'" class="space-y-1.5 text-xs text-gray-600">
                                 <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                                    <span><strong>单选 / 判断题</strong>：点击选项后<strong>立即判定</strong>，正确选项显示<span class="text-green-600 font-bold">绿色</span>，若选错错选项显示<span class="text-red-600 font-bold">红色</span>并提示标准答案。</span>
+                                    <i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i>
+                                    <span><strong>单选 / 判断题</strong>：点击选项后<strong>立即判定</strong>，正确选项显示<span class="text-green-600 font-bold">绿色</span>，错选显示<span class="text-red-600 font-bold">红色</span>并提示标准答案。</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                    <i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i>
                                     <span><strong>多选题</strong>：自由勾选/取消选项，勾选完毕后点击下方<strong>【确认提交本题】</strong>立即反馈正误与标答。</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                                    <span>做错的题目将<strong>自动记录到错题本</strong>，支持智能加权复练！</span>
+                                    <i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i>
+                                    <span>每个题目上方及错题本中均<strong>显著展示题目所属赛段题库</strong>！做错题目自动归档至错题集。</span>
                                 </li>
                             </ul>
 
-                            <ul v-else class="space-y-2 text-xs sm:text-sm text-gray-600">
+                            <ul v-else class="space-y-1.5 text-xs text-gray-600">
                                 <li class="flex items-start">
-                                    <i class="fas fa-clock text-blue-500 mt-1 mr-2 flex-shrink-0"></i>
-                                    <span>随机抽取 60 题，限时 90 分钟，答题时不提示答案。</span>
+                                    <i class="fas fa-clock text-blue-500 mt-0.5 mr-2 flex-shrink-0"></i>
+                                    <span>从选定题库抽取试题，限时 90 分钟，答题时不提示答案。</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-2 flex-shrink-0"></i>
+                                    <i class="fas fa-check-circle text-blue-500 mt-0.5 mr-2 flex-shrink-0"></i>
                                     <span>交卷后生成千分制成绩单并全卷复盘，做错题目同样自动记录至错题本。</span>
                                 </li>
                             </ul>
                         </div>
 
-                        <!-- 核心操作按钮组 -->
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button @click="startExam('all')" 
-                                    class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 px-8 rounded-xl shadow-md transition transform hover:-translate-y-0.5 text-base flex items-center justify-center">
-                                <i class="fas fa-play mr-2"></i>开始常规抽题 (60题)
+                        <!-- 3. 核心操作按钮组 -->
+                        <div class="flex flex-col sm:flex-row gap-3.5 justify-center">
+                            <button @click="startExam('normal')" 
+                                    class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl shadow-md transition transform hover:-translate-y-0.5 text-base flex items-center justify-center">
+                                <i class="fas fa-play mr-2"></i>开始【{{ selectedBankName }}】练习
                             </button>
                             
                             <button @click="startExam('wrong')" 
                                     :disabled="wrongQuestionsCount === 0"
                                     :class="wrongQuestionsCount === 0 ? 'bg-gray-100 text-gray-400 border border-gray-200 cursor-not-allowed' : 'bg-red-500 hover:bg-red-600 text-white shadow-md hover:-translate-y-0.5'"
-                                    class="font-bold py-3.5 px-6 rounded-xl transition transform text-base flex items-center justify-center">
+                                    class="font-bold py-3 px-6 rounded-xl transition transform text-base flex items-center justify-center">
                                 <i class="fas fa-fire mr-2"></i>开始错题专练
                                 <span v-if="wrongQuestionsCount > 0" class="ml-1.5 text-xs bg-white/20 px-2 py-0.5 rounded-full font-mono">
                                     {{ wrongQuestionsCount }}
@@ -161,23 +277,39 @@
 
                     <!-- Question Container -->
                     <div class="p-6 sm:p-8 flex-grow">
-                        <!-- Header Tag Row -->
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="flex items-center space-x-2">
-                                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-1 rounded-md border border-blue-200">
+                        <!-- Header Tag Row (题目上方题库徽章展示) -->
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b border-gray-100">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <!-- 题型标签 -->
+                                <span class="bg-blue-50 text-blue-700 text-xs font-bold px-2.5 py-1 rounded-md border border-blue-200">
                                     {{ currentQuestion.type }}
                                 </span>
+
+                                <!-- 核心要求：每个题目上方都要显示是来自哪个题库 -->
+                                <span :class="getStageBadgeClass(currentQuestion.stage)" 
+                                      class="text-xs font-bold px-2.5 py-1 rounded-md border flex items-center shadow-sm">
+                                    <i :class="getStageIcon(currentQuestion.stage)" class="mr-1 text-[11px]"></i>
+                                    {{ currentQuestion.stage || '省赛初赛' }}题库
+                                </span>
+
+                                <!-- 考纲能力分类小标签 -->
+                                <span v-if="currentQuestion.category" class="hidden sm:inline-block bg-gray-50 text-gray-500 text-[11px] px-2 py-0.5 rounded border border-gray-200">
+                                    {{ currentQuestion.category }}
+                                </span>
+
+                                <!-- 错题模式专属标签 -->
                                 <span v-if="examSource === 'wrong'" class="bg-red-100 text-red-700 text-xs font-bold px-2.5 py-1 rounded-md border border-red-200 flex items-center">
-                                    <i class="fas fa-redo-alt mr-1"></i>错题练习
+                                    <i class="fas fa-redo-alt mr-1"></i>错题强化
                                     <span v-if="getQuestionStats(currentQuestion)" class="ml-1 text-[11px]">
                                         (错{{ getQuestionStats(currentQuestion).wrongCount }}次/对{{ getQuestionStats(currentQuestion).correctCount }}次)
                                     </span>
                                 </span>
+
                                 <span class="text-xs text-gray-400">原题 ID: {{ currentQuestion.original_id }}</span>
                             </div>
 
-                            <span class="text-xs text-gray-500 font-medium md:hidden">
-                                进度: {{ currentIndex + 1 }} / {{ examQuestions.length }}
+                            <span class="text-xs text-gray-500 font-medium">
+                                进度: <strong class="text-gray-800">{{ currentIndex + 1 }}</strong> / {{ examQuestions.length }}
                             </span>
                         </div>
 
@@ -253,15 +385,21 @@
                                     <i :class="isCurrentCorrect ? 'fas fa-check-circle text-green-600' : 'fas fa-times-circle text-red-600'" class="text-lg"></i>
                                     <span>{{ isCurrentCorrect ? '回答正确！' : '回答错误！' }}</span>
                                 </div>
-                                <span class="text-xs font-medium px-2 py-0.5 rounded-full"
-                                      :class="isCurrentCorrect ? 'bg-green-200/70 text-green-800' : 'bg-red-200/70 text-red-800'">
-                                    {{ isCurrentCorrect ? (examSource === 'wrong' ? '错题权重已降低' : '掌握牢固') : '已记录至错题本' }}
-                                </span>
+                                <div class="flex items-center space-x-2">
+                                    <span :class="getStageBadgeClass(currentQuestion.stage)" class="text-[11px] font-bold px-2 py-0.5 rounded border">
+                                        来自：{{ currentQuestion.stage || '省赛初赛' }}题库
+                                    </span>
+                                    <span class="text-xs font-medium px-2 py-0.5 rounded-full"
+                                          :class="isCurrentCorrect ? 'bg-green-200/70 text-green-800' : 'bg-red-200/70 text-red-800'">
+                                        {{ isCurrentCorrect ? (examSource === 'wrong' ? '错题权重已降低' : '掌握牢固') : '已记录至错题本' }}
+                                    </span>
+                                </div>
                             </div>
 
                             <div class="text-xs sm:text-sm space-y-1">
                                 <p><span class="text-gray-500">您的答案：</span><span class="font-mono font-bold" :class="isCurrentCorrect ? 'text-green-700' : 'text-red-700'">{{ userAnswers[currentIndex] || '未作答' }}</span></p>
                                 <p><span class="text-gray-500">标准答案：</span><span class="font-mono font-bold text-green-700">{{ currentQuestion.answer }}</span></p>
+                                <p v-if="currentQuestion.sub_category" class="text-xs text-gray-400 pt-1">考查细则：{{ currentQuestion.sub_category }}</p>
                             </div>
                         </div>
                     </div>
@@ -293,9 +431,9 @@
                     </div>
                     
                     <!-- Question Navigation Grid overlay -->
-                    <div v-if="showGrid" class="border-t border-gray-200 bg-white p-5 max-h-60 overflow-y-auto">
+                    <div v-if="showGrid" class="border-t border-gray-200 bg-white p-5 max-h-64 overflow-y-auto">
                         <div class="flex justify-between items-center mb-3">
-                            <h4 class="font-bold text-gray-700 text-sm">试题跳转卡</h4>
+                            <h4 class="font-bold text-gray-700 text-sm">试题跳转卡 ({{ selectedBankName }})</h4>
                             <button @click="showGrid = false" class="text-gray-400 hover:text-gray-700 text-sm"><i class="fas fa-times"></i></button>
                         </div>
                         <div class="grid grid-cols-10 sm:grid-cols-12 gap-2">
@@ -327,10 +465,11 @@
                     <!-- Score Card -->
                     <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 text-center border-t-8" 
                          :class="score >= 600 ? 'border-green-500' : 'border-red-500'">
-                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">
+                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-1">
                             {{ studyMode === 'recite' ? '背题复习完成' : '模拟考试结束' }}
                         </h2>
-                        <p class="text-gray-500 text-sm mb-6">按 1000 分制成绩核算</p>
+                        <p class="text-gray-500 text-xs mb-2">练习题库：<strong>{{ selectedBankName }}</strong></p>
+                        <p class="text-gray-400 text-xs mb-6">按 1000 分制成绩核算</p>
                         
                         <div class="text-6xl sm:text-7xl font-black mb-4 font-mono tracking-tight" 
                              :class="score >= 600 ? 'text-green-500' : 'text-red-500'">
@@ -374,20 +513,24 @@
                         <div v-for="(q, idx) in examQuestions" :key="idx" class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 border-l-4"
                              :class="isCorrect(idx) ? 'border-green-500' : 'border-red-500'">
                             <div class="flex justify-between items-start mb-3">
-                                <h4 class="font-bold text-gray-800 leading-relaxed text-sm sm:text-base">
-                                    <span class="text-gray-400 mr-2">{{ idx + 1 }}.</span>{{ q.question }}
-                                </h4>
+                                <div>
+                                    <div class="flex items-center space-x-2 mb-1.5">
+                                        <span class="text-xs font-bold px-2 py-0.5 rounded bg-gray-100 text-gray-700">第 {{ idx + 1 }} 题</span>
+                                        <span :class="getStageBadgeClass(q.stage)" class="text-xs font-bold px-2 py-0.5 rounded border">
+                                            {{ q.stage || '省赛初赛' }}题库
+                                        </span>
+                                        <span class="text-xs text-gray-400">ID: {{ q.original_id }}</span>
+                                    </div>
+                                    <h4 class="font-bold text-gray-800 leading-relaxed text-sm sm:text-base">
+                                        {{ q.question }}
+                                    </h4>
+                                </div>
                                 <span v-if="isCorrect(idx)" class="bg-green-100 text-green-800 text-xs px-2.5 py-1 rounded font-bold ml-4 whitespace-nowrap">
                                     <i class="fas fa-check mr-1"></i>正确
                                 </span>
                                 <span v-else class="bg-red-100 text-red-800 text-xs px-2.5 py-1 rounded font-bold ml-4 whitespace-nowrap">
                                     <i class="fas fa-times mr-1"></i>错误
                                 </span>
-                            </div>
-                            
-                            <div class="text-xs text-gray-400 mb-3 flex items-center space-x-2">
-                                <span class="bg-gray-100 px-2 py-0.5 rounded text-gray-600">{{ q.type }}</span>
-                                <span>原题 ID: {{ q.original_id }}</span>
                             </div>
 
                             <div class="space-y-2 mb-4">
@@ -399,7 +542,7 @@
 
                             <div class="bg-gray-50 p-3 rounded-lg text-xs sm:text-sm border border-gray-200">
                                 <p class="text-gray-600 mb-1">您的作答：<span class="font-mono font-bold" :class="isCorrect(idx) ? 'text-green-600' : 'text-red-600'">{{ userAnswers[idx] || '未作答' }}</span></p>
-                                <p class="text-gray-600">标准答案：<span class="font-mono font-bold text-green-600">{{ q.answer }}</span></p>
+                                <p class="text-gray-600">标准答案：<span class="font-mono font-bold text-green-700">{{ q.answer }}</span></p>
                             </div>
                         </div>
                     </div>
@@ -425,13 +568,43 @@
                         </button>
                     </div>
 
+                    <!-- 错题本按题库赛段筛选栏 -->
+                    <div class="px-4 py-2.5 bg-gray-50/80 border-b border-gray-100 flex items-center space-x-1.5 overflow-x-auto text-xs">
+                        <span class="text-gray-400 text-[11px] whitespace-nowrap mr-1">筛选题库:</span>
+                        <button @click="wrongFilterStage = '全部'" 
+                                :class="wrongFilterStage === '全部' ? 'bg-blue-600 text-white font-bold' : 'bg-white text-gray-600 border border-gray-200'"
+                                class="px-2 py-0.5 rounded-md whitespace-nowrap transition-colors">
+                            全部 ({{ wrongQuestionsCount }})
+                        </button>
+                        <button @click="wrongFilterStage = '省赛初赛'" 
+                                :class="wrongFilterStage === '省赛初赛' ? 'bg-blue-600 text-white font-bold' : 'bg-white text-gray-600 border border-gray-200'"
+                                class="px-2 py-0.5 rounded-md whitespace-nowrap transition-colors">
+                            初赛 ({{ getWrongStageCount('省赛初赛') }})
+                        </button>
+                        <button @click="wrongFilterStage = '省赛复赛'" 
+                                :class="wrongFilterStage === '省赛复赛' ? 'bg-purple-600 text-white font-bold' : 'bg-white text-gray-600 border border-gray-200'"
+                                class="px-2 py-0.5 rounded-md whitespace-nowrap transition-colors">
+                            省赛 ({{ getWrongStageCount('省赛复赛') }})
+                        </button>
+                        <button @click="wrongFilterStage = '全国总决赛'" 
+                                :class="wrongFilterStage === '全国总决赛' ? 'bg-amber-600 text-white font-bold' : 'bg-white text-gray-600 border border-gray-200'"
+                                class="px-2 py-0.5 rounded-md whitespace-nowrap transition-colors">
+                            国赛 ({{ getWrongStageCount('全国总决赛') }})
+                        </button>
+                        <button @click="wrongFilterStage = '全球总决赛'" 
+                                :class="wrongFilterStage === '全球总决赛' ? 'bg-rose-600 text-white font-bold' : 'bg-white text-gray-600 border border-gray-200'"
+                                class="px-2 py-0.5 rounded-md whitespace-nowrap transition-colors">
+                            全球 ({{ getWrongStageCount('全球总决赛') }})
+                        </button>
+                    </div>
+
                     <!-- Drawer Action Toolbar -->
                     <div class="p-4 bg-white border-b border-gray-100 flex flex-wrap gap-2 items-center justify-between">
                         <button @click="startWrongQuestionsPractice" 
-                                :disabled="wrongQuestionsCount === 0"
-                                :class="wrongQuestionsCount === 0 ? 'bg-gray-100 text-gray-400 cursor-not-allowed' : 'bg-red-600 hover:bg-red-700 text-white shadow-sm'"
+                                :disabled="filteredWrongQuestions.length === 0"
+                                :class="filteredWrongQuestions.length === 0 ? 'bg-gray-100 text-gray-400 cursor-not-allowed' : 'bg-red-600 hover:bg-red-700 text-white shadow-sm'"
                                 class="px-4 py-2 rounded-lg text-xs sm:text-sm font-bold flex items-center transition-all">
-                            <i class="fas fa-dumbbell mr-1.5"></i>开始练习错题
+                            <i class="fas fa-dumbbell mr-1.5"></i>开始练习错题 ({{ filteredWrongQuestions.length }}题)
                         </button>
 
                         <button @click="openCleanModal" 
@@ -444,19 +617,22 @@
 
                     <!-- Drawer Question List -->
                     <div class="flex-grow overflow-y-auto p-4 space-y-4">
-                        <div v-if="wrongQuestionsCount === 0" class="text-center py-20">
+                        <div v-if="filteredWrongQuestions.length === 0" class="text-center py-20">
                             <div class="w-16 h-16 bg-green-50 text-green-500 rounded-full flex items-center justify-center text-2xl mx-auto mb-3">
                                 <i class="fas fa-check"></i>
                             </div>
-                            <p class="text-gray-700 font-bold text-sm">太棒了，目前没有错题记录！</p>
+                            <p class="text-gray-700 font-bold text-sm">当前分类下暂无错题记录！</p>
                             <p class="text-gray-400 text-xs mt-1">在刷题和考试中做错的题目会自动汇总至此</p>
                         </div>
 
-                        <div v-for="item in sortedWrongQuestions" :key="item.original_id" 
+                        <div v-for="item in filteredWrongQuestions" :key="item.original_id" 
                              class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm hover:border-gray-300 transition-all">
-                            <!-- Tag line -->
+                            <!-- 题目上方题库徽章展示 (核心要求) -->
                             <div class="flex items-center justify-between mb-2">
                                 <div class="flex items-center space-x-1.5">
+                                    <span :class="getStageBadgeClass(item.stage)" class="text-[11px] font-bold px-2 py-0.5 rounded border">
+                                        {{ item.stage || '省赛初赛' }}题库
+                                    </span>
                                     <span class="bg-gray-100 text-gray-600 text-[11px] font-bold px-2 py-0.5 rounded">
                                         {{ item.type }}
                                     </span>
@@ -550,8 +726,13 @@
                 // 核心应用状态
                 const appState = ref('welcome'); // welcome, exam, result
                 const studyMode = ref('recite'); // 'recite' (背题模式，默认) | 'mock' (模考模式)
-                const examSource = ref('all');    // 'all' (全量题库抽题) | 'wrong' (错题专练)
+                const examSource = ref('normal'); // 'normal' (常规模考) | 'wrong' (错题专练)
                 const isLoading = ref(true);
+
+                // 赛段题库选择与抽题策略 (选项 C)
+                const selectedStage = ref('省赛初赛'); // '省赛初赛' | '省赛复赛' | '全国总决赛' | '全球总决赛' | '全部'
+                const drawStrategy = ref('progressive'); // 'progressive' (赛段大纲模考) | 'exclusive' (专项考点突击)
+                const wrongFilterStage = ref('全部'); // 错题本内的赛段筛选
 
                 // 数据集合
                 const allQuestions = ref([]);
@@ -567,17 +748,29 @@
                 const showGrid = ref(false);
 
                 // 错题库体系
-                const wrongQuestionsMap = ref({}); // { [original_id]: { original_id, question, options, answer, type, wrongCount, correctCount, updatedAt } }
+                const wrongQuestionsMap = ref({}); // { [original_id]: { original_id, question, options, answer, type, stage, category, sub_category, wrongCount, correctCount, updatedAt } }
                 const showWrongDrawer = ref(false);
                 const showCleanModal = ref(false);
                 const cleanThreshold = ref(1);
 
-                // 加载持久化错题本
+                // 加载持久化错题本 (包含向后兼容打标)
                 const loadWrongQuestions = () => {
                     try {
                         const stored = localStorage.getItem(STORAGE_KEY);
                         if (stored) {
-                            wrongQuestionsMap.value = JSON.parse(stored);
+                            const parsed = JSON.parse(stored);
+                            // 针对历史错题补全 stage 信息
+                            if (allQuestions.value && allQuestions.value.length > 0) {
+                                const qMap = {};
+                                allQuestions.value.forEach(q => qMap[q.original_id] = q);
+                                for (const id in parsed) {
+                                    if (!parsed[id].stage && qMap[id]) {
+                                        parsed[id].stage = qMap[id].stage || '省赛初赛';
+                                        parsed[id].category = qMap[id].category || '';
+                                    }
+                                }
+                            }
+                            wrongQuestionsMap.value = parsed;
                         }
                     } catch (e) {
                         console.error("读取错题本失败", e);
@@ -595,11 +788,11 @@
 
                 // 初始化挂载
                 onMounted(async () => {
-                    loadWrongQuestions();
                     try {
                         const response = await fetch('questions.json');
                         const data = await response.json();
                         allQuestions.value = data;
+                        loadWrongQuestions();
                     } catch (e) {
                         alert("无法加载题库数据，请确保 questions.json 存在于同一目录下。");
                         console.error(e);
@@ -608,16 +801,52 @@
                     }
                 });
 
-                // 计算属性
+                // 计算属性：当前题目
                 const currentQuestion = computed(() => examQuestions.value[currentIndex.value] || {});
 
+                // 计算属性：当前选中题库名称
+                const selectedBankName = computed(() => {
+                    if (examSource.value === 'wrong') return '错题专练';
+                    if (selectedStage.value === '全部') return '全真全量题库';
+                    return `${selectedStage.value}题库`;
+                });
+
+                // 获取某个赛段可用题目总数
+                const getStageQuestionCount = (stageName) => {
+                    if (drawStrategy.value === 'progressive') {
+                        // 递进大纲模式：初赛包含初赛；复赛包含初赛+复赛；国赛包含初赛+复赛+国赛；全球赛包含全部
+                        if (stageName === '省赛初赛') return allQuestions.value.filter(q => q.stage === '省赛初赛').length;
+                        if (stageName === '省赛复赛') return allQuestions.value.filter(q => ['省赛初赛', '省赛复赛'].includes(q.stage)).length;
+                        if (stageName === '全国总决赛') return allQuestions.value.filter(q => ['省赛初赛', '省赛复赛', '全国总决赛'].includes(q.stage)).length;
+                        return allQuestions.value.length;
+                    } else {
+                        // 专项专属模式：严格只算该赛段
+                        return allQuestions.value.filter(q => q.stage === stageName).length;
+                    }
+                };
+
+                // 当前抽题池的候选题目总数
+                const currentPoolCount = computed(() => {
+                    if (selectedStage.value === '全部') return allQuestions.value.length;
+                    return getStageQuestionCount(selectedStage.value);
+                });
+
+                // 错题统计与赛段过滤
                 const wrongQuestionsCount = computed(() => {
                     return Object.keys(wrongQuestionsMap.value).length;
                 });
 
-                // 错题按错误次数从大到小降序排列
-                const sortedWrongQuestions = computed(() => {
-                    return Object.values(wrongQuestionsMap.value).sort((a, b) => {
+                const getWrongStageCount = (stageName) => {
+                    return Object.values(wrongQuestionsMap.value).filter(q => q.stage === stageName).length;
+                };
+
+                // 按题库赛段过滤后的错题列表 (按做错次数降序)
+                const filteredWrongQuestions = computed(() => {
+                    let list = Object.values(wrongQuestionsMap.value);
+                    if (wrongFilterStage.value !== '全部') {
+                        list = list.filter(item => item.stage === wrongFilterStage.value);
+                    }
+                    return list.sort((a, b) => {
                         const diff = (b.wrongCount || 0) - (a.wrongCount || 0);
                         if (diff !== 0) return diff;
                         return (b.updatedAt || 0) - (a.updatedAt || 0);
@@ -651,9 +880,35 @@
                     studyMode.value = mode;
                 };
 
-                // 错题抽样算法（轮盘赌加权无放回抽样）
-                const getWeightedWrongSample = (wrongList, maxCount = 60) => {
-                    const pool = [...wrongList];
+                // 赛段标签样式与图标工具
+                const getStageBadgeClass = (stage) => {
+                    switch (stage) {
+                        case '省赛初赛':
+                            return 'bg-blue-50 text-blue-700 border-blue-300';
+                        case '省赛复赛':
+                            return 'bg-purple-50 text-purple-700 border-purple-300';
+                        case '全国总决赛':
+                            return 'bg-amber-50 text-amber-800 border-amber-300';
+                        case '全球总决赛':
+                            return 'bg-rose-50 text-rose-700 border-rose-300';
+                        default:
+                            return 'bg-gray-100 text-gray-700 border-gray-300';
+                    }
+                };
+
+                const getStageIcon = (stage) => {
+                    switch (stage) {
+                        case '省赛初赛': return 'fas fa-seedling';
+                        case '省赛复赛': return 'fas fa-medal';
+                        case '全国总决赛': return 'fas fa-award';
+                        case '全球总决赛': return 'fas fa-globe';
+                        default: return 'fas fa-book';
+                    }
+                };
+
+                // 轮盘赌加权无放回抽样
+                const getWeightedSample = (list, maxCount = 60) => {
+                    const pool = [...list];
                     const selected = [];
                     const targetCount = Math.min(pool.length, maxCount);
 
@@ -677,22 +932,52 @@
                     return selected;
                 };
 
-                // 开始考试（全题库随机或错题专练）
-                const startExam = (source = 'all') => {
+                // 开始考试（支持从所选赛段题库抽取）
+                const startExam = (source = 'normal') => {
                     examSource.value = source;
 
-                    if (source === 'all') {
+                    if (source === 'normal') {
                         if (allQuestions.value.length === 0) return;
-                        let shuffled = [...allQuestions.value].sort(() => 0.5 - Math.random());
-                        examQuestions.value = shuffled.slice(0, 60);
-                    } else {
-                        // 错题专练
-                        const wrongList = Object.values(wrongQuestionsMap.value);
-                        if (wrongList.length === 0) {
-                            alert("当前错题本暂无题目，请先在刷题中积累错题。");
+                        
+                        // 筛选所选赛段候选池
+                        let candidatePool = [];
+                        if (selectedStage.value === '全部') {
+                            candidatePool = [...allQuestions.value];
+                        } else if (drawStrategy.value === 'progressive') {
+                            // 赛段大纲模考模式 (递进包容)
+                            if (selectedStage.value === '省赛初赛') {
+                                candidatePool = allQuestions.value.filter(q => q.stage === '省赛初赛');
+                            } else if (selectedStage.value === '省赛复赛') {
+                                candidatePool = allQuestions.value.filter(q => ['省赛初赛', '省赛复赛'].includes(q.stage));
+                            } else if (selectedStage.value === '全国总决赛') {
+                                candidatePool = allQuestions.value.filter(q => ['省赛初赛', '省赛复赛', '全国总决赛'].includes(q.stage));
+                            } else {
+                                candidatePool = [...allQuestions.value];
+                            }
+                        } else {
+                            // 专项考点突击模式 (严格独立)
+                            candidatePool = allQuestions.value.filter(q => q.stage === selectedStage.value);
+                        }
+
+                        if (candidatePool.length === 0) {
+                            alert("当前题库暂无可抽取的题目！");
                             return;
                         }
-                        examQuestions.value = getWeightedWrongSample(wrongList, 60);
+
+                        // 随机抽取 60 题 (或最大可用题数)
+                        let shuffled = [...candidatePool].sort(() => 0.5 - Math.random());
+                        examQuestions.value = shuffled.slice(0, Math.min(candidatePool.length, 60));
+                    } else {
+                        // 错题专练
+                        let wrongList = Object.values(wrongQuestionsMap.value);
+                        if (wrongFilterStage.value !== '全部') {
+                            wrongList = wrongList.filter(q => q.stage === wrongFilterStage.value);
+                        }
+                        if (wrongList.length === 0) {
+                            alert("当前分类下暂无错题，请先在刷题中积累错题。");
+                            return;
+                        }
+                        examQuestions.value = getWeightedSample(wrongList, Math.min(wrongList.length, 60));
                     }
 
                     userAnswers.value = {};
@@ -702,6 +987,7 @@
                     showGrid.value = false;
                     showWrongDrawer.value = false;
                     appState.value = 'exam';
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
 
                     // 启动计时器
                     clearInterval(timerInterval);
@@ -787,7 +1073,7 @@
 
                     const qId = q.original_id;
                     if (!correct) {
-                        // 答错：纳入/更新错题本
+                        // 答错：纳入/更新错题本 (带上stage与category信息)
                         if (!wrongQuestionsMap.value[qId]) {
                             wrongQuestionsMap.value[qId] = {
                                 original_id: q.original_id,
@@ -795,12 +1081,16 @@
                                 question: q.question,
                                 options: q.options,
                                 answer: q.answer,
+                                stage: q.stage || '省赛初赛',
+                                category: q.category || '',
+                                sub_category: q.sub_category || '',
                                 wrongCount: 1,
                                 correctCount: 0,
                                 updatedAt: Date.now()
                             };
                         } else {
                             wrongQuestionsMap.value[qId].wrongCount = (wrongQuestionsMap.value[qId].wrongCount || 0) + 1;
+                            wrongQuestionsMap.value[qId].stage = q.stage || wrongQuestionsMap.value[qId].stage || '省赛初赛';
                             wrongQuestionsMap.value[qId].updatedAt = Date.now();
                         }
                         saveWrongQuestions();
@@ -823,18 +1113,14 @@
                         const selected = isOptionSelected(letter);
 
                         if (inAnswer) {
-                            // 标准答案选项无论选没选均变绿
                             return 'border-green-500 bg-green-50/80 cursor-default';
                         }
                         if (selected && !inAnswer) {
-                            // 用户选错的选项变红
                             return 'border-red-500 bg-red-50/80 cursor-default';
                         }
-                        // 其他选项置灰
                         return 'border-gray-200 bg-gray-50/40 text-gray-400 cursor-default opacity-70';
                     }
 
-                    // 未判定或模考模式
                     if (isOptionSelected(letter)) {
                         return 'border-blue-600 bg-blue-50/70 shadow-sm cursor-pointer';
                     }
@@ -887,13 +1173,13 @@
                 // 结算处理
                 const submitExam = () => {
                     clearInterval(timerInterval);
-                    // 模考模式下交卷时统一进行判定并记录错题
                     if (studyMode.value === 'mock') {
                         for (let i = 0; i < examQuestions.value.length; i++) {
                             evaluateQuestion(i);
                         }
                     }
                     appState.value = 'result';
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 };
 
                 // 判定某题是否完全正确
@@ -929,6 +1215,7 @@
                 const resetToHome = () => {
                     appState.value = 'welcome';
                     showGrid.value = false;
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 };
 
                 const confirmGoHome = () => {
@@ -1023,9 +1310,11 @@
                     nextQuestion, prevQuestion, jumpTo, confirmSubmit, isQuestionEvaluated, hasUserSelectedCurrent,
                     correctCount, score, timeUsed, isCorrect, isCurrentCorrect, resetToHome, confirmGoHome, setStudyMode,
                     showGrid, getGridItemClass, getReviewOptionClass, getOptionDynamicClass, getOptionTextClass,
-                    wrongQuestionsMap, wrongQuestionsCount, sortedWrongQuestions, showWrongDrawer, openWrongDrawer, closeWrongDrawer,
+                    wrongQuestionsMap, wrongQuestionsCount, showWrongDrawer, openWrongDrawer, closeWrongDrawer,
                     startWrongQuestionsPractice, showCleanModal, cleanThreshold, openCleanModal, executeCleanWrongQuestions,
-                    getCalculateWeight, getQuestionStats
+                    getCalculateWeight, getQuestionStats,
+                    selectedStage, drawStrategy, selectedBankName, getStageQuestionCount, currentPoolCount,
+                    getStageBadgeClass, getStageIcon, wrongFilterStage, getWrongStageCount, filteredWrongQuestions
                 };
             }
         }).mount('#app');
