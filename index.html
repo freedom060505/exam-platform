@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>华为云赛道模考平台 (MVP)</title>
+    <title>华为云赛道模考与刷题平台</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Vue 3 -->
@@ -12,149 +12,310 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background-color: #f3f4f6; }
-        .fade-enter-active, .fade-leave-active { transition: opacity 0.3s; }
+        .fade-enter-active, .fade-leave-active { transition: opacity 0.25s ease; }
         .fade-enter-from, .fade-leave-to { opacity: 0; }
+        .slide-enter-active, .slide-leave-active { transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+        .slide-enter-from, .slide-leave-to { transform: translateX(100%); }
     </style>
 </head>
 <body>
-    <div id="app" class="min-h-screen flex flex-col font-sans">
+    <div id="app" class="min-h-screen flex flex-col font-sans relative">
         <!-- Header -->
-        <header class="bg-white shadow-sm sticky top-0 z-50">
-            <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
-                <h1 class="text-xl font-bold text-blue-600">
-                    <i class="fas fa-cloud mr-2"></i>华为 ICT 大赛云赛道模考
-                </h1>
-                <div v-if="appState === 'exam'" class="flex items-center space-x-4">
-                    <div class="text-gray-600 font-medium">进度：{{ currentIndex + 1 }} / {{ examQuestions.length }}</div>
-                    <div class="bg-blue-100 text-blue-700 px-4 py-1.5 rounded-full font-mono font-bold flex items-center">
-                        <i class="far fa-clock mr-2"></i>{{ formattedTime }}
+        <header class="bg-white shadow-sm sticky top-0 z-40 border-b border-gray-100">
+            <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+                <div class="flex items-center space-x-3 cursor-pointer" @click="confirmGoHome">
+                    <div class="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center text-white shadow-sm">
+                        <i class="fas fa-cloud text-lg"></i>
                     </div>
+                    <div>
+                        <h1 class="text-base sm:text-lg font-bold text-gray-800 leading-tight">华为 ICT 大赛云赛道</h1>
+                        <p class="text-xs text-gray-400">题库智能刷题 & 模拟考试平台</p>
+                    </div>
+                </div>
+
+                <!-- 模式切换与状态栏 -->
+                <div class="flex items-center space-x-2 sm:space-x-3">
+                    <!-- 模式切换器 -->
+                    <div class="bg-gray-100 p-1 rounded-lg flex items-center text-xs sm:text-sm font-medium">
+                        <button @click="setStudyMode('recite')" 
+                                :class="studyMode === 'recite' ? 'bg-white text-blue-600 shadow-sm font-bold' : 'text-gray-500 hover:text-gray-800'"
+                                class="px-2.5 sm:px-3 py-1 rounded-md transition-all flex items-center">
+                            <i class="fas fa-bolt mr-1 sm:mr-1.5 text-amber-500"></i>背题模式
+                        </button>
+                        <button @click="setStudyMode('mock')" 
+                                :class="studyMode === 'mock' ? 'bg-white text-blue-600 shadow-sm font-bold' : 'text-gray-500 hover:text-gray-800'"
+                                class="px-2.5 sm:px-3 py-1 rounded-md transition-all flex items-center">
+                            <i class="fas fa-file-signature mr-1 sm:mr-1.5 text-blue-500"></i>模考模式
+                        </button>
+                    </div>
+
+                    <!-- 考试进度 / 计时 (仅在考试中显示) -->
+                    <div v-if="appState === 'exam'" class="hidden md:flex items-center space-x-3 pl-2 border-l border-gray-200">
+                        <span class="text-xs text-gray-500">
+                            {{ examSource === 'wrong' ? '错题专练' : '全题库' }}
+                            <strong class="text-gray-800 text-sm ml-1">{{ currentIndex + 1 }}</strong> / {{ examQuestions.length }}
+                        </span>
+                        <div class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-mono text-xs font-bold flex items-center border border-blue-100">
+                            <i class="far fa-clock mr-1.5"></i>{{ formattedTime }}
+                        </div>
+                    </div>
+
+                    <!-- 错题本入口按钮 (顶部快捷) -->
+                    <button @click="openWrongDrawer" 
+                            class="relative bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-colors flex items-center shadow-sm">
+                        <i class="fas fa-book-open mr-1.5 text-red-500"></i>
+                        <span>错题本</span>
+                        <span v-if="wrongQuestionsCount > 0" 
+                              class="ml-1.5 bg-red-600 text-white text-[11px] font-bold px-1.5 py-0.2 rounded-full min-w-[18px] text-center">
+                            {{ wrongQuestionsCount }}
+                        </span>
+                    </button>
                 </div>
             </div>
         </header>
 
         <!-- Main Content -->
         <main class="flex-grow max-w-4xl mx-auto w-full p-4 sm:p-6 lg:p-8">
-            
             <!-- Loading State -->
-            <div v-if="isLoading" class="flex flex-col items-center justify-center py-20">
+            <div v-if="isLoading" class="flex flex-col items-center justify-center py-24">
                 <i class="fas fa-circle-notch fa-spin text-4xl text-blue-500 mb-4"></i>
-                <p class="text-gray-500">正在加载题库数据...</p>
+                <p class="text-gray-500 font-medium">正在加载题库真题数据...</p>
             </div>
 
             <!-- Welcome Screen -->
             <transition name="fade" mode="out-in">
-                <div v-if="appState === 'welcome' && !isLoading" class="bg-white rounded-xl shadow-sm p-8 text-center max-w-2xl mx-auto mt-10">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-4">欢迎参加模拟考试</h2>
-                    <p class="text-gray-600 mb-6">题库共包含 <strong>{{ allQuestions.length }}</strong> 道真题。</p>
-                    
-                    <div class="bg-blue-50 border border-blue-100 rounded-lg p-6 mb-8 text-left">
-                        <h3 class="font-bold text-blue-800 mb-3"><i class="fas fa-info-circle mr-2"></i>考试规则说明：</h3>
-                        <ul class="space-y-2 text-blue-700 text-sm">
-                            <li>• 系统将从题库中随机抽取 <strong>60</strong> 道题目（包含单选、多选、判断）。</li>
-                            <li>• 考试限时 <strong>90 分钟</strong>，倒计时结束后将自动交卷并判分。</li>
-                            <li>• 考试过程中请勿刷新页面，否则进度将会丢失。</li>
-                            <li>• 多选题必须完全匹配标准答案才算正确。</li>
-                        </ul>
-                    </div>
+                <div v-if="appState === 'welcome' && !isLoading" class="max-w-2xl mx-auto mt-6">
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-10 text-center">
+                        <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-5 shadow-inner">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">华为云赛道备考中心</h2>
+                        <p class="text-gray-500 text-sm mb-6">题库真题共收录 <strong class="text-blue-600">{{ allQuestions.length }}</strong> 道 | 已收录错题 <strong class="text-red-500">{{ wrongQuestionsCount }}</strong> 道</p>
+                        
+                        <!-- 模式提示说明卡片 -->
+                        <div class="bg-gray-50 rounded-xl p-5 mb-8 text-left border border-gray-200/80">
+                            <div class="flex items-center justify-between mb-3 pb-2 border-b border-gray-200">
+                                <span class="font-bold text-gray-700 text-sm flex items-center">
+                                    <i class="fas fa-sliders-h mr-2 text-blue-500"></i>当前做题模式：
+                                    <span v-if="studyMode === 'recite'" class="text-amber-600 font-extrabold ml-1">【背题模式】（即时查验）</span>
+                                    <span v-else class="text-blue-600 font-extrabold ml-1">【模考模式】（交卷统一出分）</span>
+                                </span>
+                                <span class="text-xs text-gray-400">可在右上角随时切换</span>
+                            </div>
+                            
+                            <ul v-if="studyMode === 'recite'" class="space-y-2 text-xs sm:text-sm text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                    <span><strong>单选 / 判断题</strong>：点击选项后<strong>立即判定</strong>，正确选项显示<span class="text-green-600 font-bold">绿色</span>，若选错错选项显示<span class="text-red-600 font-bold">红色</span>并提示标准答案。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                    <span><strong>多选题</strong>：自由勾选/取消选项，勾选完毕后点击下方<strong>【确认提交本题】</strong>立即反馈正误与标答。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                    <span>做错的题目将<strong>自动记录到错题本</strong>，支持智能加权复练！</span>
+                                </li>
+                            </ul>
 
-                    <button @click="startExam" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-md transition transform hover:-translate-y-0.5 w-full sm:w-auto text-lg">
-                        <i class="fas fa-play mr-2"></i>开始考试
-                    </button>
+                            <ul v-else class="space-y-2 text-xs sm:text-sm text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-clock text-blue-500 mt-1 mr-2 flex-shrink-0"></i>
+                                    <span>随机抽取 60 题，限时 90 分钟，答题时不提示答案。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-2 flex-shrink-0"></i>
+                                    <span>交卷后生成千分制成绩单并全卷复盘，做错题目同样自动记录至错题本。</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 核心操作按钮组 -->
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <button @click="startExam('all')" 
+                                    class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 px-8 rounded-xl shadow-md transition transform hover:-translate-y-0.5 text-base flex items-center justify-center">
+                                <i class="fas fa-play mr-2"></i>开始常规抽题 (60题)
+                            </button>
+                            
+                            <button @click="startExam('wrong')" 
+                                    :disabled="wrongQuestionsCount === 0"
+                                    :class="wrongQuestionsCount === 0 ? 'bg-gray-100 text-gray-400 border border-gray-200 cursor-not-allowed' : 'bg-red-500 hover:bg-red-600 text-white shadow-md hover:-translate-y-0.5'"
+                                    class="font-bold py-3.5 px-6 rounded-xl transition transform text-base flex items-center justify-center">
+                                <i class="fas fa-fire mr-2"></i>开始错题专练
+                                <span v-if="wrongQuestionsCount > 0" class="ml-1.5 text-xs bg-white/20 px-2 py-0.5 rounded-full font-mono">
+                                    {{ wrongQuestionsCount }}
+                                </span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </transition>
 
             <!-- Exam Screen -->
             <transition name="fade" mode="out-in">
-                <div v-if="appState === 'exam'" class="bg-white rounded-xl shadow-sm overflow-hidden flex flex-col" style="min-height: 400px;">
-                    <!-- Progress bar -->
-                    <div class="w-full bg-gray-200 h-1.5">
-                        <div class="bg-blue-500 h-1.5 transition-all duration-300" :style="{ width: ((currentIndex + 1) / examQuestions.length * 100) + '%' }"></div>
+                <div v-if="appState === 'exam'" class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col" style="min-height: 480px;">
+                    <!-- Top Progress Bar -->
+                    <div class="w-full bg-gray-100 h-1.5">
+                        <div class="bg-blue-600 h-1.5 transition-all duration-300" :style="{ width: ((currentIndex + 1) / examQuestions.length * 100) + '%' }"></div>
                     </div>
 
-                    <div class="p-6 sm:p-10 flex-grow">
-                        <!-- Question Label -->
-                        <div class="flex items-center mb-4">
-                            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-1 rounded border border-blue-200">
-                                {{ currentQuestion.type }}
+                    <!-- Question Container -->
+                    <div class="p-6 sm:p-8 flex-grow">
+                        <!-- Header Tag Row -->
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-1 rounded-md border border-blue-200">
+                                    {{ currentQuestion.type }}
+                                </span>
+                                <span v-if="examSource === 'wrong'" class="bg-red-100 text-red-700 text-xs font-bold px-2.5 py-1 rounded-md border border-red-200 flex items-center">
+                                    <i class="fas fa-redo-alt mr-1"></i>错题练习
+                                    <span v-if="getQuestionStats(currentQuestion)" class="ml-1 text-[11px]">
+                                        (错{{ getQuestionStats(currentQuestion).wrongCount }}次/对{{ getQuestionStats(currentQuestion).correctCount }}次)
+                                    </span>
+                                </span>
+                                <span class="text-xs text-gray-400">原题 ID: {{ currentQuestion.original_id }}</span>
+                            </div>
+
+                            <span class="text-xs text-gray-500 font-medium md:hidden">
+                                进度: {{ currentIndex + 1 }} / {{ examQuestions.length }}
                             </span>
-                            <span class="ml-3 text-gray-500 text-sm">题目 ID: {{ currentQuestion.original_id }}</span>
                         </div>
 
-                        <!-- Question Text -->
-                        <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-6 leading-relaxed">
+                        <!-- Question Title -->
+                        <h3 class="text-base sm:text-lg font-bold text-gray-800 mb-6 leading-relaxed">
                             {{ currentIndex + 1 }}. {{ currentQuestion.question }}
                         </h3>
 
-                        <!-- Options -->
+                        <!-- Options List -->
                         <div class="space-y-3">
                             <div v-for="(option, idx) in currentQuestion.options" :key="idx"
-                                 @click="toggleOption(getOptionLetter(option))"
-                                 class="flex items-start p-4 rounded-lg border-2 cursor-pointer transition-colors"
-                                 :class="isOptionSelected(getOptionLetter(option)) ? 'border-blue-500 bg-blue-50' : 'border-gray-200 hover:border-blue-300 hover:bg-gray-50'">
+                                 @click="handleOptionClick(getOptionLetter(option))"
+                                 class="flex items-start p-4 rounded-xl border-2 transition-all"
+                                 :class="getOptionDynamicClass(getOptionLetter(option))">
                                 
-                                <!-- Radio/Checkbox Icon Indicator -->
-                                <div class="mt-0.5 mr-4 flex-shrink-0">
-                                    <div v-if="currentQuestion.type === '多选题'" 
-                                         class="w-5 h-5 rounded flex items-center justify-center border"
-                                         :class="isOptionSelected(getOptionLetter(option)) ? 'bg-blue-500 border-blue-500' : 'border-gray-300 bg-white'">
-                                        <i v-if="isOptionSelected(getOptionLetter(option))" class="fas fa-check text-white text-xs"></i>
-                                    </div>
-                                    <div v-else 
-                                         class="w-5 h-5 rounded-full flex items-center justify-center border"
-                                         :class="isOptionSelected(getOptionLetter(option)) ? 'border-blue-500' : 'border-gray-300 bg-white'">
-                                        <div v-if="isOptionSelected(getOptionLetter(option))" class="w-2.5 h-2.5 bg-blue-500 rounded-full"></div>
-                                    </div>
+                                <!-- Icon / Indicator -->
+                                <div class="mt-0.5 mr-3.5 flex-shrink-0">
+                                    <!-- 已在背题模式下判定后的状态图标 -->
+                                    <template v-if="isQuestionEvaluated(currentIndex) && studyMode === 'recite'">
+                                        <!-- 正确选项无论选没选都显示绿勾 -->
+                                        <div v-if="isOptionInAnswer(getOptionLetter(option))" 
+                                             class="w-5 h-5 rounded-full bg-green-500 text-white flex items-center justify-center text-xs">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        <!-- 错选的选项显示红叉 -->
+                                        <div v-else-if="isOptionSelected(getOptionLetter(option))" 
+                                             class="w-5 h-5 rounded-full bg-red-500 text-white flex items-center justify-center text-xs">
+                                            <i class="fas fa-times"></i>
+                                        </div>
+                                        <!-- 其他无关选项空白圆圈 -->
+                                        <div v-else class="w-5 h-5 rounded-full border border-gray-300 bg-white"></div>
+                                    </template>
+
+                                    <!-- 正常答题中（未判定）状态 -->
+                                    <template v-else>
+                                        <div v-if="currentQuestion.type === '多选题'" 
+                                             class="w-5 h-5 rounded flex items-center justify-center border transition-colors"
+                                             :class="isOptionSelected(getOptionLetter(option)) ? 'bg-blue-600 border-blue-600 text-white' : 'border-gray-300 bg-white'">
+                                            <i v-if="isOptionSelected(getOptionLetter(option))" class="fas fa-check text-xs"></i>
+                                        </div>
+                                        <div v-else 
+                                             class="w-5 h-5 rounded-full flex items-center justify-center border transition-colors"
+                                             :class="isOptionSelected(getOptionLetter(option)) ? 'border-blue-600' : 'border-gray-300 bg-white'">
+                                            <div v-if="isOptionSelected(getOptionLetter(option))" class="w-2.5 h-2.5 bg-blue-600 rounded-full"></div>
+                                        </div>
+                                    </template>
                                 </div>
                                 
-                                <span class="text-gray-700 select-none leading-tight">{{ option }}</span>
+                                <span class="text-sm sm:text-base select-none leading-relaxed flex-grow"
+                                      :class="getOptionTextClass(getOptionLetter(option))">
+                                    {{ option }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- 多选题的【确认提交本题】按钮（仅在背题模式且未判定时展示） -->
+                        <div v-if="studyMode === 'recite' && currentQuestion.type === '多选题' && !isQuestionEvaluated(currentIndex)" 
+                             class="mt-6 flex justify-end">
+                            <button @click="submitMultiChoice" 
+                                    :disabled="!hasUserSelectedCurrent"
+                                    :class="hasUserSelectedCurrent ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-sm' : 'bg-gray-100 text-gray-400 cursor-not-allowed border border-gray-200'"
+                                    class="px-5 py-2 rounded-lg font-bold text-sm transition-all flex items-center">
+                                <i class="fas fa-check-double mr-2"></i>确认提交本题
+                            </button>
+                        </div>
+
+                        <!-- 背题模式即时答案解析横幅 (已判定时展示) -->
+                        <div v-if="studyMode === 'recite' && isQuestionEvaluated(currentIndex)" 
+                             class="mt-6 rounded-xl p-4 transition-all border"
+                             :class="isCurrentCorrect ? 'bg-green-50 border-green-200 text-green-900' : 'bg-red-50 border-red-200 text-red-900'">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center space-x-2 font-bold text-sm sm:text-base">
+                                    <i :class="isCurrentCorrect ? 'fas fa-check-circle text-green-600' : 'fas fa-times-circle text-red-600'" class="text-lg"></i>
+                                    <span>{{ isCurrentCorrect ? '回答正确！' : '回答错误！' }}</span>
+                                </div>
+                                <span class="text-xs font-medium px-2 py-0.5 rounded-full"
+                                      :class="isCurrentCorrect ? 'bg-green-200/70 text-green-800' : 'bg-red-200/70 text-red-800'">
+                                    {{ isCurrentCorrect ? (examSource === 'wrong' ? '错题权重已降低' : '掌握牢固') : '已记录至错题本' }}
+                                </span>
+                            </div>
+
+                            <div class="text-xs sm:text-sm space-y-1">
+                                <p><span class="text-gray-500">您的答案：</span><span class="font-mono font-bold" :class="isCurrentCorrect ? 'text-green-700' : 'text-red-700'">{{ userAnswers[currentIndex] || '未作答' }}</span></p>
+                                <p><span class="text-gray-500">标准答案：</span><span class="font-mono font-bold text-green-700">{{ currentQuestion.answer }}</span></p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Footer Navigation -->
-                    <div class="bg-gray-50 p-4 sm:px-10 flex items-center justify-between border-t border-gray-100">
+                    <div class="bg-gray-50 p-4 sm:px-8 flex items-center justify-between border-t border-gray-100">
                         <button @click="prevQuestion" :disabled="currentIndex === 0" 
-                                class="px-5 py-2 rounded-lg font-medium transition-colors"
-                                :class="currentIndex === 0 ? 'text-gray-400 cursor-not-allowed' : 'text-blue-600 hover:bg-blue-100'">
-                            <i class="fas fa-chevron-left mr-2"></i>上一题
+                                class="px-4 py-2 rounded-lg font-medium text-sm transition-colors flex items-center"
+                                :class="currentIndex === 0 ? 'text-gray-300 cursor-not-allowed' : 'text-gray-700 hover:bg-gray-200'">
+                            <i class="fas fa-chevron-left mr-1.5"></i>上一题
                         </button>
                         
-                        <div class="flex space-x-3">
-                            <!-- Show Question Grid Toggle (Optional enhancement) -->
-                            <button @click="showGrid = !showGrid" class="px-4 py-2 text-gray-500 hover:bg-gray-200 rounded-lg transition-colors">
-                                <i class="fas fa-th"></i>
+                        <div class="flex items-center space-x-2 sm:space-x-3">
+                            <!-- 答题卡抽屉/悬浮按钮 -->
+                            <button @click="showGrid = !showGrid" 
+                                    class="px-3.5 py-2 text-gray-600 hover:bg-gray-200 rounded-lg text-sm font-medium transition-colors flex items-center">
+                                <i class="fas fa-th mr-1.5"></i>答题卡
                             </button>
 
                             <button v-if="currentIndex < examQuestions.length - 1" @click="nextQuestion" 
-                                    class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium shadow-sm transition-colors">
-                                下一题<i class="fas fa-chevron-right ml-2"></i>
+                                    class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-bold text-sm shadow-sm transition-colors flex items-center">
+                                下一题<i class="fas fa-chevron-right ml-1.5"></i>
                             </button>
                             <button v-else @click="confirmSubmit" 
-                                    class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg font-medium shadow-sm transition-colors">
-                                <i class="fas fa-paper-plane mr-2"></i>确认交卷
+                                    class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg font-bold text-sm shadow-sm transition-colors flex items-center">
+                                <i class="fas fa-paper-plane mr-1.5"></i>{{ studyMode === 'recite' ? '完成复习' : '确认交卷' }}
                             </button>
                         </div>
                     </div>
                     
                     <!-- Question Navigation Grid overlay -->
-                    <div v-if="showGrid" class="absolute bottom-20 left-0 right-0 mx-auto max-w-3xl bg-white shadow-2xl rounded-xl p-6 z-10 border border-gray-200 max-h-64 overflow-y-auto">
-                        <div class="flex justify-between items-center mb-4">
-                            <h4 class="font-bold text-gray-700">答题卡</h4>
-                            <button @click="showGrid = false" class="text-gray-400 hover:text-gray-700"><i class="fas fa-times"></i></button>
+                    <div v-if="showGrid" class="border-t border-gray-200 bg-white p-5 max-h-60 overflow-y-auto">
+                        <div class="flex justify-between items-center mb-3">
+                            <h4 class="font-bold text-gray-700 text-sm">试题跳转卡</h4>
+                            <button @click="showGrid = false" class="text-gray-400 hover:text-gray-700 text-sm"><i class="fas fa-times"></i></button>
                         </div>
                         <div class="grid grid-cols-10 sm:grid-cols-12 gap-2">
                             <button v-for="(q, idx) in examQuestions" :key="idx"
                                     @click="jumpTo(idx)"
-                                    class="w-8 h-8 rounded text-sm font-medium flex items-center justify-center transition-colors"
+                                    class="w-8 h-8 rounded-md text-xs font-bold flex items-center justify-center transition-colors border"
                                     :class="getGridItemClass(idx)">
                                 {{ idx + 1 }}
                             </button>
                         </div>
-                        <div class="mt-4 flex space-x-4 text-xs text-gray-500 justify-center">
-                            <div class="flex items-center"><div class="w-3 h-3 bg-blue-500 rounded mr-1"></div>当前</div>
-                            <div class="flex items-center"><div class="w-3 h-3 bg-blue-100 text-blue-600 border border-blue-300 rounded mr-1"></div>已答</div>
-                            <div class="flex items-center"><div class="w-3 h-3 bg-gray-100 border border-gray-300 rounded mr-1"></div>未答</div>
+                        <div class="mt-3 flex flex-wrap gap-4 text-xs text-gray-500 justify-center">
+                            <div class="flex items-center"><div class="w-3 h-3 bg-blue-600 rounded mr-1"></div>当前位置</div>
+                            <template v-if="studyMode === 'recite'">
+                                <div class="flex items-center"><div class="w-3 h-3 bg-green-500 rounded mr-1"></div>回答正确</div>
+                                <div class="flex items-center"><div class="w-3 h-3 bg-red-500 rounded mr-1"></div>回答错误</div>
+                            </template>
+                            <template v-else>
+                                <div class="flex items-center"><div class="w-3 h-3 bg-blue-100 border border-blue-400 rounded mr-1"></div>已作答</div>
+                            </template>
+                            <div class="flex items-center"><div class="w-3 h-3 bg-gray-100 border border-gray-300 rounded mr-1"></div>未作答</div>
                         </div>
                     </div>
                 </div>
@@ -164,86 +325,277 @@
             <transition name="fade" mode="out-in">
                 <div v-if="appState === 'result'" class="space-y-6">
                     <!-- Score Card -->
-                    <div class="bg-white rounded-xl shadow-sm p-8 text-center border-t-8" :class="score >= 600 ? 'border-green-500' : 'border-red-500'">
-                        <h2 class="text-3xl font-bold text-gray-800 mb-2">考试结束</h2>
-                        <p class="text-gray-500 mb-6">您的最终得分（按 1000 分制计算）</p>
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 text-center border-t-8" 
+                         :class="score >= 600 ? 'border-green-500' : 'border-red-500'">
+                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">
+                            {{ studyMode === 'recite' ? '背题复习完成' : '模拟考试结束' }}
+                        </h2>
+                        <p class="text-gray-500 text-sm mb-6">按 1000 分制成绩核算</p>
                         
-                        <div class="text-7xl font-black mb-4" :class="score >= 600 ? 'text-green-500' : 'text-red-500'">
+                        <div class="text-6xl sm:text-7xl font-black mb-4 font-mono tracking-tight" 
+                             :class="score >= 600 ? 'text-green-500' : 'text-red-500'">
                             {{ score }}
                         </div>
                         
-                        <div class="flex justify-center space-x-12 text-sm text-gray-600 mb-8">
+                        <div class="flex justify-center space-x-8 sm:space-x-14 text-sm text-gray-600 mb-8">
                             <div>
                                 <div class="text-2xl font-bold text-gray-800">{{ correctCount }}</div>
-                                <div>答对题数</div>
+                                <div class="text-xs text-gray-400 mt-0.5">答对题数</div>
                             </div>
                             <div>
                                 <div class="text-2xl font-bold text-gray-800">{{ examQuestions.length - correctCount }}</div>
-                                <div>答错题数</div>
+                                <div class="text-xs text-gray-400 mt-0.5">答错题数</div>
                             </div>
                             <div>
                                 <div class="text-2xl font-bold text-gray-800">{{ timeUsed }}</div>
-                                <div>用时</div>
+                                <div class="text-xs text-gray-400 mt-0.5">练习用时</div>
                             </div>
                         </div>
 
-                        <button @click="resetExam" class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-2 px-6 rounded-lg transition-colors">
-                            <i class="fas fa-redo mr-2"></i>重新考试
-                        </button>
+                        <div class="flex justify-center space-x-3">
+                            <button @click="resetToHome" class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold py-2.5 px-6 rounded-xl transition-colors text-sm">
+                                <i class="fas fa-home mr-1.5"></i>返回首页
+                            </button>
+                            <button @click="startExam(examSource)" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 px-6 rounded-xl transition-colors text-sm shadow-sm">
+                                <i class="fas fa-redo mr-1.5"></i>再练一次
+                            </button>
+                        </div>
                     </div>
 
                     <!-- Review Section -->
-                    <h3 class="text-xl font-bold text-gray-800 mt-10 mb-4">错题解析 / 答卷回顾</h3>
+                    <div class="flex items-center justify-between mt-8 mb-4">
+                        <h3 class="text-lg font-bold text-gray-800 flex items-center">
+                            <i class="fas fa-list-check mr-2 text-blue-600"></i>全卷题目回顾与错题解析
+                        </h3>
+                        <span class="text-xs text-gray-400">错误题目已同步更新至错题本</span>
+                    </div>
                     
                     <div class="space-y-4">
-                        <div v-for="(q, idx) in examQuestions" :key="idx" class="bg-white rounded-lg shadow-sm p-6 border-l-4"
-                             :class="isCorrect(idx) ? 'border-green-400' : 'border-red-400'">
-                            <div class="flex justify-between items-start mb-2">
-                                <h4 class="font-bold text-gray-800 leading-relaxed"><span class="text-gray-400 mr-2">{{ idx + 1 }}.</span>{{ q.question }}</h4>
-                                <span v-if="isCorrect(idx)" class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded font-bold ml-4 whitespace-nowrap"><i class="fas fa-check mr-1"></i>正确</span>
-                                <span v-else class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded font-bold ml-4 whitespace-nowrap"><i class="fas fa-times mr-1"></i>错误</span>
+                        <div v-for="(q, idx) in examQuestions" :key="idx" class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 border-l-4"
+                             :class="isCorrect(idx) ? 'border-green-500' : 'border-red-500'">
+                            <div class="flex justify-between items-start mb-3">
+                                <h4 class="font-bold text-gray-800 leading-relaxed text-sm sm:text-base">
+                                    <span class="text-gray-400 mr-2">{{ idx + 1 }}.</span>{{ q.question }}
+                                </h4>
+                                <span v-if="isCorrect(idx)" class="bg-green-100 text-green-800 text-xs px-2.5 py-1 rounded font-bold ml-4 whitespace-nowrap">
+                                    <i class="fas fa-check mr-1"></i>正确
+                                </span>
+                                <span v-else class="bg-red-100 text-red-800 text-xs px-2.5 py-1 rounded font-bold ml-4 whitespace-nowrap">
+                                    <i class="fas fa-times mr-1"></i>错误
+                                </span>
                             </div>
                             
-                            <div class="text-xs text-gray-400 mb-4">题目类型：{{ q.type }}</div>
+                            <div class="text-xs text-gray-400 mb-3 flex items-center space-x-2">
+                                <span class="bg-gray-100 px-2 py-0.5 rounded text-gray-600">{{ q.type }}</span>
+                                <span>原题 ID: {{ q.original_id }}</span>
+                            </div>
 
                             <div class="space-y-2 mb-4">
-                                <div v-for="opt in q.options" :key="opt" class="text-sm px-3 py-2 rounded"
+                                <div v-for="opt in q.options" :key="opt" class="text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border"
                                      :class="getReviewOptionClass(idx, q, opt)">
                                     {{ opt }}
                                 </div>
                             </div>
 
-                            <div class="bg-gray-50 p-3 rounded text-sm border border-gray-200">
-                                <p class="text-gray-600 mb-1">您的答案：<span class="font-mono font-bold" :class="isCorrect(idx) ? 'text-green-600' : 'text-red-600'">{{ userAnswers[idx] || '未作答' }}</span></p>
+                            <div class="bg-gray-50 p-3 rounded-lg text-xs sm:text-sm border border-gray-200">
+                                <p class="text-gray-600 mb-1">您的作答：<span class="font-mono font-bold" :class="isCorrect(idx) ? 'text-green-600' : 'text-red-600'">{{ userAnswers[idx] || '未作答' }}</span></p>
                                 <p class="text-gray-600">标准答案：<span class="font-mono font-bold text-green-600">{{ q.answer }}</span></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </transition>
-
         </main>
+
+        <!-- 侧边错题本抽屉 (Slide Drawer) -->
+        <div v-if="showWrongDrawer" class="fixed inset-0 z-50 overflow-hidden bg-black/40 backdrop-blur-sm transition-opacity" @click.self="closeWrongDrawer">
+            <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+                <div class="w-screen max-w-lg bg-white shadow-2xl flex flex-col">
+                    <!-- Drawer Header -->
+                    <div class="p-5 border-b border-gray-100 flex items-center justify-between bg-gray-50">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-book text-red-500 text-lg"></i>
+                            <h3 class="font-bold text-gray-800 text-base sm:text-lg">错题集</h3>
+                            <span class="bg-red-100 text-red-700 text-xs font-bold px-2 py-0.5 rounded-full">
+                                共 {{ wrongQuestionsCount }} 题
+                            </span>
+                        </div>
+                        <button @click="closeWrongDrawer" class="text-gray-400 hover:text-gray-600 p-1">
+                            <i class="fas fa-times text-lg"></i>
+                        </button>
+                    </div>
+
+                    <!-- Drawer Action Toolbar -->
+                    <div class="p-4 bg-white border-b border-gray-100 flex flex-wrap gap-2 items-center justify-between">
+                        <button @click="startWrongQuestionsPractice" 
+                                :disabled="wrongQuestionsCount === 0"
+                                :class="wrongQuestionsCount === 0 ? 'bg-gray-100 text-gray-400 cursor-not-allowed' : 'bg-red-600 hover:bg-red-700 text-white shadow-sm'"
+                                class="px-4 py-2 rounded-lg text-xs sm:text-sm font-bold flex items-center transition-all">
+                            <i class="fas fa-dumbbell mr-1.5"></i>开始练习错题
+                        </button>
+
+                        <button @click="openCleanModal" 
+                                :disabled="wrongQuestionsCount === 0"
+                                :class="wrongQuestionsCount === 0 ? 'text-gray-300 cursor-not-allowed' : 'text-gray-600 hover:text-red-600 hover:bg-red-50 border border-gray-200'"
+                                class="px-3 py-2 rounded-lg text-xs font-medium flex items-center transition-all">
+                            <i class="fas fa-broom mr-1.5 text-gray-500"></i>清理错题本
+                        </button>
+                    </div>
+
+                    <!-- Drawer Question List -->
+                    <div class="flex-grow overflow-y-auto p-4 space-y-4">
+                        <div v-if="wrongQuestionsCount === 0" class="text-center py-20">
+                            <div class="w-16 h-16 bg-green-50 text-green-500 rounded-full flex items-center justify-center text-2xl mx-auto mb-3">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <p class="text-gray-700 font-bold text-sm">太棒了，目前没有错题记录！</p>
+                            <p class="text-gray-400 text-xs mt-1">在刷题和考试中做错的题目会自动汇总至此</p>
+                        </div>
+
+                        <div v-for="item in sortedWrongQuestions" :key="item.original_id" 
+                             class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm hover:border-gray-300 transition-all">
+                            <!-- Tag line -->
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center space-x-1.5">
+                                    <span class="bg-gray-100 text-gray-600 text-[11px] font-bold px-2 py-0.5 rounded">
+                                        {{ item.type }}
+                                    </span>
+                                    <span class="text-xs text-gray-400">ID: {{ item.original_id }}</span>
+                                </div>
+                                <div class="flex items-center space-x-2 text-xs">
+                                    <span class="bg-red-50 text-red-700 border border-red-200 px-2 py-0.5 rounded-full font-bold">
+                                        错 {{ item.wrongCount }} 次
+                                    </span>
+                                    <span v-if="item.correctCount > 0" class="bg-green-50 text-green-700 border border-green-200 px-2 py-0.5 rounded-full font-bold">
+                                        对 {{ item.correctCount }} 次
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Question Text -->
+                            <h4 class="text-sm font-bold text-gray-800 leading-snug mb-3">{{ item.question }}</h4>
+
+                            <!-- Options preview -->
+                            <div class="space-y-1.5 mb-3 bg-gray-50/70 p-2.5 rounded-lg border border-gray-100">
+                                <div v-for="opt in item.options" :key="opt" 
+                                     class="text-xs text-gray-600 leading-tight"
+                                     :class="item.answer.includes(getOptionLetter(opt)) ? 'text-green-700 font-semibold' : ''">
+                                    {{ opt }}
+                                </div>
+                            </div>
+
+                            <!-- Answer Badge -->
+                            <div class="flex items-center justify-between text-xs pt-1 border-t border-gray-100">
+                                <span class="text-gray-500">标准答案：<strong class="text-green-600 font-mono text-sm">{{ item.answer }}</strong></span>
+                                <span class="text-[11px] text-gray-400">抽中权重: {{ getCalculateWeight(item) }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 清理错题本弹窗 (Modal) -->
+        <div v-if="showCleanModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" @click.self="showCleanModal = false">
+            <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl border border-gray-100 text-left">
+                <div class="flex items-center space-x-2 mb-3 text-red-600">
+                    <i class="fas fa-broom text-xl"></i>
+                    <h3 class="text-lg font-bold text-gray-800">清理已掌握错题</h3>
+                </div>
+                <p class="text-xs text-gray-500 mb-4 leading-relaxed">
+                    清除在错题练习中<strong>回答正确次数大于 X 次</strong>的题目。请输入您期望的阈值 X：
+                </p>
+
+                <div class="mb-4">
+                    <label class="block text-xs font-bold text-gray-700 mb-1">正确次数阈值 X：</label>
+                    <div class="flex items-center space-x-2">
+                        <input type="number" v-model.number="cleanThreshold" min="0" 
+                               class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500 font-mono" 
+                               placeholder="请输入数字，如 1">
+                    </div>
+                    <div class="flex space-x-2 mt-2">
+                        <button @click="cleanThreshold = 0" class="text-xs bg-gray-100 hover:bg-gray-200 px-2 py-1 rounded text-gray-600">清空已做对过的(>0次)</button>
+                        <button @click="cleanThreshold = 1" class="text-xs bg-gray-100 hover:bg-gray-200 px-2 py-1 rounded text-gray-600">做对>1次</button>
+                        <button @click="cleanThreshold = 2" class="text-xs bg-gray-100 hover:bg-gray-200 px-2 py-1 rounded text-gray-600">做对>2次</button>
+                    </div>
+                </div>
+
+                <div class="flex justify-end space-x-2">
+                    <button @click="showCleanModal = false" class="px-4 py-2 rounded-lg text-sm text-gray-600 hover:bg-gray-100">取消</button>
+                    <button @click="executeCleanWrongQuestions" class="px-4 py-2 rounded-lg text-sm font-bold bg-red-600 hover:bg-red-700 text-white shadow-sm">
+                        确认清理
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 页面常驻悬浮错题本快捷按钮 (右下角) -->
+        <button v-if="appState !== 'welcome' && !showWrongDrawer" @click="openWrongDrawer" 
+                class="fixed bottom-6 right-6 z-40 bg-white hover:bg-gray-50 text-gray-800 border-2 border-red-500 shadow-xl rounded-full px-4 py-3 text-sm font-bold flex items-center space-x-2 transition-transform hover:scale-105">
+            <i class="fas fa-book text-red-500"></i>
+            <span>错题集</span>
+            <span v-if="wrongQuestionsCount > 0" class="bg-red-600 text-white text-xs px-2 py-0.5 rounded-full font-mono">
+                {{ wrongQuestionsCount }}
+            </span>
+        </button>
     </div>
 
     <script>
         const { createApp, ref, computed, onMounted } = Vue;
 
+        const STORAGE_KEY = 'huawei_ict_wrong_questions_v1';
+
         createApp({
             setup() {
+                // 核心应用状态
                 const appState = ref('welcome'); // welcome, exam, result
+                const studyMode = ref('recite'); // 'recite' (背题模式，默认) | 'mock' (模考模式)
+                const examSource = ref('all');    // 'all' (全量题库抽题) | 'wrong' (错题专练)
                 const isLoading = ref(true);
+
+                // 数据集合
                 const allQuestions = ref([]);
                 const examQuestions = ref([]);
                 const currentIndex = ref(0);
-                const userAnswers = ref({}); // { index: 'A' or 'AB' }
-                
-                const timeTotal = 90 * 60; // 90 minutes in seconds
+                const userAnswers = ref({}); // { index: 'A' 或 'ABD' }
+                const evaluatedQuestions = ref({}); // { index: { isSubmitted: true, isCorrect: boolean } }
+
+                // 计时器
+                const timeTotal = 90 * 60; // 90分钟
                 const timeLeft = ref(timeTotal);
                 let timerInterval = null;
                 const showGrid = ref(false);
 
-                // Fetch questions on load
+                // 错题库体系
+                const wrongQuestionsMap = ref({}); // { [original_id]: { original_id, question, options, answer, type, wrongCount, correctCount, updatedAt } }
+                const showWrongDrawer = ref(false);
+                const showCleanModal = ref(false);
+                const cleanThreshold = ref(1);
+
+                // 加载持久化错题本
+                const loadWrongQuestions = () => {
+                    try {
+                        const stored = localStorage.getItem(STORAGE_KEY);
+                        if (stored) {
+                            wrongQuestionsMap.value = JSON.parse(stored);
+                        }
+                    } catch (e) {
+                        console.error("读取错题本失败", e);
+                    }
+                };
+
+                // 持久化保存错题本
+                const saveWrongQuestions = () => {
+                    try {
+                        localStorage.setItem(STORAGE_KEY, JSON.stringify(wrongQuestionsMap.value));
+                    } catch (e) {
+                        console.error("保存错题本失败", e);
+                    }
+                };
+
+                // 初始化挂载
                 onMounted(async () => {
+                    loadWrongQuestions();
                     try {
                         const response = await fetch('questions.json');
                         const data = await response.json();
@@ -256,7 +608,21 @@
                     }
                 });
 
+                // 计算属性
                 const currentQuestion = computed(() => examQuestions.value[currentIndex.value] || {});
+
+                const wrongQuestionsCount = computed(() => {
+                    return Object.keys(wrongQuestionsMap.value).length;
+                });
+
+                // 错题按错误次数从大到小降序排列
+                const sortedWrongQuestions = computed(() => {
+                    return Object.values(wrongQuestionsMap.value).sort((a, b) => {
+                        const diff = (b.wrongCount || 0) - (a.wrongCount || 0);
+                        if (diff !== 0) return diff;
+                        return (b.updatedAt || 0) - (a.updatedAt || 0);
+                    });
+                });
 
                 const formattedTime = computed(() => {
                     const m = Math.floor(timeLeft.value / 60).toString().padStart(2, '0');
@@ -264,20 +630,80 @@
                     return `${m}:${s}`;
                 });
 
-                const startExam = () => {
-                    if (allQuestions.value.length === 0) return;
-                    
-                    // Randomly select 60 questions
-                    let shuffled = [...allQuestions.value].sort(() => 0.5 - Math.random());
-                    examQuestions.value = shuffled.slice(0, 60);
-                    
+                const isCurrentCorrect = computed(() => {
+                    return isCorrect(currentIndex.value);
+                });
+
+                const hasUserSelectedCurrent = computed(() => {
+                    const ans = userAnswers.value[currentIndex.value];
+                    return Boolean(ans && ans.length > 0);
+                });
+
+                // 权重计算公式：错得越多权重越高，对得越多权重越低，保底为 1
+                const getCalculateWeight = (item) => {
+                    const wc = item.wrongCount || 0;
+                    const cc = item.correctCount || 0;
+                    return Math.max(1, (wc * 2) - cc);
+                };
+
+                // 模式切换
+                const setStudyMode = (mode) => {
+                    studyMode.value = mode;
+                };
+
+                // 错题抽样算法（轮盘赌加权无放回抽样）
+                const getWeightedWrongSample = (wrongList, maxCount = 60) => {
+                    const pool = [...wrongList];
+                    const selected = [];
+                    const targetCount = Math.min(pool.length, maxCount);
+
+                    while (selected.length < targetCount && pool.length > 0) {
+                        const totalWeight = pool.reduce((sum, item) => sum + getCalculateWeight(item), 0);
+                        let randomWeight = Math.random() * totalWeight;
+                        let chosenIndex = 0;
+
+                        for (let i = 0; i < pool.length; i++) {
+                            const w = getCalculateWeight(pool[i]);
+                            if (randomWeight < w) {
+                                chosenIndex = i;
+                                break;
+                            }
+                            randomWeight -= w;
+                        }
+
+                        selected.push(pool[chosenIndex]);
+                        pool.splice(chosenIndex, 1);
+                    }
+                    return selected;
+                };
+
+                // 开始考试（全题库随机或错题专练）
+                const startExam = (source = 'all') => {
+                    examSource.value = source;
+
+                    if (source === 'all') {
+                        if (allQuestions.value.length === 0) return;
+                        let shuffled = [...allQuestions.value].sort(() => 0.5 - Math.random());
+                        examQuestions.value = shuffled.slice(0, 60);
+                    } else {
+                        // 错题专练
+                        const wrongList = Object.values(wrongQuestionsMap.value);
+                        if (wrongList.length === 0) {
+                            alert("当前错题本暂无题目，请先在刷题中积累错题。");
+                            return;
+                        }
+                        examQuestions.value = getWeightedWrongSample(wrongList, 60);
+                    }
+
                     userAnswers.value = {};
+                    evaluatedQuestions.value = {};
                     currentIndex.value = 0;
                     timeLeft.value = timeTotal;
                     showGrid.value = false;
+                    showWrongDrawer.value = false;
                     appState.value = 'exam';
 
-                    // Start timer
+                    // 启动计时器
                     clearInterval(timerInterval);
                     timerInterval = setInterval(() => {
                         timeLeft.value--;
@@ -288,8 +714,15 @@
                     }, 1000);
                 };
 
+                // 从错题抽屉启动练习
+                const startWrongQuestionsPractice = () => {
+                    if (appState.value === 'exam') {
+                        if (!confirm("正在答题中，开始错题练习将重新开始，确定继续吗？")) return;
+                    }
+                    startExam('wrong');
+                };
+
                 const getOptionLetter = (optionStr) => {
-                    // Extract "A" from "A、..." or "A."
                     return optionStr.charAt(0);
                 };
 
@@ -298,52 +731,176 @@
                     return ans.includes(letter);
                 };
 
-                const toggleOption = (letter) => {
+                const isOptionInAnswer = (letter) => {
+                    const qAns = currentQuestion.value.answer || "";
+                    return qAns.includes(letter);
+                };
+
+                const isQuestionEvaluated = (idx) => {
+                    return Boolean(evaluatedQuestions.value[idx]?.isSubmitted);
+                };
+
+                // 处理选项点击事件
+                const handleOptionClick = (letter) => {
+                    // 若当前题目已在背题模式下判定，则锁定选项
+                    if (studyMode.value === 'recite' && isQuestionEvaluated(currentIndex.value)) {
+                        return;
+                    }
+
                     const qType = currentQuestion.value.type;
                     let currentAns = userAnswers.value[currentIndex.value] || "";
 
                     if (qType === '多选题') {
+                        // 多选题允许勾选/取消勾选
                         if (currentAns.includes(letter)) {
                             currentAns = currentAns.replace(letter, '');
                         } else {
                             currentAns += letter;
                         }
-                        // Sort alphabetically
-                        currentAns = currentAns.split('').sort().join('');
-                        userAnswers.value[currentIndex.value] = currentAns;
+                        userAnswers.value[currentIndex.value] = currentAns.split('').sort().join('');
                     } else {
-                        // Single / TrueFalse
+                        // 单选或判断题
                         userAnswers.value[currentIndex.value] = letter;
+                        // 背题模式下单选/判断题选后立即判定
+                        if (studyMode.value === 'recite') {
+                            evaluateQuestion(currentIndex.value);
+                        }
                     }
                 };
 
-                const nextQuestion = () => { if (currentIndex.value < examQuestions.value.length - 1) currentIndex.value++; };
-                const prevQuestion = () => { if (currentIndex.value > 0) currentIndex.value--; };
-                const jumpTo = (idx) => { currentIndex.value = idx; showGrid.value = false; };
+                // 多选题背题模式下的【确认提交本题】
+                const submitMultiChoice = () => {
+                    if (!hasUserSelectedCurrent.value) return;
+                    evaluateQuestion(currentIndex.value);
+                };
 
+                // 核心判定与错题本联动更新逻辑
+                const evaluateQuestion = (idx) => {
+                    const q = examQuestions.value[idx];
+                    if (!q) return;
+
+                    const correct = isCorrect(idx);
+                    evaluatedQuestions.value[idx] = {
+                        isSubmitted: true,
+                        isCorrect: correct
+                    };
+
+                    const qId = q.original_id;
+                    if (!correct) {
+                        // 答错：纳入/更新错题本
+                        if (!wrongQuestionsMap.value[qId]) {
+                            wrongQuestionsMap.value[qId] = {
+                                original_id: q.original_id,
+                                type: q.type,
+                                question: q.question,
+                                options: q.options,
+                                answer: q.answer,
+                                wrongCount: 1,
+                                correctCount: 0,
+                                updatedAt: Date.now()
+                            };
+                        } else {
+                            wrongQuestionsMap.value[qId].wrongCount = (wrongQuestionsMap.value[qId].wrongCount || 0) + 1;
+                            wrongQuestionsMap.value[qId].updatedAt = Date.now();
+                        }
+                        saveWrongQuestions();
+                    } else {
+                        // 答对：如果在错题练习模式下，累加 correctCount
+                        if (examSource.value === 'wrong' && wrongQuestionsMap.value[qId]) {
+                            wrongQuestionsMap.value[qId].correctCount = (wrongQuestionsMap.value[qId].correctCount || 0) + 1;
+                            wrongQuestionsMap.value[qId].updatedAt = Date.now();
+                            saveWrongQuestions();
+                        }
+                    }
+                };
+
+                // 选项样式动态计算
+                const getOptionDynamicClass = (letter) => {
+                    const isEval = isQuestionEvaluated(currentIndex.value) && studyMode.value === 'recite';
+                    
+                    if (isEval) {
+                        const inAnswer = isOptionInAnswer(letter);
+                        const selected = isOptionSelected(letter);
+
+                        if (inAnswer) {
+                            // 标准答案选项无论选没选均变绿
+                            return 'border-green-500 bg-green-50/80 cursor-default';
+                        }
+                        if (selected && !inAnswer) {
+                            // 用户选错的选项变红
+                            return 'border-red-500 bg-red-50/80 cursor-default';
+                        }
+                        // 其他选项置灰
+                        return 'border-gray-200 bg-gray-50/40 text-gray-400 cursor-default opacity-70';
+                    }
+
+                    // 未判定或模考模式
+                    if (isOptionSelected(letter)) {
+                        return 'border-blue-600 bg-blue-50/70 shadow-sm cursor-pointer';
+                    }
+                    return 'border-gray-200 hover:border-blue-300 hover:bg-gray-50 cursor-pointer';
+                };
+
+                const getOptionTextClass = (letter) => {
+                    const isEval = isQuestionEvaluated(currentIndex.value) && studyMode.value === 'recite';
+                    if (isEval) {
+                        if (isOptionInAnswer(letter)) return 'text-green-800 font-bold';
+                        if (isOptionSelected(letter)) return 'text-red-700 font-bold';
+                        return 'text-gray-400';
+                    }
+                    if (isOptionSelected(letter)) return 'text-blue-900 font-medium';
+                    return 'text-gray-700';
+                };
+
+                const nextQuestion = () => { 
+                    if (currentIndex.value < examQuestions.length - 1) {
+                        currentIndex.value++; 
+                    }
+                };
+
+                const prevQuestion = () => { 
+                    if (currentIndex.value > 0) {
+                        currentIndex.value--; 
+                    }
+                };
+
+                const jumpTo = (idx) => { 
+                    currentIndex.value = idx; 
+                    showGrid.value = false; 
+                };
+
+                // 试卷提交确认
                 const confirmSubmit = () => {
                     const unanswered = examQuestions.value.length - Object.keys(userAnswers.value).length;
+                    const actionName = studyMode.value === 'recite' ? '完成复习' : '交卷';
                     if (unanswered > 0) {
-                        if (!confirm(`您还有 ${unanswered} 道题未作答，确定要交卷吗？`)) return;
+                        if (!confirm(`您还有 ${unanswered} 道题未作答，确定要${actionName}吗？`)) return;
                     } else {
-                        if (!confirm("确定要提交试卷吗？")) return;
+                        if (!confirm(`确定要${actionName}吗？`)) return;
                     }
                     submitExam();
                 };
 
+                // 结算处理
                 const submitExam = () => {
                     clearInterval(timerInterval);
+                    // 模考模式下交卷时统一进行判定并记录错题
+                    if (studyMode.value === 'mock') {
+                        for (let i = 0; i < examQuestions.value.length; i++) {
+                            evaluateQuestion(i);
+                        }
+                    }
                     appState.value = 'result';
                 };
 
+                // 判定某题是否完全正确
                 const isCorrect = (idx) => {
                     const q = examQuestions.value[idx];
+                    if (!q) return false;
                     const uAns = userAnswers.value[idx] || "";
-                    // Need exact match (especially for multiselect)
-                    // Ensure sorting just in case
                     const sortedUAns = uAns.split('').sort().join('');
-                    const sortedQAns = q.answer.split('').sort().join('');
-                    return sortedUAns === sortedQAns;
+                    const sortedQAns = (q.answer || "").split('').sort().join('');
+                    return sortedUAns === sortedQAns && sortedUAns.length > 0;
                 };
 
                 const correctCount = computed(() => {
@@ -355,7 +912,7 @@
                 });
 
                 const score = computed(() => {
-                    // Huawei uses 1000 point scale typically.
+                    if (examQuestions.value.length === 0) return 0;
                     return Math.round((correctCount.value / examQuestions.value.length) * 1000);
                 });
 
@@ -366,18 +923,39 @@
                     return `${m}分${s}秒`;
                 });
 
-                const resetExam = () => {
-                    if(confirm("将清除本次考试记录，重新抽取题目。确定继续？")) {
+                const resetToHome = () => {
+                    appState.value = 'welcome';
+                    showGrid.value = false;
+                };
+
+                const confirmGoHome = () => {
+                    if (appState.value === 'exam') {
+                        if (confirm("当前正在作答，返回首页将退出本次练习，确定返回吗？")) {
+                            clearInterval(timerInterval);
+                            appState.value = 'welcome';
+                        }
+                    } else {
                         appState.value = 'welcome';
                     }
                 };
 
+                // 答题卡网格样式
                 const getGridItemClass = (idx) => {
-                    if (idx === currentIndex.value) return 'bg-blue-500 text-white';
-                    if (userAnswers.value[idx]) return 'bg-blue-100 text-blue-600 border border-blue-300';
-                    return 'bg-gray-100 text-gray-500 border border-gray-300';
+                    if (idx === currentIndex.value) {
+                        return 'border-blue-600 ring-2 ring-blue-400 bg-blue-50 font-extrabold text-blue-700';
+                    }
+                    if (studyMode.value === 'recite' && isQuestionEvaluated(idx)) {
+                        return evaluatedQuestions.value[idx]?.isCorrect
+                            ? 'bg-green-500 text-white border-green-600'
+                            : 'bg-red-500 text-white border-red-600';
+                    }
+                    if (userAnswers.value[idx]) {
+                        return 'bg-blue-100 text-blue-700 border-blue-300';
+                    }
+                    return 'bg-gray-50 text-gray-500 border-gray-200 hover:bg-gray-100';
                 };
 
+                // 结果页复盘选项样式
                 const getReviewOptionClass = (idx, q, opt) => {
                     const letter = getOptionLetter(opt);
                     const uAns = userAnswers.value[idx] || "";
@@ -387,23 +965,64 @@
                     const isUserPicked = uAns.includes(letter);
 
                     if (isRightAnswer && isUserPicked) {
-                        return 'bg-green-100 border border-green-300 font-medium text-green-800'; // Got it right
+                        return 'bg-green-100 border-green-400 font-bold text-green-900';
                     }
                     if (isRightAnswer && !isUserPicked) {
-                        return 'bg-green-50 border border-green-300 text-green-700'; // Should have picked
+                        return 'bg-green-50 border-green-300 text-green-800';
                     }
                     if (!isRightAnswer && isUserPicked) {
-                        return 'bg-red-100 border border-red-300 text-red-800 line-through'; // Wrongly picked
+                        return 'bg-red-100 border-red-400 text-red-800 line-through';
                     }
-                    return 'text-gray-500'; // Default unpicked correct
+                    return 'text-gray-400 border-gray-100';
+                };
+
+                // 错题抽屉与清理逻辑
+                const openWrongDrawer = () => { showWrongDrawer.value = true; };
+                const closeWrongDrawer = () => { showWrongDrawer.value = false; };
+                const openCleanModal = () => { showCleanModal.value = true; };
+
+                // 执行清理回答正确次数大于 X 次的题目
+                const executeCleanWrongQuestions = () => {
+                    const threshold = Number(cleanThreshold.value);
+                    if (isNaN(threshold) || threshold < 0) {
+                        alert("请输入有效的非负整数！");
+                        return;
+                    }
+
+                    const originalCount = wrongQuestionsCount.value;
+                    const newMap = {};
+                    let cleanedCount = 0;
+
+                    for (const id in wrongQuestionsMap.value) {
+                        const item = wrongQuestionsMap.value[id];
+                        const cc = item.correctCount || 0;
+                        if (cc > threshold) {
+                            cleanedCount++;
+                        } else {
+                            newMap[id] = item;
+                        }
+                    }
+
+                    wrongQuestionsMap.value = newMap;
+                    saveWrongQuestions();
+                    showCleanModal.value = false;
+                    alert(`清理完成！已移除 ${cleanedCount} 道正确次数大于 ${threshold} 的题目，剩余 ${wrongQuestionsCount.value} 道。`);
+                };
+
+                const getQuestionStats = (q) => {
+                    if (!q || !q.original_id) return null;
+                    return wrongQuestionsMap.value[q.original_id] || null;
                 };
 
                 return {
-                    appState, isLoading, allQuestions, examQuestions, currentIndex, currentQuestion, userAnswers,
-                    formattedTime, startExam, toggleOption, isOptionSelected, getOptionLetter,
-                    nextQuestion, prevQuestion, jumpTo, confirmSubmit,
-                    correctCount, score, timeUsed, isCorrect, resetExam,
-                    showGrid, getGridItemClass, getReviewOptionClass
+                    appState, studyMode, examSource, isLoading, allQuestions, examQuestions, currentIndex, currentQuestion, userAnswers,
+                    formattedTime, startExam, handleOptionClick, submitMultiChoice, isOptionSelected, isOptionInAnswer, getOptionLetter,
+                    nextQuestion, prevQuestion, jumpTo, confirmSubmit, isQuestionEvaluated, hasUserSelectedCurrent,
+                    correctCount, score, timeUsed, isCorrect, isCurrentCorrect, resetToHome, confirmGoHome, setStudyMode,
+                    showGrid, getGridItemClass, getReviewOptionClass, getOptionDynamicClass, getOptionTextClass,
+                    wrongQuestionsMap, wrongQuestionsCount, sortedWrongQuestions, showWrongDrawer, openWrongDrawer, closeWrongDrawer,
+                    startWrongQuestionsPractice, showCleanModal, cleanThreshold, openCleanModal, executeCleanWrongQuestions,
+                    getCalculateWeight, getQuestionStats
                 };
             }
         }).mount('#app');
